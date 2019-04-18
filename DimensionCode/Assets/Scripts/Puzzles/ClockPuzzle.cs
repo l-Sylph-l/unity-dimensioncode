@@ -7,15 +7,20 @@ public class ClockPuzzle : MonoBehaviour
 {
     public GameObject hourHand;
     public GameObject minuteHand;
+    public Material correctMaterial;
+    public Material failMaterial;
     public float rotationSpeedHour;
     public float rotationSpeedMinute;
     private bool rotateHour = true;
     private bool rotateMinute = true;
+    private Material initialHourMaterial;
+    private Material initialMinuteMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
- 
+        initialHourMaterial = hourHand.GetComponent<Renderer>().material;
+        initialMinuteMaterial = minuteHand.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -48,16 +53,21 @@ public class ClockPuzzle : MonoBehaviour
         }
     }
 
-    private int convertToHour(float angle)
+    private int GetCurrentHourToHour()
     {
-        float result = angle / 30f;
+        float result = hourHand.transform.eulerAngles.y / 30f;
+
+        if(result == 0)
+        {
+            result = 12;
+        }
 
         return (int)result;
     }
 
-    private int convertToMinute(float angle)
+    private int GetCurrentMinute()
     {
-        float result = angle / 6f;
+        float result = minuteHand.transform.eulerAngles.y / 6f;
 
         return (int)result;
     }
@@ -86,17 +96,35 @@ public class ClockPuzzle : MonoBehaviour
     private void CheckTime()
     {
         Debug.Log(DateTime.Now.Hour);
+        Debug.Log(GetCurrentHourToHour());
         Debug.Log(DateTime.Now.Minute);
+        Debug.Log(GetCurrentMinute());
         int currentHour = DateTime.Now.Hour;
+        int currentMinute = DateTime.Now.Minute;
 
         if (currentHour > 12)
         {
             currentHour = currentHour - 12;
         }
 
-        if(convertToHour(hourHand.transform.eulerAngles.y) != currentHour)
+        if (GetCurrentHourToHour() != currentHour)
         {
             rotateHour = true;
+            hourHand.GetComponent<Renderer>().material = failMaterial;
+        } else
+        {
+            hourHand.GetComponent<Renderer>().material = correctMaterial;
+        }
+
+        if (GetCurrentMinute() != currentMinute)
+        {
+            rotateMinute= true;
+            minuteHand.GetComponent<Renderer>().material = failMaterial;
+        }
+        else
+        {
+            minuteHand.GetComponent<Renderer>().material = correctMaterial;
         }
     }
+
 }
