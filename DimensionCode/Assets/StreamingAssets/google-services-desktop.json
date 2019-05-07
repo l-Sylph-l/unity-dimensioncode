@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1097773210443",
+    "firebase_url": "https://dimension-code.firebaseio.com",
+    "project_id": "dimension-code",
+    "storage_bucket": "dimension-code.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097773210443:android:fa7363daddbef1e5",
+        "android_client_info": {
+          "package_name": "com.dimensioncode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097773210443-ihbrd00la7pmfaik56cs138asdga156t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmnLBrCwIWdruCjvs8Sa-JK-p904kENKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097773210443-ihbrd00la7pmfaik56cs138asdga156t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097773210443:android:ec7026892da3225a",
+        "android_client_info": {
+          "package_name": "com.dimensioncode.unity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097773210443-ihbrd00la7pmfaik56cs138asdga156t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmnLBrCwIWdruCjvs8Sa-JK-p904kENKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097773210443-ihbrd00la7pmfaik56cs138asdga156t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
