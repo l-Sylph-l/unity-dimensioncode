@@ -7,9 +7,9 @@ using TMPro;
 public class LoginManager : MonoBehaviour
 {
     private FirebaseAuth firebaseAuth;
-    public TMP_InputField phoneNumber;
-    public TMP_Text idText;
-    public TMP_Text tokenText;
+    public TMP_InputField email;
+    public TMP_InputField password;
+    public TMP_Text message;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class LoginManager : MonoBehaviour
 
     public void DoLogin()
     {
-        firebaseAuth.SignInWithEmailAndPasswordAsync("c.stefano6@gmail.com", "123456").ContinueWith(task => {
+        firebaseAuth.SignInWithEmailAndPasswordAsync(email.text, password.text).ContinueWith(task => {
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
@@ -40,6 +40,7 @@ public class LoginManager : MonoBehaviour
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
+            message.text = "User signed in successfully: " + newUser.DisplayName + newUser.UserId;
         });
 
 
