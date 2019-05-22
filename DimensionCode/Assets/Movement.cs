@@ -6,11 +6,12 @@ public class Movement : MonoBehaviour
 {
     //Parameters
     public float runSpeed = 10f;
-    
+
     public float turnSpeed = 0.1f;
     public float jumpHeight = 10f;
     public float jumpControll = 1f;
-    
+    private bool isgrounded = true;
+
     //objects
     public Transform cameraTransform;
     //Grounded
@@ -43,8 +44,8 @@ public class Movement : MonoBehaviour
     {
         //Rotate and Move Player
         Move();
-        if (Input.GetButton("Jump"))
-            {
+        if (Input.GetButton("Jump") && isgrounded == true)
+        {
             Jump();
         }
 
@@ -81,7 +82,23 @@ public class Movement : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);    
-        
+        rb.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
+
+    }
+
+    void OnCollisionEnter(Collision theCollision)
+    {
+        if (theCollision.gameObject.tag == "floor")
+        {
+            isgrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision theCollision)
+    {
+        if (theCollision.gameObject.tag == "floor")
+        {
+            isgrounded = false;
+        }
     }
 }
