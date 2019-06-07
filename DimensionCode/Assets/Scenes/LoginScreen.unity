@@ -179,8 +179,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Login
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68d29168e6dea8242bc2d224f834d48c, type: 2}
+  m_sharedMaterial: {fileID: 2422732824137380895, guid: 68d29168e6dea8242bc2d224f834d48c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1050,6 +1051,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4606102332468141040, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606102332468141040, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_InputType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4606102332586476092, guid: 9f01aff283e96a6489633e5e862a5a99,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1085,6 +1096,18 @@ PrefabInstance:
       propertyPath: m_textInfo.spaceCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4606102331791912570, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
+    - target: {fileID: 4606102331791912570, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2422732824137380895, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
     - target: {fileID: 4606102331643991311, guid: 9f01aff283e96a6489633e5e862a5a99,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1105,6 +1128,18 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4606102331643991311, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
+    - target: {fileID: 4606102331643991311, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2422732824137380895, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f01aff283e96a6489633e5e862a5a99, type: 3}
 --- !u!224 &1527996805 stripped
@@ -1547,5 +1582,29 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4606102331791912570, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
+    - target: {fileID: 4606102331791912570, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2422732824137380895, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
+    - target: {fileID: 4606102331643991311, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
+    - target: {fileID: 4606102331643991311, guid: 9f01aff283e96a6489633e5e862a5a99,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2422732824137380895, guid: 68d29168e6dea8242bc2d224f834d48c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f01aff283e96a6489633e5e862a5a99, type: 3}
