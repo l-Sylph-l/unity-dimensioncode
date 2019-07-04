@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockPuzzle : MonoBehaviour
+public class ClockPuzzle : MonoBehaviour, InteractableInterface
 {
     public GameObject hourHand;
     public GameObject minuteHand;
@@ -11,53 +11,49 @@ public class ClockPuzzle : MonoBehaviour
     public Material failMaterial;
     public float rotationSpeedHour;
     public float rotationSpeedMinute;
+    public bool rotateX = false;
+    public bool rotateY = true;
+    public bool rotateZ = false;
     private bool rotateHour = true;
     private bool rotateMinute = true;
+    private bool minuteHandCorrect = false;
+    private bool hourHandCorrect = false;
     private Material initialHourMaterial;
     private Material initialMinuteMaterial;
+    private Vector3 openDoorPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         initialHourMaterial = hourHand.GetComponent<Renderer>().material;
         initialMinuteMaterial = minuteHand.GetComponent<Renderer>().material;
+        openDoorPosition = this.transform.parent.position + new Vector3(3f, 0f, 3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        RotateHands();
-
-        if (Input.GetMouseButtonDown(0))
+        if (minuteHandCorrect && hourHandCorrect)
         {
-            ShootRay();
+            // Open the clock door to the right.
+            if (this.transform.parent.position.x < openDoorPosition.x)
+            {
+                this.transform.parent.position = Vector3.Lerp(this.transform.parent.position, openDoorPosition, 0.6f * Time.deltaTime);
+                //this.transform.parent.Rotate(0, 0, 10f * Time.deltaTime);
+            }
         }
-
-        if (!rotateHour && !rotateMinute)
+        else
         {
-
-            CheckTime();
-        }
-    }
-
-    private void RotateHands()
-    {
-        if (rotateHour)
-        {
-            hourHand.transform.Rotate(0, rotationSpeedHour * Time.deltaTime, 0);
-        }
-
-        if (rotateMinute)
-        {
-            minuteHand.transform.Rotate(0, rotationSpeedMinute * Time.deltaTime, 0);
+            RotateHourHand();
+            RotateMinuteHand();
         }
     }
 
-    private int GetCurrentHourToHour()
+    private int GetCurrentHour()
     {
-        float result = hourHand.transform.eulerAngles.y / 30f;
+        float result = GetCurrentHourAngle() / 30f;
 
-        if(result == 0)
+        if (result == 0)
         {
             result = 12;
         }
@@ -67,38 +63,15 @@ public class ClockPuzzle : MonoBehaviour
 
     private int GetCurrentMinute()
     {
-        float result = minuteHand.transform.eulerAngles.y / 6f;
+        float result = GetCurrentMinuteAngle() / 6f;
 
         return (int)result;
     }
 
-    void ShootRay()
-    {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            Transform currentClockHand = hit.transform;
-
-            if (currentClockHand == hourHand.transform)
-            {
-                rotateHour = false;
-            }
-
-            if (currentClockHand == minuteHand.transform)
-            {
-                rotateMinute = false;
-            }
-        }
-    }
-
     private void CheckTime()
     {
-        Debug.Log(DateTime.Now.Hour);
-        Debug.Log(GetCurrentHourToHour());
-        Debug.Log(DateTime.Now.Minute);
-        Debug.Log(GetCurrentMinute());
+        Debug.Log("Current Display Hour" + GetCurrentHour() + ", Current Real Hour: " + DateTime.Now.Hour);
+        Debug.Log("Current Display Minute" + GetCurrentMinute() + ", Current Real Minute: " + DateTime.Now.Minute);
         int currentHour = DateTime.Now.Hour;
         int currentMinute = DateTime.Now.Minute;
 
@@ -107,24 +80,126 @@ public class ClockPuzzle : MonoBehaviour
             currentHour = currentHour - 12;
         }
 
-        if (GetCurrentHourToHour() != currentHour)
+        if (!rotateMinute && (GetCurrentMinute() >= (currentMinute -1) && GetCurrentMinute() <= (currentMinute + 1)))
         {
-            rotateHour = true;
-            hourHand.GetComponent<Renderer>().material = failMaterial;
-        } else
-        {
-            hourHand.GetComponent<Renderer>().material = correctMaterial;
-        }
-
-        if (GetCurrentMinute() != currentMinute)
-        {
-            rotateMinute= true;
-            minuteHand.GetComponent<Renderer>().material = failMaterial;
+            minuteHand.GetComponent<Renderer>().material = correctMaterial;
+            minuteHandCorrect = true;
+            rotateMinute = false;
         }
         else
         {
-            minuteHand.GetComponent<Renderer>().material = correctMaterial;
+            rotateMinute = true;
+            minuteHand.GetComponent<Renderer>().material = failMaterial;
+        }
+
+
+        if (!rotateMinute && !rotateHour && GetCurrentHour() == currentHour)
+        {
+            hourHand.GetComponent<Renderer>().material = correctMaterial;
+            hourHandCorrect = true;
+            rotateHour = false;
+        }
+        else
+        {
+            rotateHour = true;
+            hourHand.GetComponent<Renderer>().material = failMaterial;
         }
     }
 
+    private void RotateHourHand()
+    {
+        if (rotateHour)
+        {
+            if (rotateX)
+            {
+                hourHand.transform.Rotate(rotationSpeedHour * Time.deltaTime, 0, 0);
+            }
+
+            if (rotateY)
+            {
+                hourHand.transform.Rotate(0, rotationSpeedHour * Time.deltaTime, 0);
+            }
+
+            if (rotateZ)
+            {
+                hourHand.transform.Rotate(0, 0, rotationSpeedHour * Time.deltaTime);
+            }
+        }
+    }
+
+    private void RotateMinuteHand()
+    {
+        if (rotateMinute)
+        {
+            if (rotateX)
+            {
+                minuteHand.transform.Rotate(rotationSpeedMinute * Time.deltaTime, 0, 0);
+            }
+
+            if (rotateY)
+            {
+                minuteHand.transform.Rotate(0, rotationSpeedMinute * Time.deltaTime, 0);
+            }
+
+            if (rotateZ)
+            {
+                minuteHand.transform.Rotate(0, 0, rotationSpeedMinute * Time.deltaTime);
+            }
+        }
+    }
+
+    private float GetCurrentHourAngle()
+    {
+        if (rotateX)
+        {
+            return hourHand.transform.eulerAngles.x;
+        }
+
+        if (rotateY)
+        {
+            return hourHand.transform.eulerAngles.y;
+        }
+
+        if (rotateZ)
+        {
+            return hourHand.transform.eulerAngles.z;
+        }
+
+        return 0f;
+    }
+
+    private float GetCurrentMinuteAngle()
+    {
+        if (rotateX)
+        {
+            return minuteHand.transform.eulerAngles.x;
+        }
+
+        if (rotateY)
+        {
+            return minuteHand.transform.eulerAngles.y;
+        }
+
+        if (rotateZ)
+        {
+            return minuteHand.transform.eulerAngles.z;
+        }
+
+        return 0f;
+    }
+
+    public void Interact()
+    {
+        if (!rotateMinute && rotateHour)
+        {
+            rotateHour = false;
+        }
+
+        if (rotateMinute)
+        {
+            rotateMinute = false;
+        }
+
+        CheckTime();
+    }
 }
