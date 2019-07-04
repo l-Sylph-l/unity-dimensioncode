@@ -874,7 +874,7 @@ VisualEffectResource:
       \   Turbulence_1(position,  /*inout */velocity, mass, float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1),
       float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1), (float)0.5, tmp_bi, (float)3, (uint)6,
       deltaTime_a);\n\t\t\t}\n\t\t\t{\n\t\t\t    uint tmp_bd = particleId ^ asuint(uniform_b);\n\t\t\t
-      \   float tmp_be = FixedRand(tmp_bd);\n\t\t\t    float tmp_bg = tmp_be * (float)17;\n\t\t\t
+      \   float tmp_be = FixedRand(tmp_bd);\n\t\t\t    float tmp_bg = tmp_be * (float)8;\n\t\t\t
       \   float3 tmp_bh = float3(uniform_d, tmp_bg, uniform_e);\n\t\t\t    float3
       tmp_bi = tmp_bh - position;\n\t\t\t    float3 tmp_bk = tmp_bi * tmp_bi;\n\t\t\t
       \   float tmp_bl = tmp_bk[2];\n\t\t\t    float tmp_bm = tmp_bk[1];\n\t\t\t    float
@@ -905,7 +905,7 @@ VisualEffectResource:
       \   Turbulence_1(position,  /*inout */velocity, mass, float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1),
       float4x4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1), (float)0.5, tmp_bi, (float)3, (uint)6,
       deltaTime_a);\n\t\t}\n\t\t{\n\t\t    uint tmp_bd = particleId ^ asuint(uniform_b);\n\t\t
-      \   float tmp_be = FixedRand(tmp_bd);\n\t\t    float tmp_bg = tmp_be * (float)17;\n\t\t
+      \   float tmp_be = FixedRand(tmp_bd);\n\t\t    float tmp_bg = tmp_be * (float)8;\n\t\t
       \   float3 tmp_bh = float3(uniform_d, tmp_bg, uniform_e);\n\t\t    float3 tmp_bi
       = tmp_bh - position;\n\t\t    float3 tmp_bk = tmp_bi * tmp_bi;\n\t\t    float
       tmp_bl = tmp_bk[2];\n\t\t    float tmp_bm = tmp_bk[1];\n\t\t    float tmp_bn
@@ -1159,7 +1159,7 @@ VisualEffectResource:
       mass = (float)1;\n\t\t\tuint particleId = (attributeBuffer.Load((index * 0x1
       + 0x90000) << 2));\n\t\t\t\n\n\t\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\t\toldPosition
       = position;\n#endif\n\t\t\t\n\t\t\t{\n\t\t\t    uint tmp_bb = particleId ^ asuint(uniform_c);\n\t\t\t
-      \   float tmp_bc = FixedRand(tmp_bb);\n\t\t\t    float tmp_be = tmp_bc * (float)17;\n\t\t\t
+      \   float tmp_bc = FixedRand(tmp_bb);\n\t\t\t    float tmp_be = tmp_bc * (float)8;\n\t\t\t
       \   float3 tmp_bf = float3(uniform_b, tmp_be, uniform_d);\n\t\t\t    float3
       tmp_bg = tmp_bf - position;\n\t\t\t    float3 tmp_bi = tmp_bg * tmp_bg;\n\t\t\t
       \   float tmp_bj = tmp_bi[2];\n\t\t\t    float tmp_bk = tmp_bi[1];\n\t\t\t    float
@@ -1180,7 +1180,7 @@ VisualEffectResource:
       mass = (float)1;\n\t\tuint particleId = (attributeBuffer.Load((index * 0x1 +
       0x90000) << 2));\n\t\t\n\n\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\toldPosition
       = position;\n#endif\n\t\t\n\t\t{\n\t\t    uint tmp_bb = particleId ^ asuint(uniform_c);\n\t\t
-      \   float tmp_bc = FixedRand(tmp_bb);\n\t\t    float tmp_be = tmp_bc * (float)17;\n\t\t
+      \   float tmp_bc = FixedRand(tmp_bb);\n\t\t    float tmp_be = tmp_bc * (float)8;\n\t\t
       \   float3 tmp_bf = float3(uniform_b, tmp_be, uniform_d);\n\t\t    float3 tmp_bg
       = tmp_bf - position;\n\t\t    float3 tmp_bi = tmp_bg * tmp_bg;\n\t\t    float
       tmp_bj = tmp_bi[2];\n\t\t    float tmp_bk = tmp_bi[1];\n\t\t    float tmp_bl
@@ -1533,7 +1533,7 @@ VisualEffectResource:
       m_Float:
         m_Array:
         - m_ExpressionIndex: 4
-          m_Value: 17
+          m_Value: 8
         - m_ExpressionIndex: 7
           m_Value: 0.5
         - m_ExpressionIndex: 8
@@ -8429,7 +8429,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 17
+      m_SerializableObject: 8
     m_Space: 2147483647
   m_Property:
     name: max
