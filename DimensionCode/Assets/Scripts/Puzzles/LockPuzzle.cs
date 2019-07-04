@@ -65,7 +65,6 @@ public class LockPuzzle : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log(hit.transform.name);
             Transform currentClockHand = hit.transform;
 
             int index = 0;

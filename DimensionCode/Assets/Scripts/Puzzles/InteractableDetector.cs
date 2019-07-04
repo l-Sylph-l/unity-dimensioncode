@@ -18,28 +18,20 @@ public class InteractableDetector : MonoBehaviour
     void CheckForInteractable()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log(hit.transform.name);
-            if ( currentInteractable != hit.transform)
+            if( currentInteractable != hit.transform)
             {
                 ChangeToOriginalMaterial();
             }
    
             if ("Interactable" == hit.transform.tag)
             {
-                currentInteractable = hit.transform;             
+                currentInteractable = hit.transform;
                 originalMaterial = currentInteractable.GetComponent<Renderer>().material;
                 currentInteractable.GetComponent<Renderer>().material = interactableMaterial;
-                InteractableInterface action = currentInteractable.GetComponent<InteractableInterface>();
-
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    action.Interact();
-                }
             }
         } else if (currentInteractable != null)
         {

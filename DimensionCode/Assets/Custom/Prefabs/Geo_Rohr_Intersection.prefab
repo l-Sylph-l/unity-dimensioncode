@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8541774276651627565}
   - component: {fileID: 6107907022811929824}
   - component: {fileID: 1048464795637501010}
-  - component: {fileID: 667367676231441050}
   m_Layer: 0
   m_Name: Intersection_Kreis
   m_TagString: Untagged
@@ -79,20 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &667367676231441050
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22234186870976120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -5018531445995105062, guid: 50bdb90150a0c0746ac3c7c16f3363e5, type: 3}
 --- !u!1 &1232306552870193242
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +89,6 @@ GameObject:
   - component: {fileID: 5877841985466077173}
   - component: {fileID: 1227295689684923053}
   - component: {fileID: 3388011062314159995}
-  - component: {fileID: 5762738028927489706}
   m_Layer: 0
   m_Name: Intersection_Gang
   m_TagString: Untagged
@@ -172,20 +156,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5762738028927489706
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232306552870193242}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2071734706512772638, guid: 50bdb90150a0c0746ac3c7c16f3363e5, type: 3}
 --- !u!1 &2663797202015360845
 GameObject:
   m_ObjectHideFlags: 0
