@@ -111,7 +111,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2FABC876: 9.3
+    - Vector1_2FABC876: 2.55
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
