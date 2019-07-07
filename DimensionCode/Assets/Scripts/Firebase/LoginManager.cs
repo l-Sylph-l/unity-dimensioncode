@@ -20,7 +20,11 @@ public class LoginManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(firebaseAuth.CurrentUser != null)
+        {
+            message.text = firebaseAuth.CurrentUser.DisplayName;
+        }
+       
     }
 
     public void DoLogin()
@@ -42,8 +46,6 @@ public class LoginManager : MonoBehaviour
                 newUser.DisplayName, newUser.UserId);
             message.text = "User signed in successfully: " + newUser.DisplayName + newUser.UserId;
         });
-
-
 
 
         //Debug.Log($"Started Login Process with phonenumber '{phoneNumber.text}'");
