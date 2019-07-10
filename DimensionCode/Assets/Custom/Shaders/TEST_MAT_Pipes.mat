@@ -10,10 +10,10 @@ Material:
   m_Name: TEST_MAT_Pipes
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ShaderKeywords: _NORMALMAP_TANGENT_SPACE
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses:
   - DistortionVectors
@@ -112,7 +112,7 @@ Material:
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
-    - _AlbedoAffectEmissive: 0
+    - _AlbedoAffectEmissive: 1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
     - _AlphaCutoffPostpass: 0.5
@@ -155,7 +155,7 @@ Material:
     - _DstBlend: 0
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
-    - _EmissiveIntensity: 100
+    - _EmissiveIntensity: 5
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
@@ -234,14 +234,14 @@ Material:
     - _ZTestModeDistortion: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.11480955, g: 0.2830189, b: 0.12424712, a: 1}
+    - _BaseColor: {r: 0.11764706, g: 0.78431374, b: 0.09803922, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.11480955, g: 0.2830189, b: 0.12424712, a: 1}
+    - _Color: {r: 0.11764706, g: 0.78431374, b: 0.09803922, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0, g: 19.811321, b: 0.1961528, a: 100}
-    - _EmissiveColorLDR: {r: 0, g: 0.1981132, b: 0.001961528, a: 1}
+    - _EmissiveColor: {r: 0.5882353, g: 3.9215686, b: 0.49019608, a: 5}
+    - _EmissiveColorLDR: {r: 0.11764706, g: 0.78431374, b: 0.09803922, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
