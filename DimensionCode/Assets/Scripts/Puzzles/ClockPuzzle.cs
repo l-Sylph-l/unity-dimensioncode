@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockPuzzle : MonoBehaviour, InteractableInterface
+public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
 {
     public GameObject hourHand;
     public GameObject minuteHand;
@@ -38,7 +38,7 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface
             // Open the clock door to the right.
             if (this.transform.parent.position.x < openDoorPosition.x)
             {
-                this.transform.parent.position = Vector3.Lerp(this.transform.parent.position, openDoorPosition, 0.6f * Time.deltaTime);
+                ChangeToEndState();
                 //this.transform.parent.Rotate(0, 0, 10f * Time.deltaTime);
             }
         }
@@ -201,5 +201,25 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface
         }
 
         CheckTime();
+    }
+
+    public string GetPart()
+    {
+        return "1";
+    }
+
+    public string GetLevel()
+    {
+        return "1";
+    }
+
+    public void ChangeToEndState()
+    {
+        this.transform.parent.position = Vector3.Lerp(this.transform.parent.position, openDoorPosition, 0.6f * Time.deltaTime);
+        minuteHand.GetComponent<Renderer>().material = correctMaterial;
+        hourHand.GetComponent<Renderer>().material = correctMaterial;
+        rotateMinute = false;
+        minuteHandCorrect = true;
+        hourHandCorrect = true;
     }
 }
