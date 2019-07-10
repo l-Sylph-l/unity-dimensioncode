@@ -3,89 +3,106 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using Firebase.Database;
 
 public class LoginManager : MonoBehaviour
 {
     private FirebaseAuth firebaseAuth;
     public TMP_InputField email;
     public TMP_InputField password;
-    public TMP_Text message;
+    public TMP_Text successMessage;
+    public TMP_Text errorMessage;
+    public DatabaseManager db;
+    public GameObject successPopup;
+    public GameObject errorPopup;
+    private string errorMessageValue = "";
+    private bool loginButtonClicked = false;
 
     // Start is called before the first frame update
     void Start()
     {
         firebaseAuth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        email.text = PlayerPrefs.GetString("email");
+        password.text = PlayerPrefs.GetString("password");
+        successPopup.SetActive(false);
+        errorPopup.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(firebaseAuth.CurrentUser != null)
+        if (firebaseAuth.CurrentUser != null)
         {
-            message.text = firebaseAuth.CurrentUser.DisplayName;
+            loginButtonClicked = false;
+            successPopup.SetActive(true);
+            successMessage.text = "Signed in successfully";
+            successMessage.color = new Color32(0, 255, 0, 255);
         }
-       
+        else if (loginButtonClicked)
+        {
+            loginButtonClicked = false;
+            errorPopup.SetActive(true);
+            errorMessage.text = errorMessageValue;
+            errorMessage.color = new Color32(255, 0, 0, 255);
+        }
     }
 
     public void DoLogin()
     {
-        firebaseAuth.SignInWithEmailAndPasswordAsync(email.text, password.text).ContinueWith(task => {
+        PlayerPrefs.SetString("email", email.text);
+        PlayerPrefs.SetString("password", password.text);
+
+        firebaseAuth.SignInWithEmailAndPasswordAsync(email.text, password.text).ContinueWith(async task =>
+        {
+            loginButtonClicked = true;
             if (task.IsCanceled)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
+                errorMessageValue = "Login process was canceled.";
                 return;
             }
             if (task.IsFaulted)
             {
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+                errorMessageValue = "An error encountered";
                 return;
             }
 
             Firebase.Auth.FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
-            message.text = "User signed in successfully: " + newUser.DisplayName + newUser.UserId;
+            string result = "";
+            await db.ReadState().ContinueWith(dbTask =>
+            {
+                if (dbTask.IsFaulted)
+                {
+                    // Handle the error...
+                }
+                else if (dbTask.IsCompleted)
+                {
+                    DataSnapshot snapshot = dbTask.Result;
+                    result = snapshot.GetRawJsonValue();
+
+                    StateModel test = db.JsonToObject(result);
+
+                    if (result == null || result == "")
+                    {
+                        db.UpdateState(new StateModel(email.text, "1", "1"));
+                    }
+
+                }
+            });
         });
+    }
 
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("PrototypeLevel");
+    }
 
-        //Debug.Log($"Started Login Process with phonenumber '{phoneNumber.text}'");
-        //Debug.Log("Started Login Process");
-        //PhoneAuthProvider provider = PhoneAuthProvider.GetInstance(firebaseAuth);
-        //provider.VerifyPhoneNumber(phoneNumber.text, 5000, null,
-        //  verificationCompleted: (credential) => {
-        //      Debug.Log("verificationCompleted");
-
-        //      // Auto-sms-retrieval or instant validation has succeeded (Android only).
-        //      // There is no need to input the verification code.
-        //      // `credential` can be used instead of calling GetCredential().
-        //  },
-        //  verificationFailed: (error) => {
-        //      Debug.Log("error");
-        //      // The verification code was not sent.
-        //      // `error` contains a human readable explanation of the problem.
-        //  },
-        //  codeSent: (id, token) => {
-
-        //      Debug.Log("codeSent");
-        //      Debug.Log("Id: " + id);
-        //      Debug.Log("Token: " + token);
-
-        //      idText.text = id;
-
-
-        //      // Verification code was successfully sent via SMS.
-        //      // `id` contains the verification id that will need to passed in with
-        //      // the code from the user when calling GetCredential().
-        //      // `token` can be used if the user requests the code be sent again, to
-        //      // tie the two requests together.
-        //  },
-        //  codeAutoRetrievalTimeOut: (id) => {
-        //      Debug.Log("codeAutoRetrievalTimeOut");
-        //      Debug.Log("Id: " + id);
-        //      // Called when the auto-sms-retrieval has timed out, based on the given
-        //      // timeout parameter.
-        //      // `id` contains the verification id of the request that timed out.
-        //  });
-
+    public void DeactivateErrorPopup()
+    {
+        errorPopup.SetActive(false);
     }
 }
