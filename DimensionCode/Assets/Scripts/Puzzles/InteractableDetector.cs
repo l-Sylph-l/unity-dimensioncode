@@ -30,16 +30,10 @@ public class InteractableDetector : MonoBehaviour
    
             if ("Interactable" == hit.transform.tag)
             {
-                currentInteractable = hit.transform;             
-                originalMaterial = currentInteractable.GetComponent<Renderer>().material;
-                currentInteractable.GetComponent<Renderer>().material = interactableMaterial;
-                InteractableInterface action = currentInteractable.GetComponent<InteractableInterface>();
-
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    action.Interact();
-                }
+                ActivateInteractable(hit);
+            } else if ("InteractableChild" == hit.transform.tag)
+            {
+                ActivateInteractableChild(hit);
             }
         } else if (currentInteractable != null)
         {
@@ -49,9 +43,41 @@ public class InteractableDetector : MonoBehaviour
 
     private void ChangeToOriginalMaterial()
     {
-        if(currentInteractable != null){
+        if (currentInteractable != null && currentInteractable.tag == "InteractableChild")
+        {
+            foreach (Transform child in currentInteractable.parent)
+            {
+                child.GetComponent<Renderer>().material = originalMaterial;
+            }
+        }
+
+        if (currentInteractable != null){
             currentInteractable.GetComponent<Renderer>().material = originalMaterial;
             currentInteractable = null;
+        }
+    }
+
+    private void ActivateInteractable(RaycastHit hit)
+    {
+        currentInteractable = hit.transform;
+        originalMaterial = currentInteractable.GetComponent<Renderer>().material;
+        currentInteractable.GetComponent<Renderer>().material = interactableMaterial;
+        InteractableInterface action = currentInteractable.GetComponent<InteractableInterface>();
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            action.Interact();
+        }
+    }
+
+    private void ActivateInteractableChild(RaycastHit hit)
+    {
+        ActivateInteractable(hit);
+
+        foreach( Transform child in currentInteractable.parent)
+        {
+            child.GetComponent<Renderer>().material = interactableMaterial;
         }
     }
 }
