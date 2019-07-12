@@ -88,7 +88,7 @@ public class LoginManager : MonoBehaviour
 
                     if (result == null || result == "")
                     {
-                        db.UpdateState(new StateModel(email.text, "1", "1"));
+                        db.UpdateState("1", "1");
                     }
 
                 }

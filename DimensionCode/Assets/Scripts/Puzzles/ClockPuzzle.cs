@@ -14,6 +14,7 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
     public bool rotateX = false;
     public bool rotateY = true;
     public bool rotateZ = false;
+    public DatabaseManager dbManager;
     private bool rotateHour = true;
     private bool rotateMinute = true;
     private bool minuteHandCorrect = false;
@@ -188,6 +189,11 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
         return 0f;
     }
 
+    /**
+     * Start of Methods from the interact interface
+     * IMPORTANT: This Gameobject must have the Tag "Interactable"
+     */
+
     public void Interact()
     {
         if (!rotateMinute && rotateHour)
@@ -202,6 +208,10 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
 
         CheckTime();
     }
+
+    /**
+     * Start of Methods from the puzzle interface
+     */
 
     public string GetPart()
     {
@@ -221,5 +231,20 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
         rotateMinute = false;
         minuteHandCorrect = true;
         hourHandCorrect = true;
+        dbManager.UpdateState("1", "2");
     }
+
+    public Vector3 GetSpawnPosition()
+    {
+        return new Vector3(0f, 0.01f, 10.53f);
+    }
+
+    public Vector3 GetSpawnRotation()
+    {
+        return new Vector3(0f, -237.921f, 0f);
+    }
+
+    /**
+    * End of Methods from the puzzle interface
+    */
 }
