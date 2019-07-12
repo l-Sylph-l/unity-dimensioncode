@@ -11,8 +11,6 @@ using System.Threading.Tasks;
 
 public class DatabaseManager : MonoBehaviour
 {
-    public TMP_Text text;
-    public TMP_InputField mainInputField;
     private FirebaseAuth firebaseAuth;
     DatabaseReference reference;
 
@@ -51,9 +49,6 @@ public class DatabaseManager : MonoBehaviour
             Debug.LogError(args.DatabaseError.Message);
             return;
         }
-        // Do something with the data in args.Snapshot
-        Debug.Log(args.Snapshot.GetValue(true));
-        text.text = (string)args.Snapshot.GetValue(true);
     }
 
     public async Task<DataSnapshot> ReadState()
@@ -62,8 +57,9 @@ public class DatabaseManager : MonoBehaviour
 
     }
 
-    public void UpdateState(StateModel currentState)
-    {
+    public void UpdateState(string level, string part)
+    {     
+        StateModel currentState = new StateModel(firebaseAuth.CurrentUser.Email, level, part);
         Debug.Log("Update Data: " + JsonUtility.ToJson(currentState));
         reference.Child("users").Child(firebaseAuth.CurrentUser.UserId).SetRawJsonValueAsync(JsonUtility.ToJson(currentState));
     }
