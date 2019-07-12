@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
@@ -10,6 +11,7 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
     public TetrisTrigger rowTrigger04;
     public TetrisTrigger rowTrigger05;
     public TetrisTrigger rowTrigger06;
+    public TMP_Text displayText;
 
     /**
      * Start of Methods from the puzzle interface
@@ -44,7 +46,7 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
     * End of Methods from the puzzle interface
     */
 
-    string GetCurrentValue()
+    void DisplayCurrentValue()
     {
         Debug.Log("rowTrigger01: " + rowTrigger01.getCount());
         Debug.Log("rowTrigger02: " + rowTrigger02.getCount());
@@ -63,11 +65,11 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
         // Code beginnt bei 6, da rowOne(Collider) von rechts beginnt der Code aber normal von links her geschrieben werden muss.
         string tetrisCode = rowSix + rowFive  + rowFour  + rowThree  + rowTwo  + rowOne;
 
-        return tetrisCode;
+        displayText.text = tetrisCode;
     }
 
     void Update()
     {
-        GetCurrentValue();
+        DisplayCurrentValue();
     }
 }
