@@ -189,9 +189,9 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
         return 0f;
     }
 
-
     /**
      * Start of Methods from the interact interface
+     * IMPORTANT: This Gameobject must have the Tag "Interactable"
      */
 
     public void Interact()
@@ -208,10 +208,6 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
 
         CheckTime();
     }
-
-    /**
-    * End of Methods from the interact interface
-    */
 
     /**
      * Start of Methods from the puzzle interface
