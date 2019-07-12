@@ -47,7 +47,23 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
     string GetCurrentValue()
     {
         Debug.Log("rowTrigger01: " + rowTrigger01.getCount());
-        return null;
+        Debug.Log("rowTrigger02: " + rowTrigger02.getCount());
+        Debug.Log("rowTrigger03: " + rowTrigger03.getCount());
+        Debug.Log("rowTrigger04: " + rowTrigger04.getCount());
+        Debug.Log("rowTrigger05: " + rowTrigger05.getCount());
+        Debug.Log("rowTrigger06: " + rowTrigger06.getCount());
+
+        string rowOne = rowTrigger01.getCount().ToString();
+        string rowTwo = rowTrigger02.getCount().ToString();
+        string rowThree = rowTrigger03.getCount().ToString();
+        string rowFour = rowTrigger04.getCount().ToString();
+        string rowFive = rowTrigger05.getCount().ToString();
+        string rowSix = rowTrigger06.getCount().ToString();
+
+        // Code beginnt bei 6, da rowOne(Collider) von rechts beginnt der Code aber normal von links her geschrieben werden muss.
+        string tetrisCode = rowSix + rowFive  + rowFour  + rowThree  + rowTwo  + rowOne;
+
+        return tetrisCode;
     }
 
     void Update()
