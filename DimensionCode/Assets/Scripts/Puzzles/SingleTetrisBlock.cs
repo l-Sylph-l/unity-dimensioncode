@@ -12,7 +12,5 @@ public class SingleTetrisBlock : MonoBehaviour, InteractableInterface
     public void Interact()
     {
         this.gameObject.transform.parent.Rotate(new Vector3(0f, 90f, 0f));
-
-
     }
 }
