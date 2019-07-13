@@ -415,8 +415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 8777449}
   - {fileID: 8777448}
+  - {fileID: 8777449}
   m_VisualEffect: {fileID: 8777452}
 --- !u!73398921 &8777451
 VFXRenderer:
@@ -3638,8 +3638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 123431010}
   - {fileID: 123431009}
+  - {fileID: 123431010}
   m_VisualEffect: {fileID: 123431013}
 --- !u!73398921 &123431012
 VFXRenderer:
@@ -27009,8 +27009,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40198,8 +40198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1087578533}
   - {fileID: 1087578532}
+  - {fileID: 1087578533}
   m_VisualEffect: {fileID: 1087578536}
 --- !u!73398921 &1087578535
 VFXRenderer:
@@ -53085,8 +53085,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1421294408}
   - {fileID: 1421294407}
+  - {fileID: 1421294408}
   m_VisualEffect: {fileID: 1421294411}
 --- !u!73398921 &1421294410
 VFXRenderer:
@@ -60807,8 +60807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1684927468}
   - {fileID: 1684927467}
+  - {fileID: 1684927468}
   m_VisualEffect: {fileID: 1684927471}
 --- !u!73398921 &1684927470
 VFXRenderer:
@@ -69196,8 +69196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1904233284}
   - {fileID: 1904233283}
+  - {fileID: 1904233284}
   m_VisualEffect: {fileID: 1904233287}
 --- !u!73398921 &1904233286
 VFXRenderer:

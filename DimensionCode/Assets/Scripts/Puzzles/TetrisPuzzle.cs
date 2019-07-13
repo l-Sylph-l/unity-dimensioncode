@@ -63,9 +63,19 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
         string rowSix = rowTrigger06.getCount().ToString();
 
         // Code beginnt bei 6, da rowOne(Collider) von rechts beginnt der Code aber normal von links her geschrieben werden muss.
-        string tetrisCode = rowSix + rowFive  + rowFour  + rowThree  + rowTwo  + rowOne;
+        string tetrisCode = ColorTextRed(rowSix) + ColorTextGreen(rowFive) + ColorTextRed(rowFour) + ColorTextGreen(rowThree) + ColorTextGreen(rowTwo) + ColorTextRed(rowOne);
 
         displayText.text = tetrisCode;
+    }
+
+    string ColorTextRed(string value)
+    {
+        return "<color=red>" + value + "</color>";
+    }
+
+    string ColorTextGreen(string value)
+    {
+        return "<color=green>" + value + "</color>";
     }
 
     void Update()
