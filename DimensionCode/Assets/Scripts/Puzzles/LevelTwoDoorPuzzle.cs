@@ -17,6 +17,19 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     public GameObject door11Left, door11Right;
     public GameObject door12Left, door12Right;
 
+    bool door01Open = false;
+    bool door02Open = false;
+    bool door03Open = false;
+    bool door04Open = false;
+    bool door05Open = false;
+    bool door06Open = false;
+    bool door07Open = false;
+    bool door08Open = false;
+    bool door09Open = false;
+    bool door10Open = false;
+    bool door11Open = false;
+    bool door12Open = false;
+
     public GameObject doorButton;
 
     public float speed = 1.0f;
@@ -64,15 +77,25 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
     public void Interact()
     {
-        float step = speed * Time.deltaTime;
-        target.transform.position = new Vector3(20f, 0f, 0f);
-
-        // Prüfung für den Button Nr. 1
-        if (doorButton.ToString() == "Geo_button")
+        // Prüfung für den Button Nr. 3
+        if (doorButton.ToString() == "Geo_Button_L2 (1)")
         {
-            this.gameObject.transform.parent.Rotate(new Vector3(0f, 90f, 0f));
+            if (door03Open == false)
+            {
+                // Hier muss der Code noch angepasst werden, dass sich die Türe wirklich öffnet
+                door03Left.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
+                door03Right.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
 
-            door02Left.transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+                door03Open = true;
+            }
+            if (door03Open == true)
+            {
+                // Hier muss der Code noch angepasst werden, dass sich die Türe wirklich schliesst
+                door03Left.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
+                door03Right.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
+
+                door03Open = false;
+            }         
         }       
     }
 }
