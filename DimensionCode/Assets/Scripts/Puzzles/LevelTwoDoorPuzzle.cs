@@ -32,10 +32,6 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
     public GameObject doorButton;
 
-    public float speed = 1.0f;
-
-    private Transform target;
-
     /**
     * Start of Methods from the puzzle interface
     */
@@ -78,21 +74,22 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     public void Interact()
     {
         // Prüfung für den Button Nr. 3
-        if (doorButton.ToString() == "Geo_Button_L2 (1)")
+        if (doorButton.name == "Geo_Button_L2 (1)")
         {
             if (door03Open == false)
             {
                 // Hier muss der Code noch angepasst werden, dass sich die Türe wirklich öffnet
-                door03Left.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
-                door03Right.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
+                door03Left.transform.position = new Vector3(0.7f, 0, 0);
+                door03Right.transform.position = new Vector3(0.7f, 0, 0);
 
                 door03Open = true;
             }
+
             if (door03Open == true)
             {
                 // Hier muss der Code noch angepasst werden, dass sich die Türe wirklich schliesst
-                door03Left.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
-                door03Right.transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, 0.73f, 0), Time.deltaTime * speed);
+                door03Left.transform.position = new Vector3(0, 0, 0);
+                door03Right.transform.position = new Vector3(0, 0, 0);
 
                 door03Open = false;
             }         
