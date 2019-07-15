@@ -10612,8 +10612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 328823262}
   - {fileID: 328823263}
+  - {fileID: 328823262}
   m_VisualEffect: {fileID: 328823266}
 --- !u!73398921 &328823265
 VFXRenderer:
@@ -27343,8 +27343,139 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00012
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 743698968}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &743698968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 743698967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &743997346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36900,8 +37031,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1007651700}
   - {fileID: 1007651701}
+  - {fileID: 1007651700}
   m_VisualEffect: {fileID: 1007651704}
 --- !u!73398921 &1007651703
 VFXRenderer:
@@ -40288,8 +40419,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1087578533}
   - {fileID: 1087578532}
+  - {fileID: 1087578533}
   m_VisualEffect: {fileID: 1087578536}
 --- !u!73398921 &1087578535
 VFXRenderer:
@@ -47863,8 +47994,139 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 1261164559}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &1261164559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261164558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1261584912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1345710603370030430, guid: 37dae579c96831d44bc4d7d228b466d6,
@@ -48630,8 +48892,139 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00012
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 1280914475}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &1280914475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1280914474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1281940142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3763743701821986509, guid: 74204b3cf7298ae46a80f6e0f42604e6,
@@ -58632,8 +59025,139 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 1602828637}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &1602828637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1602828636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1604570300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59851,8 +60375,139 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00012
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 1632898996}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &1632898996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1632898995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1639650599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68867,8 +69522,139 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00012
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 1900913714}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &1900913714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1900913713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1902184792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73301,8 +74087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2022562983}
   - {fileID: 2022562984}
+  - {fileID: 2022562983}
   m_VisualEffect: {fileID: 2022562987}
 --- !u!73398921 &2022562986
 VFXRenderer:
@@ -74368,8 +75154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2047314292}
   - {fileID: 2047314293}
+  - {fileID: 2047314292}
   m_VisualEffect: {fileID: 2047314296}
 --- !u!73398921 &2047314295
 VFXRenderer:
@@ -80136,5 +80922,136 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100.00012
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Left
+      value: 
+      objectReference: {fileID: 93524045}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door01Right
+      value: 
+      objectReference: {fileID: 1324801343}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Left
+      value: 
+      objectReference: {fileID: 1201509239}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door02Right
+      value: 
+      objectReference: {fileID: 1373039932}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Left
+      value: 
+      objectReference: {fileID: 1194739817}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door03Right
+      value: 
+      objectReference: {fileID: 133516065}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Left
+      value: 
+      objectReference: {fileID: 2137290017000099714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door04Right
+      value: 
+      objectReference: {fileID: 894129195}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Left
+      value: 
+      objectReference: {fileID: 506656573}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door05Right
+      value: 
+      objectReference: {fileID: 514874612}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Left
+      value: 
+      objectReference: {fileID: 565826828}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door06Right
+      value: 
+      objectReference: {fileID: 1402100997}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Left
+      value: 
+      objectReference: {fileID: 1007759897}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door07Right
+      value: 
+      objectReference: {fileID: 773283133}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Left
+      value: 
+      objectReference: {fileID: 1157514541}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door08Right
+      value: 
+      objectReference: {fileID: 295035500}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Left
+      value: 
+      objectReference: {fileID: 1577419561}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door09Right
+      value: 
+      objectReference: {fileID: 447798347}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Left
+      value: 
+      objectReference: {fileID: 604583365}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door10Right
+      value: 
+      objectReference: {fileID: 297162398}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Left
+      value: 
+      objectReference: {fileID: 368779538}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door11Right
+      value: 
+      objectReference: {fileID: 1201088081}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Left
+      value: 
+      objectReference: {fileID: 931090621}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: door12Right
+      value: 
+      objectReference: {fileID: 2005447858}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 8237543516823679857}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
+--- !u!1 &8237543516823679857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6451634366898539396, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8237543516823679856}
+  m_PrefabAsset: {fileID: 0}
