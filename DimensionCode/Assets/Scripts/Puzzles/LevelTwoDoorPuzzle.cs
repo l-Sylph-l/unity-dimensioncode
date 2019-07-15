@@ -68,7 +68,7 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Interact()
@@ -79,17 +79,15 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
             if (door03Open == false)
             {
                 // Hier muss der Code noch angepasst werden, dass sich die Türe wirklich öffnet
-                door03Left.transform.position = new Vector3(0.7f, 0, 0);
-                door03Right.transform.position = new Vector3(0.7f, 0, 0);
+                door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
                 door03Open = true;
-            }
-
-            if (door03Open == true)
+            } else if (door03Open == true)
             {
                 // Hier muss der Code noch angepasst werden, dass sich die Türe wirklich schliesst
-                door03Left.transform.position = new Vector3(0, 0, 0);
-                door03Right.transform.position = new Vector3(0, 0, 0);
+                door03Left.transform.localPosition = door03Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                door03Right.transform.localPosition = door03Right.transform.localPosition + new Vector3(0.7f, 0, 0);
 
                 door03Open = false;
             }         
