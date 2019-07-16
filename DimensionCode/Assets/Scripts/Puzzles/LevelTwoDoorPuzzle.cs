@@ -29,6 +29,7 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     bool door10Open = false;
     bool door11Open = false;
     bool door12Open = false;
+    bool allDoorsOpened = false;
 
     public GameObject doorButton;
 
@@ -69,16 +70,16 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     void Start()
     {
         // Türe 2 muss offen sein
-        door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-        door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door02Left.transform.localPosition = new Vector3(-1.010432f, -3.45163f, 0.885674f);
+        door02Right.transform.localPosition = new Vector3(-4.410432f, -3.45163f, 0.885674f);
         door02Open = true;
         // Türe 8 muss offen sein
-        door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-        door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+        door08Left.transform.localPosition = new Vector3(-12.51043f, -3.45163f, -10.81433f);
+        door08Right.transform.localPosition = new Vector3(-12.51043f, -3.45163f, - 7.414326f);
         door08Open = true;
         // Türe 10 muss offen sein
-        door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-        door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door10Left.transform.localPosition = new Vector3(-1.010432f, -3.45163f, -12.31433f);
+        door10Right.transform.localPosition = new Vector3(-4.410432f, -3.45163f, -12.31433f);
         door10Open = true;
     }
 
@@ -90,331 +91,337 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
     public void Interact()
     {
-        // Prüfung für den Button Nr. 2
-        if (doorButton.name == "Geo_Button_L2")
-        {
-            // Button Nr. 2 öffnet/schliesst die Türen 3 und 8
-            if (door03Open == false)
+        if (allDoorsOpened == false)
+        { 
+            // Prüfung für den Button Nr. 2
+            if (doorButton.name == "Geo_Button_L2")
             {
-                door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+                // Button Nr. 2 öffnet/schliesst die Türen 3 und 8
+                if (door03Open == false)
+                {
+                    door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door03Open = true;
+                    door03Open = true;
+                }
+                else if (door03Open == true)
+                {
+                    door03Left.transform.localPosition = door03Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door03Right.transform.localPosition = door03Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door03Open = false;
+                }
+                if (door08Open == false)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+
+                    door08Open = true;
+                }
+                else if (door08Open == true)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+
+                    door08Open = false;
+                }
             }
-            else if (door03Open == true)
-            {
-                door03Left.transform.localPosition = door03Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door03Right.transform.localPosition = door03Right.transform.localPosition + new Vector3(0.7f, 0, 0);
 
-                door03Open = false;
+            // Prüfung für den Button Nr. 3
+            if (doorButton.name == "Geo_Button_L2 (1)")
+            {
+                // Button Nr. 3 öffnet/schliesst die Türen 2, 6 und 8
+                if (door02Open == false)
+                {
+                    door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door02Open = true;
+                }
+                else if (door02Open == true)
+                {
+                    door02Left.transform.localPosition = door02Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door02Right.transform.localPosition = door02Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door02Open = false;
+                }
+                if (door06Open == false)
+                {
+                    door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+
+                    door06Open = true;
+                }
+                else if (door06Open == true)
+                {
+                    door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+
+                    door06Open = false;
+                }
+                if (door08Open == false)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+
+                    door08Open = true;
+                }
+                else if (door08Open == true)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+
+                    door08Open = false;
+                }
             }
-            if (door08Open == false)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
 
-                door08Open = true;
+            // Prüfung für den Button Nr. 4
+            if (doorButton.name == "Geo_Button_L2 (2)")
+            {
+                // Button Nr. 4 öffnet/schliesst die Türen 3 und 12
+                if (door03Open == false)
+                {
+                    door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door03Open = true;
+                }
+                else if (door03Open == true)
+                {
+                    door03Left.transform.localPosition = door03Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door03Right.transform.localPosition = door03Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door03Open = false;
+                }
+                if (door12Open == false)
+                {
+                    door12Left.transform.localPosition = door12Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door12Right.transform.localPosition = door12Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door12Open = true;
+                }
+                else if (door12Open == true)
+                {
+                    door12Left.transform.localPosition = door12Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door12Right.transform.localPosition = door12Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door12Open = false;
+                }
             }
-            else if (door08Open == true)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
 
-                door08Open = false;
+            // Prüfung für den Button Nr. 6
+            if (doorButton.name == "Geo_Button_L2 (11)")
+            {
+                // Button Nr. 6 öffnet/schliesst die Tür 6
+                if (door06Open == false)
+                {
+                    door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+
+                    door06Open = true;
+                }
+                else if (door06Open == true)
+                {
+                    door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+
+                    door06Open = false;
+                }
             }
-        }
 
-        // Prüfung für den Button Nr. 3
-        if (doorButton.name == "Geo_Button_L2 (1)")
-        {
-            // Button Nr. 3 öffnet/schliesst die Türen 2, 6 und 8
-            if (door02Open == false)
+            // Prüfung für den Button Nr. 8
+            if (doorButton.name == "Geo_Button_L2 (10)")
             {
-                door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+                // Button Nr. 8 öffnet/schliesst die Türen 10 und 11
+                if (door10Open == false)
+                {
+                    door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door02Open = true;
+                    door10Open = true;
+                }
+                else if (door10Open == true)
+                {
+                    door10Left.transform.localPosition = door10Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door10Right.transform.localPosition = door10Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door10Open = false;
+                }
+                if (door11Open == false)
+                {
+                    door11Left.transform.localPosition = door11Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door11Right.transform.localPosition = door11Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door11Open = true;
+                }
+                else if (door11Open == true)
+                {
+                    door11Left.transform.localPosition = door11Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door11Right.transform.localPosition = door11Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door11Open = false;
+                }
             }
-            else if (door02Open == true)
-            {
-                door02Left.transform.localPosition = door02Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door02Right.transform.localPosition = door02Right.transform.localPosition + new Vector3(0.7f, 0, 0);
 
-                door02Open = false;
+            // Prüfung für den Button Nr. 10
+            if (doorButton.name == "Geo_Button_L2 (4)")
+            {
+                // Button Nr. 10 öffnet/schliesst die Tür 2
+                if (door02Open == false)
+                {
+                    door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door02Open = true;
+                }
+                else if (door02Open == true)
+                {
+                    door02Left.transform.localPosition = door02Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door02Right.transform.localPosition = door02Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door02Open = false;
+                }
             }
-            if (door06Open == false)
-            {
-                door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
 
-                door06Open = true;
+            // Prüfung für den Button Nr. 11
+            if (doorButton.name == "Geo_Button_L2 (5)")
+            {
+                // Button Nr. 11 öffnet/schliesst die Türen 4, 8 und 10
+                if (door04Open == false)
+                {
+                    door04Left.transform.localPosition = door04Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door04Right.transform.localPosition = door04Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door04Open = true;
+                }
+                else if (door04Open == true)
+                {
+                    door04Left.transform.localPosition = door04Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door04Right.transform.localPosition = door04Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door04Open = false;
+                }
+                if (door08Open == false)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+
+                    door08Open = true;
+                }
+                else if (door08Open == true)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+
+                    door08Open = false;
+                }
+                if (door10Open == false)
+                {
+                    door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+
+                    door10Open = true;
+                }
+                else if (door10Open == true)
+                {
+                    door10Left.transform.localPosition = door10Left.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door10Right.transform.localPosition = door10Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+
+                    door10Open = false;
+                }
             }
-            else if (door06Open == true)
+
+            // Prüfung für den Button Nr. 12
+            if (doorButton.name == "Geo_Button_L2 (6)")
             {
-                door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+                // Button Nr. 12 öffnet alle Türen!
+                if (door01Open == false)
+                {
+                    door01Left.transform.localPosition = door01Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door01Right.transform.localPosition = door01Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door06Open = false;
-            }
-            if (door08Open == false)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door01Open = true;
+                }
+                if (door02Open == false)
+                {
+                    door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door08Open = true;
-            }
-            else if (door08Open == true)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door02Open = true;
+                }
+                if (door03Open == false)
+                {
+                    door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door08Open = false;
-            }
-        }
+                    door03Open = true;
+                }
+                if (door04Open == false)
+                {
+                    door04Left.transform.localPosition = door04Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door04Right.transform.localPosition = door04Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-        // Prüfung für den Button Nr. 4
-        if (doorButton.name == "Geo_Button_L2 (2)")
-        {
-            // Button Nr. 4 öffnet/schliesst die Türen 3 und 12
-            if (door03Open == false)
-            {
-                door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door04Open = true;
+                }
+                if (door05Open == false)
+                {
+                    door05Left.transform.localPosition = door05Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door05Right.transform.localPosition = door05Right.transform.localPosition - new Vector3(0, 0, 0.7f);
 
-                door03Open = true;
-            }
-            else if (door03Open == true)
-            {
-                door03Left.transform.localPosition = door03Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door03Right.transform.localPosition = door03Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door05Open = true;
+                }
+                if (door06Open == false)
+                {
+                    door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
 
-                door03Open = false;
-            }
-            if (door12Open == false)
-            {
-                door12Left.transform.localPosition = door12Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door12Right.transform.localPosition = door12Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door06Open = true;
+                }
+                if (door07Open == false)
+                {
+                    door07Left.transform.localPosition = door07Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door07Right.transform.localPosition = door07Right.transform.localPosition - new Vector3(0, 0, 0.7f);
 
-                door12Open = true;
-            }
-            else if (door12Open == true)
-            {
-                door12Left.transform.localPosition = door12Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door12Right.transform.localPosition = door12Right.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door07Open = true;
+                }
+                if (door08Open == false)
+                {
+                    door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
 
-                door12Open = false;
-            }
-        }
+                    door08Open = true;
+                }
+                if (door09Open == false)
+                {
+                    door09Left.transform.localPosition = door09Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door09Right.transform.localPosition = door09Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-        // Prüfung für den Button Nr. 6
-        if (doorButton.name == "Geo_Button_L2 (11)")
-        {
-            // Button Nr. 6 öffnet/schliesst die Tür 6
-            if (door06Open == false)
-            {
-                door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door09Open = true;
+                }
+                if (door10Open == false)
+                {
+                    door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door06Open = true;
-            }
-            else if (door06Open == true)
-            {
-                door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door10Open = true;
+                }
+                if (door11Open == false)
+                {
+                    door11Left.transform.localPosition = door11Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door11Right.transform.localPosition = door11Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-                door06Open = false;
-            }
-        }
+                    door11Open = true;
+                }
+                if (door12Open == false)
+                {
+                    door12Left.transform.localPosition = door12Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+                    door12Right.transform.localPosition = door12Right.transform.localPosition - new Vector3(0.7f, 0, 0);
 
-        // Prüfung für den Button Nr. 8
-        if (doorButton.name == "Geo_Button_L2 (10)")
-        {
-            // Button Nr. 8 öffnet/schliesst die Türen 10 und 11
-            if (door10Open == false)
-            {
-                door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+                    door12Open = true;
+                }
 
-                door10Open = true;
-            }
-            else if (door10Open == true)
-            {
-                door10Left.transform.localPosition = door10Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door10Right.transform.localPosition = door10Right.transform.localPosition + new Vector3(0.7f, 0, 0);
-
-                door10Open = false;
-            }
-            if (door11Open == false)
-            {
-                door11Left.transform.localPosition = door11Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door11Right.transform.localPosition = door11Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door11Open = true;
-            }
-            else if (door11Open == true)
-            {
-                door11Left.transform.localPosition = door11Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door11Right.transform.localPosition = door11Right.transform.localPosition + new Vector3(0.7f, 0, 0);
-
-                door11Open = false;
-            }
-        }
-
-        // Prüfung für den Button Nr. 10
-        if (doorButton.name == "Geo_Button_L2 (4)")
-        {
-            // Button Nr. 10 öffnet/schliesst die Tür 2
-            if (door02Open == false)
-            {
-                door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door02Open = true;
-            }
-            else if (door02Open == true)
-            {
-                door02Left.transform.localPosition = door02Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door02Right.transform.localPosition = door02Right.transform.localPosition + new Vector3(0.7f, 0, 0);
-
-                door02Open = false;
-            }
-        }
-
-        // Prüfung für den Button Nr. 11
-        if (doorButton.name == "Geo_Button_L2 (5)")
-        {
-            // Button Nr. 11 öffnet/schliesst die Türen 4, 8 und 10
-            if (door04Open == false)
-            {
-                door04Left.transform.localPosition = door04Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door04Right.transform.localPosition = door04Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door04Open = true;
-            }
-            else if (door04Open == true)
-            {
-                door04Left.transform.localPosition = door04Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door04Right.transform.localPosition = door04Right.transform.localPosition + new Vector3(0.7f, 0, 0);
-
-                door04Open = false;
-            }
-            if (door08Open == false)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
-
-                door08Open = true;
-            }
-            else if (door08Open == true)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
-
-                door08Open = false;
-            }
-            if (door10Open == false)
-            {
-                door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door10Open = true;
-            }
-            else if (door10Open == true)
-            {
-                door10Left.transform.localPosition = door10Left.transform.localPosition - new Vector3(0.7f, 0, 0);
-                door10Right.transform.localPosition = door10Right.transform.localPosition + new Vector3(0.7f, 0, 0);
-
-                door10Open = false;
-            }
-        }
-
-        // Prüfung für den Button Nr. 12
-        if (doorButton.name == "Geo_Button_L2 (6)")
-        {
-            // Button Nr. 12 öffnet alle Türen!
-            if (door01Open == false)
-            {
-                door01Left.transform.localPosition = door01Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door01Right.transform.localPosition = door01Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door01Open = true;
-            }
-            if (door02Open == false)
-            {
-                door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door02Open = true;
-            }
-            if (door03Open == false)
-            {
-                door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door03Open = true;
-            }
-            if (door04Open == false)
-            {
-                door04Left.transform.localPosition = door04Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door04Right.transform.localPosition = door04Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door04Open = true;
-            }
-            if (door05Open == false)
-            {
-                door05Left.transform.localPosition = door05Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door05Right.transform.localPosition = door05Right.transform.localPosition - new Vector3(0, 0, 0.7f);
-
-                door05Open = true;
-            }
-            if (door06Open == false)
-            {
-                door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
-
-                door06Open = true;
-            }
-            if (door07Open == false)
-            {
-                door07Left.transform.localPosition = door07Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                door07Right.transform.localPosition = door07Right.transform.localPosition - new Vector3(0, 0, 0.7f);
-
-                door07Open = true;
-            }
-            if (door08Open == false)
-            {
-                door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
-
-                door08Open = true;
-            }
-            if (door09Open == false)
-            {
-                door09Left.transform.localPosition = door09Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door09Right.transform.localPosition = door09Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door09Open = true;
-            }
-            if (door10Open == false)
-            {
-                door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door10Open = true;
-            }
-            if (door11Open == false)
-            {
-                door11Left.transform.localPosition = door11Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door11Right.transform.localPosition = door11Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door11Open = true;
-            }
-            if (door12Open == false)
-            {
-                door12Left.transform.localPosition = door12Left.transform.localPosition + new Vector3(0.7f, 0, 0);
-                door12Right.transform.localPosition = door12Right.transform.localPosition - new Vector3(0.7f, 0, 0);
-
-                door12Open = true;
+                // Alle Türen sind nun offen und dürfen nicht wieder geschlossen werden!
+                allDoorsOpened = true;
             }
         }
     }
