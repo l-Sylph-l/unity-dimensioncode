@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8364457644980525122}
   - component: {fileID: 2821518919151822011}
   - component: {fileID: 2118809345}
+  - component: {fileID: 1053506912}
   m_Layer: 0
   m_Name: Liftplattform
   m_TagString: Untagged
@@ -58,8 +59,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff56718092d19bd46a49ceb2588db4c9, type: 2}
-  - {fileID: 2100000, guid: ff56718092d19bd46a49ceb2588db4c9, type: 2}
+  - {fileID: 2100000, guid: c1b8c5acfdc35a744804d28f71edefc1, type: 2}
+  - {fileID: 2100000, guid: 228973bbf20435f4fad9729da1ea7cc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,4 +92,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2b3486a9ef62540a27c342925c9027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
+--- !u!64 &1053506912
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545498230338916455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2331917747482683591, guid: d8bd5c678ecdf4442998a448f36a1665, type: 3}

@@ -7,7 +7,6 @@ using UnityEngine;
 public class InitialPuzzleManager : MonoBehaviour
 {
     public GameObject[] puzzleArray;
-    public DatabaseManager dbManager;
     public GameObject character;
     private List<PuzzleInterface> puzzles;
     private StateModel currentState;
@@ -15,7 +14,7 @@ public class InitialPuzzleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dbManager.ReadState().ContinueWith(dbTask =>
+        DatabaseManager.Instance.ReadState().ContinueWith(dbTask =>
          {
              Debug.Log("Loading states...");
              if (dbTask.IsFaulted)
@@ -26,7 +25,7 @@ public class InitialPuzzleManager : MonoBehaviour
              {
                  Debug.Log("Loaded states");
                  DataSnapshot snapshot = dbTask.Result;
-                 StateModel currentState = dbManager.JsonToObject(snapshot.GetRawJsonValue());
+                 StateModel currentState = DatabaseManager.Instance.JsonToObject(snapshot.GetRawJsonValue());
                  foreach (GameObject gameobject in puzzleArray)
                  {
                      PuzzleInterface puzzle = gameObject.GetComponent<PuzzleInterface>();

@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class LiftPuzzle : MonoBehaviour, PuzzleInterface
 {
-    public Material liftMaterial;
+
+    public Material hologramMaterial;
     public LiftPlatform[] liftPlatformList;
+    public GameObject character;
+    private Material[] initialLiftMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Material[] hologramMaterials = { hologramMaterial, hologramMaterial };
+        initialLiftMaterial = liftPlatformList[1].GetComponent<Renderer>().materials;
+        ChangeLiftMaterial(hologramMaterials);
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckIfSpeedEqual();
+        if (CheckIfSpeedEqual() && CheckIfCharacterIsOnLift())
+        {
+            CheckWebPuzzleState();
+        }
     }
 
     // Checks if the speed of all Plattforms are equal.
@@ -25,26 +33,63 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
         float speedFromRecent = liftPlatformList[0].Speed;
         foreach (LiftPlatform liftPlatform in liftPlatformList)
         {
-            if(speedFromRecent != liftPlatform.Speed)
+            if (speedFromRecent != liftPlatform.Speed)
             {
                 return false;
             }
             speedFromRecent = liftPlatform.Speed;
         }
+
+        ActivateCollider();
+        ChangeLiftMaterial(initialLiftMaterial);
         return true;
     }
 
-    private void ChangeLiftMaterial()
+    private bool CheckIfCharacterIsOnLift()
+    {
+        if (character.transform.position.y > 7.9)
+        {
+            foreach (LiftPlatform liftPlatform in liftPlatformList)
+            {
+                liftPlatform.MoveToStopPosition = true;
+            }
+            return true;
+        }
+
+        return false;
+    }
+
+    private void ActivateCollider()
     {
         foreach (LiftPlatform liftPlatform in liftPlatformList)
         {
-            liftPlatform.GetComponent<Renderer>().material = liftMaterial;
+            liftPlatform.GetComponent<MeshCollider>().enabled = true;
         }
+    }
+
+    private void ChangeLiftMaterial(Material[] inMaterials)
+    {
+        foreach (LiftPlatform liftPlatform in liftPlatformList)
+        {
+            liftPlatform.GetComponent<Renderer>().materials = inMaterials;
+        }
+    }
+
+    public bool CheckWebPuzzleState()
+    {
+        return false;
     }
 
     public void ChangeToEndState()
     {
-
+        foreach (LiftPlatform liftPlatform in liftPlatformList)
+        {
+            Vector3 liftPosition = liftPlatform.transform.position;
+            liftPlatform.GetComponent<Renderer>().materials = initialLiftMaterial;
+            liftPlatform.MoveToEndPosition = true;
+            liftPlatform.MoveToStopPosition = true;
+            liftPlatform.transform.position = new Vector3(liftPosition.x, liftPlatform.endHeight, liftPosition.z);
+        }
     }
 
     public string GetLevel()
