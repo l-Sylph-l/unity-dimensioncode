@@ -56,7 +56,55 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
 
     public void ChangeToEndState()
     {
-        return;
+        door01Left.transform.localPosition = door01Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door01Right.transform.localPosition = door01Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door01Open = true;
+
+        door02Left.transform.localPosition = door02Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door02Right.transform.localPosition = door02Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door02Open = true;
+
+        door03Left.transform.localPosition = door03Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door03Right.transform.localPosition = door03Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door03Open = true;
+
+        door04Left.transform.localPosition = door04Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door04Right.transform.localPosition = door04Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door04Open = true;
+
+        door05Left.transform.localPosition = door05Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door05Right.transform.localPosition = door05Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door05Open = true;
+
+        door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door06Open = true;
+
+        door07Left.transform.localPosition = door07Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door07Right.transform.localPosition = door07Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door07Open = true;
+
+        door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door08Open = true;
+
+        door09Left.transform.localPosition = door09Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door09Right.transform.localPosition = door09Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door09Open = true;
+
+        door10Left.transform.localPosition = door10Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door10Right.transform.localPosition = door10Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door10Open = true;
+
+        door11Left.transform.localPosition = door11Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door11Right.transform.localPosition = door11Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door11Open = true;
+
+        door12Left.transform.localPosition = door12Left.transform.localPosition + new Vector3(0.7f, 0, 0);
+        door12Right.transform.localPosition = door12Right.transform.localPosition - new Vector3(0.7f, 0, 0);
+        door12Open = true;
+
+        allDoorsOpened = true;
     }
 
     public Vector3 GetSpawnPosition()
