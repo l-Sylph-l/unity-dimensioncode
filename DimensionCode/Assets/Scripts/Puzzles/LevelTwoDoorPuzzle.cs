@@ -46,7 +46,7 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
 
     public string GetPart()
     {
-        return "2"; // TODO: Check later!!
+        return "1"; // TODO: Check later!!
     }
 
     public string GetLevel()
@@ -61,12 +61,12 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
 
     public Vector3 GetSpawnPosition()
     {
-        return new Vector3(0f, 0.01f, 10.53f); // TODO: Level 2 Stats
+        return new Vector3(0.09f, 10.984f, 3.54f);
     }
 
     public Vector3 GetSpawnRotation()
     {
-        return new Vector3(0f, -237.921f, 0f); // TODO: Level 2 Stats
+        return new Vector3(0f, -179.99f, 0f);
     }
 
     /**
