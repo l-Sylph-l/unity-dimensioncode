@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8057949766533151127}
   - component: {fileID: 1335475764059521953}
   - component: {fileID: 4734436918020980568}
+  - component: {fileID: 5259149911415328028}
+  - component: {fileID: 722411526374900541}
   m_Layer: 0
   m_Name: Geo_Button_L2
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6451634366898539396}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: 3.5321, y: 12.358, z: 12.879}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 100.00018, y: 100.00012, z: 100.00012}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,3 +80,54 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5259149911415328028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451634366898539396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0017745334, y: 0.0008216174, z: 0.0016402256}
+  m_Center: {x: -0.0000000018626451, y: 0.00028867662, z: -0.000017973085}
+--- !u!114 &722411526374900541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451634366898539396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e7935b43d95ee45a75226fe9dfd5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door01Left: {fileID: 0}
+  door01Right: {fileID: 0}
+  door02Left: {fileID: 0}
+  door02Right: {fileID: 0}
+  door03Left: {fileID: 0}
+  door03Right: {fileID: 0}
+  door04Left: {fileID: 0}
+  door04Right: {fileID: 0}
+  door05Left: {fileID: 0}
+  door05Right: {fileID: 0}
+  door06Left: {fileID: 0}
+  door06Right: {fileID: 0}
+  door07Left: {fileID: 0}
+  door07Right: {fileID: 0}
+  door08Left: {fileID: 0}
+  door08Right: {fileID: 0}
+  door09Left: {fileID: 0}
+  door09Right: {fileID: 0}
+  door10Left: {fileID: 0}
+  door10Right: {fileID: 0}
+  door11Left: {fileID: 0}
+  door11Right: {fileID: 0}
+  door12Left: {fileID: 0}
+  door12Right: {fileID: 0}
+  doorButton: {fileID: 0}
+  speed: 1
