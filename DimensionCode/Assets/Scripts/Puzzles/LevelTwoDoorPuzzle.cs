@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
+public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
 {
     public GameObject door01Left, door01Right;
     public GameObject door02Left, door02Right;
@@ -31,7 +31,14 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     bool door12Open = false;
     bool allDoorsOpened = false;
 
-    public GameObject doorButton;
+    public GetDoorPuzzleButton doorButton02;
+    public GetDoorPuzzleButton doorButton03;
+    public GetDoorPuzzleButton doorButton04;
+    public GetDoorPuzzleButton doorButton06;
+    public GetDoorPuzzleButton doorButton08;
+    public GetDoorPuzzleButton doorButton10;
+    public GetDoorPuzzleButton doorButton11;
+    public GetDoorPuzzleButton doorButton12;
 
     /**
     * Start of Methods from the puzzle interface
@@ -86,15 +93,15 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
     // Update is called once per frame
     void Update()
     {
-
+        ButtonTriggered();
     }
 
-    public void Interact()
+    public void ButtonTriggered()
     {
         if (allDoorsOpened == false)
         { 
             // Prüfung für den Button Nr. 2
-            if (doorButton.name == "Geo_Button_L2")
+            if (doorButton02.buttonClick)
             {
                 // Button Nr. 2 öffnet/schliesst die Türen 3 und 8
                 if (door03Open == false)
@@ -125,10 +132,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door08Open = false;
                 }
+                doorButton02.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 3
-            if (doorButton.name == "Geo_Button_L2 (1)")
+            if (doorButton03.buttonClick)
             {
                 // Button Nr. 3 öffnet/schliesst die Türen 2, 6 und 8
                 if (door02Open == false)
@@ -173,10 +181,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door08Open = false;
                 }
+                doorButton03.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 4
-            if (doorButton.name == "Geo_Button_L2 (2)")
+            if (doorButton04.buttonClick)
             {
                 // Button Nr. 4 öffnet/schliesst die Türen 3 und 12
                 if (door03Open == false)
@@ -207,10 +216,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door12Open = false;
                 }
+                doorButton04.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 6
-            if (doorButton.name == "Geo_Button_L2 (11)")
+            if (doorButton06.buttonClick)
             {
                 // Button Nr. 6 öffnet/schliesst die Tür 6
                 if (door06Open == false)
@@ -227,10 +237,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door06Open = false;
                 }
+                doorButton06.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 8
-            if (doorButton.name == "Geo_Button_L2 (10)")
+            if (doorButton08.buttonClick)
             {
                 // Button Nr. 8 öffnet/schliesst die Türen 10 und 11
                 if (door10Open == false)
@@ -261,10 +272,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door11Open = false;
                 }
+                doorButton08.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 10
-            if (doorButton.name == "Geo_Button_L2 (4)")
+            if (doorButton10.buttonClick)
             {
                 // Button Nr. 10 öffnet/schliesst die Tür 2
                 if (door02Open == false)
@@ -281,10 +293,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door02Open = false;
                 }
+                doorButton10.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 11
-            if (doorButton.name == "Geo_Button_L2 (5)")
+            if (doorButton11.buttonClick)
             {
                 // Button Nr. 11 öffnet/schliesst die Türen 4, 8 und 10
                 if (door04Open == false)
@@ -329,10 +342,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface, InteractableIn
 
                     door10Open = false;
                 }
+                doorButton11.buttonClick = false;
             }
 
             // Prüfung für den Button Nr. 12
-            if (doorButton.name == "Geo_Button_L2 (6)")
+            if (doorButton12.buttonClick)
             {
                 // Button Nr. 12 öffnet alle Türen!
                 if (door01Open == false)

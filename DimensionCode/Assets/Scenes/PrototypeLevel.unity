@@ -12558,6 +12558,11 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1001 &366185301
@@ -27468,6 +27473,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 743698968}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &743698968 stripped
@@ -27476,6 +27486,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 743698967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &743698969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743698968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &743997346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38760,7 +38782,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046084932}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32e7935b43d95ee45a75226fe9dfd5f0, type: 3}
   m_Name: 
@@ -38789,7 +38811,14 @@ MonoBehaviour:
   door11Right: {fileID: 1201088081}
   door12Left: {fileID: 931090621}
   door12Right: {fileID: 2005447858}
-  doorButton: {fileID: 0}
+  doorButton02: {fileID: 8237543516823679858}
+  doorButton03: {fileID: 1366296533}
+  doorButton04: {fileID: 1280914476}
+  doorButton06: {fileID: 1261164560}
+  doorButton08: {fileID: 1602828638}
+  doorButton10: {fileID: 1632898997}
+  doorButton11: {fileID: 743698969}
+  doorButton12: {fileID: 1900913715}
 --- !u!1001 &1046626338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40419,8 +40448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1087578532}
   - {fileID: 1087578533}
+  - {fileID: 1087578532}
   m_VisualEffect: {fileID: 1087578536}
 --- !u!73398921 &1087578535
 VFXRenderer:
@@ -48119,6 +48148,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 1261164559}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &1261164559 stripped
@@ -48127,6 +48161,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1261164558}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1261164560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261164559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1261584912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1345710603370030430, guid: 37dae579c96831d44bc4d7d228b466d6,
@@ -49017,6 +49063,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 1280914475}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &1280914475 stripped
@@ -49025,6 +49076,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1280914474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1280914476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280914475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1281940142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3763743701821986509, guid: 74204b3cf7298ae46a80f6e0f42604e6,
@@ -51285,6 +51348,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 365731205}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1366296533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366296532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1368758235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59150,6 +59225,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 1602828637}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &1602828637 stripped
@@ -59158,6 +59238,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1602828636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1602828638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602828637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1604570300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60500,6 +60592,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 1632898996}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &1632898996 stripped
@@ -60508,6 +60605,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1632898995}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632898997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632898996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1639650599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61520,8 +61629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1684927468}
   - {fileID: 1684927467}
+  - {fileID: 1684927468}
   m_VisualEffect: {fileID: 1684927471}
 --- !u!73398921 &1684927470
 VFXRenderer:
@@ -69647,6 +69756,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 1900913714}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &1900913714 stripped
@@ -69655,6 +69769,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1900913713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1900913715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900913714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1902184792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75154,8 +75280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2047314293}
   - {fileID: 2047314292}
+  - {fileID: 2047314293}
   m_VisualEffect: {fileID: 2047314296}
 --- !u!73398921 &2047314295
 VFXRenderer:
@@ -79192,8 +79318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2142887912}
   - {fileID: 2142887911}
+  - {fileID: 2142887912}
   m_VisualEffect: {fileID: 2142887915}
 --- !u!73398921 &2142887914
 VFXRenderer:
@@ -81047,6 +81173,11 @@ PrefabInstance:
       propertyPath: doorButton
       value: 
       objectReference: {fileID: 8237543516823679857}
+    - target: {fileID: 722411526374900541, guid: 538f9ea232b2b6944bc2f4f1ea36bca9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 538f9ea232b2b6944bc2f4f1ea36bca9, type: 3}
 --- !u!1 &8237543516823679857 stripped
@@ -81055,3 +81186,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8237543516823679856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8237543516823679858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237543516823679857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88c8dc640f257c4caa67ade0ad6e567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
