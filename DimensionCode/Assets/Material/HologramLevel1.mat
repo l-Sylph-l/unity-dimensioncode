@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hologram
+  m_Name: HologramLevel1
   m_Shader: {fileID: -6465566751694194690, guid: 00902fe4a5fed60489fc8ab47b669e04,
     type: 3}
   m_ShaderKeywords: 
@@ -36,7 +36,7 @@ Material:
     - Vector1_6806731F: 0.364
     - Vector1_7907FF2E: 0.678
     m_Colors:
-    - Color_3F695560: {r: 2.297397, g: 0, b: 2.07199, a: 0}
+    - Color_3F695560: {r: 0, g: 1.7709477, b: 2.297397, a: 0}
     - Color_6C5960E2: {r: 8, g: 0, b: 0, a: 0}
-    - Color_B8B3363: {r: 0.26363555, g: 0.98053926, b: 0.7778211, a: 0}
+    - Color_B8B3363: {r: 0.2627451, g: 0.98039216, b: 0.89285105, a: 0}
     - Vector2_16D02A93: {r: 4.49, g: 0.14, b: 0, a: 0}

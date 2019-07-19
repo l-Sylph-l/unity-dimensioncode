@@ -14,7 +14,6 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
     public bool rotateX = false;
     public bool rotateY = true;
     public bool rotateZ = false;
-    public DatabaseManager dbManager;
     private bool rotateHour = true;
     private bool rotateMinute = true;
     private bool minuteHandCorrect = false;
@@ -225,13 +224,14 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
 
     public void ChangeToEndState()
     {
-        this.transform.parent.position = Vector3.Lerp(this.transform.parent.position, openDoorPosition, 0.6f * Time.deltaTime);
+        //this.transform.parent.position = Vector3.Lerp(this.transform.parent.position, openDoorPosition, 0.6f * Time.deltaTime);
         minuteHand.GetComponent<Renderer>().material = correctMaterial;
         hourHand.GetComponent<Renderer>().material = correctMaterial;
         rotateMinute = false;
         minuteHandCorrect = true;
         hourHandCorrect = true;
-        dbManager.UpdateState("1", "2");
+        DatabaseManager.Instance.UpdateState("1", "2");
+        ShaderManager.Instance.LerpFloatProperty(this.gameObject.GetComponent<Renderer>().material, "_DisolveValue", 1.5f);
     }
 
     public Vector3 GetSpawnPosition()

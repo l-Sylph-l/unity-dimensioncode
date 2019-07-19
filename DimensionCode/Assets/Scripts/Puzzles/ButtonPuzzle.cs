@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ButtonPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
 {
-    public DatabaseManager dbManager;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +42,7 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterfac
     public void ChangeToEndState()
     {
         Debug.Log("Button activated");
-        dbManager.UpdateState("1", "2");
+        DatabaseManager.Instance.UpdateState("1", "2");
     }
 
     public Vector3 GetSpawnPosition()

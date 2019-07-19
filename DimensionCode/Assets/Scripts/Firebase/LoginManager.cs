@@ -13,7 +13,6 @@ public class LoginManager : MonoBehaviour
     public TMP_InputField password;
     public TMP_Text successMessage;
     public TMP_Text errorMessage;
-    public DatabaseManager db;
     public GameObject successPopup;
     public GameObject errorPopup;
     private string errorMessageValue = "";
@@ -73,7 +72,7 @@ public class LoginManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
             string result = "";
-            await db.ReadState().ContinueWith(dbTask =>
+            await DatabaseManager.Instance.ReadState().ContinueWith(dbTask =>
             {
                 if (dbTask.IsFaulted)
                 {
@@ -84,11 +83,11 @@ public class LoginManager : MonoBehaviour
                     DataSnapshot snapshot = dbTask.Result;
                     result = snapshot.GetRawJsonValue();
 
-                    StateModel test = db.JsonToObject(result);
+                    StateModel test = DatabaseManager.Instance.JsonToObject(result);
 
                     if (result == null || result == "")
                     {
-                        db.UpdateState("1", "1");
+                        DatabaseManager.Instance.UpdateState("1", "1");
                     }
 
                 }

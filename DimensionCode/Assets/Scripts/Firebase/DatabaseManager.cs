@@ -14,6 +14,23 @@ public class DatabaseManager : MonoBehaviour
     private FirebaseAuth firebaseAuth;
     DatabaseReference reference;
 
+    private static readonly DatabaseManager instance = new DatabaseManager();
+
+    static DatabaseManager()
+    {
+    }
+
+    private DatabaseManager()
+    {
+    }
+
+    public static DatabaseManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
