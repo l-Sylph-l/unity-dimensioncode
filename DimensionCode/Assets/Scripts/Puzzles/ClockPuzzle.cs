@@ -225,13 +225,22 @@ public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
     public void ChangeToEndState()
     {
         //this.transform.parent.position = Vector3.Lerp(this.transform.parent.position, openDoorPosition, 0.6f * Time.deltaTime);
+        this.gameObject.tag = "Untagged";
         minuteHand.GetComponent<Renderer>().material = correctMaterial;
         hourHand.GetComponent<Renderer>().material = correctMaterial;
         rotateMinute = false;
         minuteHandCorrect = true;
         hourHandCorrect = true;
-        DatabaseManager.Instance.UpdateState("1", "2");
         ShaderManager.Instance.LerpFloatProperty(this.gameObject.GetComponent<Renderer>().material, "_DisolveValue", 1.5f);
+        ShaderManager.Instance.LerpOpacityProperty(minuteHand.GetComponent<Renderer>().material, "_BaseColor", 0f);
+        ShaderManager.Instance.LerpOpacityProperty(hourHand.GetComponent<Renderer>().material, "_BaseColor", 0f);
+        DatabaseManager.Instance.UpdateState("1", "2");
+        if (this.gameObject.GetComponent<Renderer>().material.GetFloat("_DisolveValue") > 1.4f){
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            DestroyImmediate(hourHand);
+            DestroyImmediate(minuteHand);
+            DestroyImmediate(this);
+        }
     }
 
     public Vector3 GetSpawnPosition()

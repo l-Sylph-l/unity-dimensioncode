@@ -9,10 +9,11 @@ using TMPro;
 using Firebase.Auth;
 using System.Threading.Tasks;
 
-public class DatabaseManager : MonoBehaviour
+public class DatabaseManager
 {
     private FirebaseAuth firebaseAuth;
     DatabaseReference reference;
+    public StateModel CurrentState { get; set; }
 
     private static readonly DatabaseManager instance = new DatabaseManager();
 
@@ -22,6 +23,13 @@ public class DatabaseManager : MonoBehaviour
 
     private DatabaseManager()
     {
+        // Set up the Editor before calling into the realtime database.
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://dimension-code.firebaseio.com/");
+
+        // Get the root reference location of the database.
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        firebaseAuth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     }
 
     public static DatabaseManager Instance
@@ -32,30 +40,9 @@ public class DatabaseManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Set up the Editor before calling into the realtime database.
-        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://dimension-code.firebaseio.com/");
-
-        // Get the root reference location of the database.
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
-
-        firebaseAuth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-
-        // readData();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void readData()
     {
-        FirebaseDatabase.DefaultInstance
-       .GetReference("users")
+        reference.Child("users").Child(firebaseAuth.CurrentUser.UserId)
        .ValueChanged += HandleValueChanged;
     }
 
@@ -66,6 +53,8 @@ public class DatabaseManager : MonoBehaviour
             Debug.LogError(args.DatabaseError.Message);
             return;
         }
+
+        CurrentState = JsonToObject(args.Snapshot.GetRawJsonValue());
     }
 
     public async Task<DataSnapshot> ReadState()

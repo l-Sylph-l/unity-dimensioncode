@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
+public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
 {
+    public ButtonPuzzleButton button01;
+    public ButtonPuzzleButton button02;
+    public Material doorMaterial;
+    public GameObject[] doors;
+    public GameObject[] lasers;
+
+    private bool puzzleFinished = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,22 +21,15 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterfac
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    /**
-     * Start of Methods from the interact interface
-    * IMPORTANT: This Gameobject must have the Tag "Interactable"
-    */
-    public void Interact()
-    {
-        ChangeToEndState();
+        if(button01.IsActivated && button02.IsActivated && !puzzleFinished)
+        {
+            ChangeToEndState();
+        }
     }
 
     /**
     * Start of Methods from the puzzle interface
     */
-
     public string GetPart()
     {
         return "2";
@@ -42,7 +43,23 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterfac
     public void ChangeToEndState()
     {
         Debug.Log("Button activated");
-        DatabaseManager.Instance.UpdateState("1", "2");
+        DatabaseManager.Instance.UpdateState("1", "3");
+
+        ShaderManager.Instance.LerpFloatProperty(doorMaterial, "_DisolveValue", 1.5f); 
+        if(doorMaterial.GetFloat("_DisolveValue") > 1.45f)
+        {
+            foreach (GameObject door in doors)
+            {
+                Destroy(door);
+            }
+
+            foreach (GameObject laser in lasers)
+            {
+                Destroy(laser);
+            }
+
+            puzzleFinished = true;
+        }
     }
 
     public Vector3 GetSpawnPosition()

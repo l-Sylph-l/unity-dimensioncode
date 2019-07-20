@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DisolveShader
-  m_Shader: {fileID: -6465566751694194690, guid: 1b5bc1dc7a081fc45b628152f9512fa9,
+  m_Name: interactableHologram
+  m_Shader: {fileID: -6465566751694194690, guid: 00902fe4a5fed60489fc8ab47b669e04,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -22,20 +22,21 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_1111FE4A:
-        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+    - Texture2D_91FC0F65:
+        m_Texture: {fileID: 2800000, guid: 4b7fb6e1bb05d174c87e14f6851d8092, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_B918D295:
+    - Texture2D_98423A58:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_4441A8F0: 0.169
-    - Vector1_533957BF: 0
-    - Vector1_B2E5D43E: 0.0028
-    - Vector1_D59DEF49: 37.03
-    - Vector1_FEE26B42: -1.5
-    - _DisolveValue: -1.5
+    - Vector1_39F2A8B3: -0.03
+    - Vector1_64B791D9: 0.19
+    - Vector1_6806731F: 0.5
+    - Vector1_7907FF2E: 0.678
     m_Colors:
-    - Color_8BDF0E71: {r: 766.9961, g: 0, b: 0, a: 0}
+    - Color_3F695560: {r: 2.297397, g: 2.1736546, b: 0, a: 0}
+    - Color_6C5960E2: {r: 8, g: 0, b: 0, a: 0}
+    - Color_B8B3363: {r: 0.98039216, g: 0.8849033, b: 0.2627451, a: 0}
+    - Vector2_16D02A93: {r: 4.49, g: 0.14, b: 0, a: 0}

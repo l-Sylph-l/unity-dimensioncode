@@ -12,7 +12,7 @@ public class LiftPlatform : MonoBehaviour
     private Vector3 startPosition;
     private float secondCounter = 0f;
     private float speedBuffer;
-    public float endHeight = 11.49f;
+    public float endHeight = 10.04f;
     private float stopHeight = 6.5f;
 
     public bool MoveToStopPosition { get; set; } = false;

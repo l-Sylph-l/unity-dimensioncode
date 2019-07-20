@@ -82,9 +82,7 @@ public class LoginManager : MonoBehaviour
                 {
                     DataSnapshot snapshot = dbTask.Result;
                     result = snapshot.GetRawJsonValue();
-
-                    StateModel test = DatabaseManager.Instance.JsonToObject(result);
-
+                    DatabaseManager.Instance.readData();
                     if (result == null || result == "")
                     {
                         DatabaseManager.Instance.UpdateState("1", "1");
@@ -95,8 +93,14 @@ public class LoginManager : MonoBehaviour
         });
     }
 
-    public void LoadLevel()
+    public void ContinueGame()
     {
+        SceneManager.LoadScene("PrototypeLevel");
+    }
+
+    public void StartNewGame()
+    {
+        DatabaseManager.Instance.UpdateState("1", "1");
         SceneManager.LoadScene("PrototypeLevel");
     }
 

@@ -52,4 +52,37 @@ public class ShaderManager
         }
         material.SetFloat(shaderProperty, valueToModify);
     }
+
+
+    public void LerpOpacityProperty(Material material, string shaderProperty, float endValue)
+    {
+        LerpOpacityProperty(material, shaderProperty, endValue, 1f);
+    }
+
+    public void LerpOpacityProperty(Material material, string shaderProperty, float endValue, float speed)
+    {
+        Color currentColor = material.GetColor(shaderProperty);
+        float valueToModify = currentColor.a;
+
+        if (valueToModify > endValue)
+        {
+            valueToModify -= Time.deltaTime * speed;
+
+            if (valueToModify < endValue)
+            {
+                valueToModify = endValue;
+            }
+        }
+        else if (valueToModify < endValue)
+        {
+            valueToModify += Time.deltaTime * speed;
+
+            if (valueToModify > endValue)
+            {
+                valueToModify = endValue;
+            }
+        }
+        currentColor.a = valueToModify;
+        material.SetColor(shaderProperty, currentColor);
+    }
 }

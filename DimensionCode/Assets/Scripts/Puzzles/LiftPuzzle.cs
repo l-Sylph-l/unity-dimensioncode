@@ -9,6 +9,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
     public LiftPlatform[] liftPlatformList;
     public GameObject character;
     private Material[] initialLiftMaterial;
+    private bool puzzleFinished = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,10 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
     // Update is called once per frame
     void Update()
     {
-        if (CheckIfSpeedEqual() && CheckIfCharacterIsOnLift())
+        if (!puzzleFinished)
         {
+            CheckIfSpeedEqual();
+            CheckIfCharacterIsOnLift();
             CheckWebPuzzleState();
         }
     }
@@ -51,8 +54,9 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
         {
             foreach (LiftPlatform liftPlatform in liftPlatformList)
             {
-                liftPlatform.MoveToStopPosition = true;
+                liftPlatform.MoveToStopPosition = true;                
             }
+            DatabaseManager.Instance.UpdateState("1", "4");
             return true;
         }
 
@@ -75,9 +79,18 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
         }
     }
 
-    public bool CheckWebPuzzleState()
+    public void CheckWebPuzzleState()
     {
-        return false;
+        Debug.Log("Current Level (Lift): " + DatabaseManager.Instance.CurrentState.level);
+        if (DatabaseManager.Instance.CurrentState.level.Equals("2"))
+        {
+            foreach (LiftPlatform liftPlatform in liftPlatformList)
+            {
+                liftPlatform.MoveToStopPosition = false;
+                liftPlatform.MoveToEndPosition = true;
+            }
+            puzzleFinished = true;
+        }
     }
 
     public void ChangeToEndState()
