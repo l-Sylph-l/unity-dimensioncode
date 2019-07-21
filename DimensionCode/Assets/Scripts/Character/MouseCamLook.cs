@@ -20,6 +20,7 @@ public class MouseCamLook : MonoBehaviour
     void Start()
     {
         character = this.transform.parent.gameObject;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
