@@ -15,7 +15,7 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
     // Start is called before the first frame update
     void Start()
     {
-
+        doorMaterial.SetFloat("_DisolveValue", -1.5f);
     }
 
     // Update is called once per frame

@@ -8,8 +8,10 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
     public Material hologramMaterial;
     public LiftPlatform[] liftPlatformList;
     public GameObject character;
+    public GameObject collider;
     private Material[] initialLiftMaterial;
     private bool puzzleFinished = false;
+    private bool gameIsFocused = true;
 
     // Start is called before the first frame update
     void Start()
@@ -65,10 +67,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
 
     private void ActivateCollider()
     {
-        foreach (LiftPlatform liftPlatform in liftPlatformList)
-        {
-            liftPlatform.GetComponent<MeshCollider>().enabled = true;
-        }
+        collider.GetComponent<MeshCollider>().enabled = true;
     }
 
     private void ChangeLiftMaterial(Material[] inMaterials)
@@ -82,7 +81,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
     public void CheckWebPuzzleState()
     {
         Debug.Log("Current Level (Lift): " + DatabaseManager.Instance.CurrentState.level);
-        if (DatabaseManager.Instance.CurrentState.level.Equals("2"))
+        if (DatabaseManager.Instance.CurrentState.level.Equals("2") && gameIsFocused)
         {
             foreach (LiftPlatform liftPlatform in liftPlatformList)
             {
@@ -103,6 +102,11 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
             liftPlatform.MoveToStopPosition = true;
             liftPlatform.transform.position = new Vector3(liftPosition.x, liftPlatform.endHeight, liftPosition.z);
         }
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        gameIsFocused = focus;
     }
 
     public string GetLevel()

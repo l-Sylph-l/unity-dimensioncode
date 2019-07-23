@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class HintModel
 {
-    public string HintName { get; set; }
-    public string HintText { get; set; }
+    public string hintName;
+    public string hintText;
 }

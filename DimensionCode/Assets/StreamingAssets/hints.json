@@ -2,12 +2,20 @@
 {
    "hints":[
       {
-         "HintName":"ClockPuzzleHint",
-         "HintText":"This is a hint for the clock puzzle."
+         "hintName":"ClockPuzzleHint",
+         "hintText":"The past is gone, there's no way to flee. The future's the goal, the present the key."
       },
       {
-         "HintName":"Button PuzzleHint",
-         "HintText":"This is a hint for the button puzzle."
+         "hintName":"ButtonPuzzleHint",
+         "hintText":"Roses are red, the red light is you. Follow the green, that's what you must do."
+      },
+      {
+         "hintName":"ElevatorPuzzleHint",
+         "hintText":"The right it will lift, the left it will sink. The planes must unit like paper and ink."
+      },
+      {
+         "hintName":"LevelSwitchPuzzleHint",
+         "hintText":"The solution to the question is where your journey has started. (ALT+TAB)"
       }
    ]
 }

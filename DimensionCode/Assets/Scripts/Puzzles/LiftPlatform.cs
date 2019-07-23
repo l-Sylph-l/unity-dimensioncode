@@ -8,7 +8,7 @@ public class LiftPlatform : MonoBehaviour
     [Range(0f, 1f), SerializeField]
     private float speed;
     public float Speed { get { return speed; } set { speed = value; } }
-    private float maxHeight = 12f;
+    private float maxHeight = 7f;
     private Vector3 startPosition;
     private float secondCounter = 0f;
     private float speedBuffer;
@@ -45,7 +45,7 @@ public class LiftPlatform : MonoBehaviour
             targetPosition = new Vector3(this.transform.position.x, endHeight, this.transform.position.z);
         }
 
-        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed * 12f);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed * 6f);
         secondCounter += Time.deltaTime;
     }
 
