@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 425269317551322173}
   - component: {fileID: 8700350367030562315}
   - component: {fileID: 3134879057372525298}
+  - component: {fileID: 7485484718529702004}
   m_Layer: 0
   m_Name: Geo_button
   m_TagString: Untagged
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7485484718529702004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728283298029504046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22950268, y: 0.22200918, z: 0.09986815}
+  m_Center: {x: 0.0047917366, y: 0.002671957, z: 0.049933746}
