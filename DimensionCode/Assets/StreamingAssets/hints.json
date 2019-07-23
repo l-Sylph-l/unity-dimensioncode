@@ -1,0 +1,13 @@
+
+{
+   "hints":[
+      {
+         "HintName":"ClockPuzzleHint",
+         "HintText":"This is a hint for the clock puzzle."
+      },
+      {
+         "HintName":"Button PuzzleHint",
+         "HintText":"This is a hint for the button puzzle."
+      }
+   ]
+}

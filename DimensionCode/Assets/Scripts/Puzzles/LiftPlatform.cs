@@ -45,7 +45,7 @@ public class LiftPlatform : MonoBehaviour
             targetPosition = new Vector3(this.transform.position.x, endHeight, this.transform.position.z);
         }
 
-        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed * 4f);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, Time.deltaTime * speed * 12f);
         secondCounter += Time.deltaTime;
     }
 
@@ -107,7 +107,7 @@ public class LiftPlatform : MonoBehaviour
 
     private void RespawnPlatform()
     {
-        if (secondCounter > 8f && !MoveToEndPosition && !MoveToStopPosition)
+        if (secondCounter > 2.7f && !MoveToEndPosition && !MoveToStopPosition)
         {
             Debug.Log("Lift Time: " + secondCounter + ", Speed: " + speed);
             secondCounter = 0f;

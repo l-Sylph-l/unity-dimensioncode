@@ -604,8 +604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 8777448}
   - {fileID: 8777449}
+  - {fileID: 8777448}
   m_VisualEffect: {fileID: 8777452}
 --- !u!73398921 &8777451
 VFXRenderer:
@@ -12797,8 +12797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 344613698}
   - {fileID: 344613697}
+  - {fileID: 344613698}
   m_VisualEffect: {fileID: 344613701}
 --- !u!73398921 &344613700
 VFXRenderer:
@@ -19628,8 +19628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 498949897}
   - {fileID: 498949898}
+  - {fileID: 498949897}
   m_VisualEffect: {fileID: 498949901}
 --- !u!73398921 &498949900
 VFXRenderer:
@@ -34452,6 +34452,7 @@ Transform:
   - {fileID: 105356391}
   - {fileID: 1687983262}
   - {fileID: 169228770}
+  - {fileID: 1690929365}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40804,8 +40805,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1007651701}
   - {fileID: 1007651700}
+  - {fileID: 1007651701}
   m_VisualEffect: {fileID: 1007651704}
 --- !u!73398921 &1007651703
 VFXRenderer:
@@ -50126,6 +50127,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1222221701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1223343243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238837291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1223662466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51015,25 +51028,13 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5998762164314537137, guid: abf6352e4ae826b4da0261a89ab997c8,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
+    - target: {fileID: 1058347865, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5998762164314537137, guid: abf6352e4ae826b4da0261a89ab997c8,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998762164314537137, guid: abf6352e4ae826b4da0261a89ab997c8,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5998762164314537137, guid: abf6352e4ae826b4da0261a89ab997c8,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
+    - target: {fileID: 1223343241, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
+      propertyPath: m_Name
+      value: HintText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
@@ -66003,8 +66004,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1684927468}
   - {fileID: 1684927467}
+  - {fileID: 1684927468}
   m_VisualEffect: {fileID: 1684927471}
 --- !u!73398921 &1684927470
 VFXRenderer:
@@ -66482,6 +66483,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 470ad1c9622b12b438e2d293ccff5c7b, type: 3}
+--- !u!1 &1690929364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1690929365}
+  - component: {fileID: 1690929366}
+  m_Layer: 0
+  m_Name: HintManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1690929365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690929364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 823470109}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690929366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690929364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ec91cb5547db54483bae36c5b329c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintText: {fileID: 1223343243}
 --- !u!1001 &1693003467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75243,8 +75288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1904233283}
   - {fileID: 1904233284}
+  - {fileID: 1904233283}
   m_VisualEffect: {fileID: 1904233287}
 --- !u!73398921 &1904233286
 VFXRenderer:
@@ -82608,7 +82653,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21756
+  m_Name: pb_Mesh34496
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -86391,6 +86436,11 @@ PrefabInstance:
     - target: {fileID: 6223568178166557601, guid: 2509ab9caa4e8484488bd6d6f0d1186b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525879978242924665, guid: 2509ab9caa4e8484488bd6d6f0d1186b,
+        type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
