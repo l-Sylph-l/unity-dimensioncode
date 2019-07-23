@@ -22,19 +22,22 @@ public class InteractableDetector : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log(hit.transform.name);
-            if (currentInteractable != hit.transform)
+            if (hit.distance < 3f)
             {
-                ChangeToOriginalMaterial();
-            }
+                Debug.Log(hit.transform.name);
+                if (currentInteractable != hit.transform)
+                {
+                    ChangeToOriginalMaterial();
+                }
 
-            if ("Interactable" == hit.transform.tag)
-            {
-                ActivateInteractable(hit);
-            }
-            else if ("InteractableChild" == hit.transform.tag)
-            {
-                ActivateInteractableChild(hit);
+                if ("Interactable" == hit.transform.tag)
+                {
+                    ActivateInteractable(hit);
+                }
+                else if ("InteractableChild" == hit.transform.tag)
+                {
+                    ActivateInteractableChild(hit);
+                }
             }
         }
         else if (currentInteractable != null)
