@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockPuzzle : MonoBehaviour, InteractableInterface, PuzzleInterface
+public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
 {
     public GameObject hourHand;
     public GameObject minuteHand;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableDetector : MonoBehaviour
 {
     public Material interactableMaterial;
+    public AudioSource interactSound;
     private Material originalMaterial;
     private Transform currentInteractable;
 
@@ -22,7 +23,7 @@ public class InteractableDetector : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.distance < 3f)
+            if (hit.distance < 4f)
             {
                 Debug.Log(hit.transform.name);
                 if (currentInteractable != hit.transform)
@@ -69,11 +70,18 @@ public class InteractableDetector : MonoBehaviour
         originalMaterial = currentInteractable.GetComponent<Renderer>().material;
         currentInteractable.GetComponent<Renderer>().material = interactableMaterial;
         InteractableInterface action = currentInteractable.GetComponent<InteractableInterface>();
+        PuzzleInterface puzzle = currentInteractable.GetComponent<PuzzleInterface>();
+
+        if (puzzle != null)
+        {
+            puzzle.GetPart();
+        }
 
 
         if (Input.GetMouseButtonDown(0))
         {
             action.Interact();
+            interactSound.Play();
         }
     }
 

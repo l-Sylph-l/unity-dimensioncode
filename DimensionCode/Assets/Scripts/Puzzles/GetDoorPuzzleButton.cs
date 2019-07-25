@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GetDoorPuzzleButton : MonoBehaviour, InteractableInterface
 {
+    public AudioSource audio;
     bool buttonClicked = false;
 
     public bool buttonClick
@@ -15,5 +16,6 @@ public class GetDoorPuzzleButton : MonoBehaviour, InteractableInterface
     public void Interact()
     {
         buttonClicked = true;
+        audio.Play();
     }
 }

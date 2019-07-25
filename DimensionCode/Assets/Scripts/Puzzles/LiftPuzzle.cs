@@ -116,7 +116,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
 
     public string GetPart()
     {
-        return "4";
+        return "3";
     }
 
     public Vector3 GetSpawnPosition()

@@ -768,6 +768,8 @@
     <Compile Include="Assets\Scripts\Puzzles\TetrisPuzzle.cs" />
     <Compile Include="Assets\Scripts\Puzzles\TetrisTrigger.cs" />
     <Compile Include="Assets\Scripts\Shader\ShaderManager.cs" />
+    <Compile Include="Assets\Scripts\UI\HintManager.cs" />
+    <Compile Include="Assets\Scripts\UI\HintModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Firebase\Editor\AppDependencies.xml" />

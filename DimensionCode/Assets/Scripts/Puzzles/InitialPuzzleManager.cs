@@ -15,9 +15,9 @@ public class InitialPuzzleManager : MonoBehaviour
     void Start()
     {
         currentState = DatabaseManager.Instance.CurrentState;
-        foreach (GameObject gameobject in puzzleArray)
+        foreach (GameObject puzzleGameObject in puzzleArray)
         {
-            PuzzleInterface puzzle = gameObject.GetComponent<PuzzleInterface>();
+            PuzzleInterface puzzle = puzzleGameObject.GetComponent<PuzzleInterface>();
 
             if (Int32.Parse(currentState.part) > Int32.Parse(puzzle.GetPart()))
             {
@@ -28,6 +28,7 @@ public class InitialPuzzleManager : MonoBehaviour
                 character.transform.position = puzzle.GetSpawnPosition();
                 Vector3 rotation = puzzle.GetSpawnRotation();
                 character.transform.rotation = new Quaternion(0f, rotation.y, 0f, 0f);
+                return;
             }
         }
     }
