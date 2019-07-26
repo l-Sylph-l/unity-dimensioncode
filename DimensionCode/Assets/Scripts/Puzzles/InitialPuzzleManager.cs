@@ -19,7 +19,7 @@ public class InitialPuzzleManager : MonoBehaviour
         {
             PuzzleInterface puzzle = puzzleGameObject.GetComponent<PuzzleInterface>();
 
-            if (Int32.Parse(currentState.part) > Int32.Parse(puzzle.GetPart()))
+            if (Int32.Parse(currentState.part) > Int32.Parse(puzzle.GetPart()) && Int32.Parse(currentState.level) > Int32.Parse(puzzle.GetLevel()))
             {
                 puzzle.ChangeToEndState();
             }

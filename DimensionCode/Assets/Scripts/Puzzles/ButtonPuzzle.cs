@@ -64,7 +64,7 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
 
     public Vector3 GetSpawnPosition()
     {
-        return new Vector3(0f, 0.01f, 5.87f);
+        return new Vector3(0f, 0.01f, 6.47f);
     }
 
     public Vector3 GetSpawnRotation()

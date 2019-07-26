@@ -116,12 +116,12 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
 
     public string GetPart()
     {
-        return "3";
+        return "4";
     }
 
     public Vector3 GetSpawnPosition()
     {
-        return new Vector3(-4.88f, 11.4f, -0.61f);
+        return new Vector3(0f, 0.01f, 6.47f);
     }
 
     public Vector3 GetSpawnRotation()
