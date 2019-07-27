@@ -42,11 +42,26 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
 
     public void ChangeToEndState()
     {
-        Debug.Log("Button activated");
-        DatabaseManager.Instance.UpdateState("1", "3");
+        if (DatabaseManager.Instance.CurrentState.level == GetLevel() && DatabaseManager.Instance.CurrentState.part == GetPart())
+        {
+            DatabaseManager.Instance.UpdateState("1", "3");
 
-        ShaderManager.Instance.LerpFloatProperty(doorMaterial, "_DisolveValue", 1.5f); 
-        if(doorMaterial.GetFloat("_DisolveValue") > 1.45f)
+            ShaderManager.Instance.LerpFloatProperty(doorMaterial, "_DisolveValue", 1.5f);
+            if (doorMaterial.GetFloat("_DisolveValue") > 1.45f)
+            {
+                foreach (GameObject door in doors)
+                {
+                    Destroy(door);
+                }
+
+                foreach (GameObject laser in lasers)
+                {
+                    Destroy(laser);
+                }
+
+                puzzleFinished = true;
+            }
+        } else
         {
             foreach (GameObject door in doors)
             {
@@ -57,19 +72,19 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
             {
                 Destroy(laser);
             }
-
-            puzzleFinished = true;
         }
+
+       
     }
 
     public Vector3 GetSpawnPosition()
     {
-        return new Vector3(0f, 0.01f, 6.47f);
+        return new Vector3(4.07f, 0.01f, 9.36f);
     }
 
     public Vector3 GetSpawnRotation()
     {
-        return new Vector3(0f, -177.584f, 0f);
+        return new Vector3(0f, -231.901f, 0f);
     }
 
     /**

@@ -32,7 +32,6 @@ public class HintManager : MonoBehaviour
     {
         currentState = DatabaseManager.Instance.CurrentState;
         LoadHints();
-        Debug.Log(hintsContainer.hints[0].hintName);
         currentText = hintsContainer.hints[0].hintText;
         ChangeColor(new Color32(0, 0, 255, 246));
     }

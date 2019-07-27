@@ -25,7 +25,6 @@ public class InteractableDetector : MonoBehaviour
         {
             if (hit.distance < 4f)
             {
-                Debug.Log(hit.transform.name);
                 if (currentInteractable != hit.transform)
                 {
                     ChangeToOriginalMaterial();

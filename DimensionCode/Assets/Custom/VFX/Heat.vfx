@@ -325,7 +325,7 @@ MonoBehaviour:
   - {fileID: 114946465509916290}
   - {fileID: 114780028408030698}
   - {fileID: 8926484042661614543}
-  m_Capacity: 20
+  m_Capacity: 1
   m_Space: 0
 --- !u!114 &114455825400398564
 MonoBehaviour:
@@ -487,7 +487,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: Rate
@@ -960,12 +960,10 @@ VisualEffectResource:
   - compute: 1
     name: '[System 1]Initialize'
     source: "#pragma kernel CSMain\n#define NB_THREADS_PER_GROUP 64\n#define VFX_USE_LIFETIME_CURRENT
-      1\n#define VFX_USE_SEED_CURRENT 1\n#define VFX_USE_ANGLEX_CURRENT 1\n#define
-      VFX_USE_ANGLEY_CURRENT 1\n#define VFX_USE_ANGLEZ_CURRENT 1\n#define VFX_USE_POSITION_CURRENT
-      1\n#define VFX_USE_DIRECTION_CURRENT 1\n#define VFX_USE_PARTICLEID_CURRENT 1\n#define
-      VFX_USE_TEXINDEX_CURRENT 1\n#define VFX_USE_ALIVE_CURRENT 1\n#define VFX_USE_AGE_CURRENT
-      1\n#define VFX_LOCAL_SPACE 1\n#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/HDRP/VFXDefines.hlsl\"\n\n\nCBUFFER_START(parameters)\n
-      \   float uniform_b;\n    uint3 PADDING_0;\nCBUFFER_END\n\n\n#include \"Packages/com.unity.visualeffectgraph/Shaders/Common/VFXCommonCompute.cginc\"\n#include
+      1\n#define VFX_USE_SEED_CURRENT 1\n#define VFX_USE_POSITION_CURRENT 1\n#define
+      VFX_USE_DIRECTION_CURRENT 1\n#define VFX_USE_TEXINDEX_CURRENT 1\n#define VFX_USE_ALIVE_CURRENT
+      1\n#define VFX_USE_AGE_CURRENT 1\n#define VFX_LOCAL_SPACE 1\n#include \"Packages/com.unity.visualeffectgraph/Shaders/RenderPipeline/HDRP/VFXDefines.hlsl\"\n\n\n\n#include
+      \"Packages/com.unity.visualeffectgraph/Shaders/Common/VFXCommonCompute.cginc\"\n#include
       \"Packages/com.unity.visualeffectgraph/Shaders/VFXCommon.cginc\"\n\n\n\nRWByteAddressBuffer
       attributeBuffer;\nByteAddressBuffer sourceAttributeBuffer;\n\nCBUFFER_START(initParams)\n#if
       !VFX_USE_SPAWNER_FROM_GPU\n    uint nbSpawned;\t\t\t\t\t// Numbers of particle
@@ -978,22 +976,18 @@ VisualEffectResource:
       inputAdditional;\n#endif\n\nvoid SetAttribute_F01429A3(inout float lifetime,
       inout uint seed, float Min, float Max) /*attribute:lifetime Composition:Overwrite
       Source:Slot Random:Uniform channels:XYZ */\n{\n    lifetime = lerp(Min,Max,RAND);\n}\nvoid
-      SetAttribute_48A7BEFF(inout float angleX, inout float angleY, inout float angleZ,
-      float3 Angle) /*attribute:angle Composition:Overwrite Source:Slot Random:Off
-      channels:XYZ */\n{\n    angleX = Angle.x;\n    angleY = Angle.y;\n    angleZ
-      = Angle.z;\n}\nvoid PositionCircle_0(inout float3 position, inout uint seed,
-      inout float3 direction, float3 ArcCircle_circle_center, float ArcCircle_circle_radius,
-      float ArcCircle_arc, float volumeFactor) /*positionMode:Surface spawnMode:Randomized
-      */\n{\n    float theta = ArcCircle_arc * RAND;\n    float rNorm = sqrt(volumeFactor
-      + (1 - volumeFactor) * RAND);\n    \n    float2 sincosTheta;\n    sincos(theta,
-      sincosTheta.x, sincosTheta.y);\n    \n    direction = float3(sincosTheta, 0.0f);\n
-      \   position.xy += sincosTheta * rNorm * ArcCircle_circle_radius + ArcCircle_circle_center;\n
-      \   \n}\n\n\n\n[numthreads(NB_THREADS_PER_GROUP,1,1)]\nvoid CSMain(uint3 groupId
-      \         : SV_GroupID,\n            uint3 groupThreadId    : SV_GroupThreadID)\n{\n
-      \   uint id = groupThreadId.x + groupId.x * NB_THREADS_PER_GROUP;\n#if !VFX_USE_SPAWNER_FROM_GPU\n
-      \   id += groupId.y * dispatchWidth * NB_THREADS_PER_GROUP;\n#endif\n\n#if VFX_USE_SPAWNER_FROM_GPU\n
-      \   uint maxThreadId = inputAdditional.Load((offsetInAdditionalOutput * 2 +
-      0) << 2);\n    uint currentSpawnIndex = inputAdditional.Load((offsetInAdditionalOutput
+      PositionCircle_0(inout float3 position, inout uint seed, inout float3 direction,
+      float3 ArcCircle_circle_center, float ArcCircle_circle_radius, float ArcCircle_arc,
+      float volumeFactor) /*positionMode:Surface spawnMode:Randomized */\n{\n    float
+      theta = ArcCircle_arc * RAND;\n    float rNorm = sqrt(volumeFactor + (1 - volumeFactor)
+      * RAND);\n    \n    float2 sincosTheta;\n    sincos(theta, sincosTheta.x, sincosTheta.y);\n
+      \   \n    direction = float3(sincosTheta, 0.0f);\n    position.xy += sincosTheta
+      * rNorm * ArcCircle_circle_radius + ArcCircle_circle_center;\n    \n}\n\n\n\n[numthreads(NB_THREADS_PER_GROUP,1,1)]\nvoid
+      CSMain(uint3 groupId          : SV_GroupID,\n            uint3 groupThreadId
+      \   : SV_GroupThreadID)\n{\n    uint id = groupThreadId.x + groupId.x * NB_THREADS_PER_GROUP;\n#if
+      !VFX_USE_SPAWNER_FROM_GPU\n    id += groupId.y * dispatchWidth * NB_THREADS_PER_GROUP;\n#endif\n\n#if
+      VFX_USE_SPAWNER_FROM_GPU\n    uint maxThreadId = inputAdditional.Load((offsetInAdditionalOutput
+      * 2 + 0) << 2);\n    uint currentSpawnIndex = inputAdditional.Load((offsetInAdditionalOutput
       * 2 + 1) << 2) - maxThreadId;\n#else\n    uint maxThreadId = nbSpawned;\n    uint
       currentSpawnIndex = spawnIndex;\n#endif\n\n#if VFX_USE_ALIVE_CURRENT\n    maxThreadId
       = min(maxThreadId, deadListCount.Load(0x0));\n#elif VFX_USE_SPAWNER_FROM_GPU\n
@@ -1007,38 +1001,27 @@ VisualEffectResource:
       += uint(asfloat(sourceAttributeBuffer.Load((sourceIndex * 0x1 + 0x0) << 2)));\n
       \           if (id < currentSumSpawnCount)\n            {\n                break;\n
       \           }\n        }\n        */\n        \n\n#endif\n        float lifetime
-      = (float)0;\n        uint seed = (uint)0;\n        float angleX = (float)0;\n
-      \       float angleY = (float)0;\n        float angleZ = (float)0;\n        float3
-      position = float3(0,0,0);\n        float3 direction = float3(0,0,1);\n        uint
-      particleId = (uint)0;\n        float texIndex = (float)0;\n        bool alive
-      = (bool)true;\n        float age = (float)0;\n        \n\n#if VFX_USE_PARTICLEID_CURRENT\n
-      \        particleId = particleIndex;\n#endif\n#if VFX_USE_SEED_CURRENT\n        seed
-      = WangHash(particleIndex ^ systemSeed);\n#endif\n        \n        {\n            SetAttribute_F01429A3(
-      /*inout */lifetime,  /*inout */seed, (float)5, (float)8);\n        }\n        {\n
-      \           uint tmp_z = particleId ^ asuint(uniform_b);\n            float
-      tmp_ba = FixedRand(tmp_z);\n            float tmp_bc = tmp_ba * (float)360;\n
-      \           float3 tmp_bd = float3((float)0, tmp_bc, (float)0);\n            SetAttribute_48A7BEFF(
-      /*inout */angleX,  /*inout */angleY,  /*inout */angleZ, tmp_bd);\n        }\n
-      \       {\n            PositionCircle_0( /*inout */position,  /*inout */seed,
-      \ /*inout */direction, float3(0,0,0), (float)0.2, (float)6.283185, (float)1);\n
-      \       }\n        \n\n\n#if VFX_USE_ALIVE_CURRENT\n        if (alive)\n        {\n\t\t\tuint
-      deadIndex = deadListIn.DecrementCounter();\n            uint index = deadListIn[deadIndex];\n
-      \           attributeBuffer.Store((index * 0x1 + 0x0) << 2,asuint(lifetime));\n
-      \           attributeBuffer.Store((index * 0x3 + 0x14) << 2,asuint(angleX));\n
-      \           attributeBuffer.Store((index * 0x3 + 0x15) << 2,asuint(angleY));\n
-      \           attributeBuffer.Store((index * 0x3 + 0x16) << 2,asuint(angleZ));\n
-      \           attributeBuffer.Store3((index * 0x4 + 0x50) << 2,asuint(position));\n
-      \           attributeBuffer.Store((index * 0x3 + 0xA0) << 2,asuint(texIndex));\n
-      \           attributeBuffer.Store((index * 0x3 + 0xA1) << 2,uint(alive));\n
-      \           attributeBuffer.Store((index * 0x3 + 0xA2) << 2,asuint(age));\n
-      \           \n\n        }\n#else\n        uint index = particleIndex;\n        attributeBuffer.Store((index
-      * 0x1 + 0x0) << 2,asuint(lifetime));\n        attributeBuffer.Store((index *
-      0x3 + 0x14) << 2,asuint(angleX));\n        attributeBuffer.Store((index * 0x3
-      + 0x15) << 2,asuint(angleY));\n        attributeBuffer.Store((index * 0x3 +
-      0x16) << 2,asuint(angleZ));\n        attributeBuffer.Store3((index * 0x4 + 0x50)
-      << 2,asuint(position));\n        attributeBuffer.Store((index * 0x3 + 0xA0)
-      << 2,asuint(texIndex));\n        attributeBuffer.Store((index * 0x3 + 0xA1)
-      << 2,uint(alive));\n        attributeBuffer.Store((index * 0x3 + 0xA2) << 2,asuint(age));\n
+      = (float)0;\n        uint seed = (uint)0;\n        float3 position = float3(0,0,0);\n
+      \       float3 direction = float3(0,0,1);\n        float texIndex = (float)0;\n
+      \       bool alive = (bool)true;\n        float age = (float)0;\n        \n\n#if
+      VFX_USE_PARTICLEID_CURRENT\n         particleId = particleIndex;\n#endif\n#if
+      VFX_USE_SEED_CURRENT\n        seed = WangHash(particleIndex ^ systemSeed);\n#endif\n
+      \       \n        {\n            SetAttribute_F01429A3( /*inout */lifetime,
+      \ /*inout */seed, (float)5, (float)8);\n        }\n        {\n            PositionCircle_0(
+      /*inout */position,  /*inout */seed,  /*inout */direction, float3(0,0,0), (float)0.2,
+      (float)6.283185, (float)1);\n        }\n        \n\n\n#if VFX_USE_ALIVE_CURRENT\n
+      \       if (alive)\n        {\n\t\t\tuint deadIndex = deadListIn.DecrementCounter();\n
+      \           uint index = deadListIn[deadIndex];\n            attributeBuffer.Store((index
+      * 0x1 + 0x0) << 2,asuint(lifetime));\n            attributeBuffer.Store3((index
+      * 0x4 + 0x4) << 2,asuint(position));\n            attributeBuffer.Store((index
+      * 0x3 + 0x14) << 2,asuint(texIndex));\n            attributeBuffer.Store((index
+      * 0x3 + 0x15) << 2,uint(alive));\n            attributeBuffer.Store((index *
+      0x3 + 0x16) << 2,asuint(age));\n            \n\n        }\n#else\n        uint
+      index = particleIndex;\n        attributeBuffer.Store((index * 0x1 + 0x0) <<
+      2,asuint(lifetime));\n        attributeBuffer.Store3((index * 0x4 + 0x4) <<
+      2,asuint(position));\n        attributeBuffer.Store((index * 0x3 + 0x14) <<
+      2,asuint(texIndex));\n        attributeBuffer.Store((index * 0x3 + 0x15) <<
+      2,uint(alive));\n        attributeBuffer.Store((index * 0x3 + 0x16) << 2,asuint(age));\n
       \       \n\n#endif\n    }\n}\n"
   - compute: 1
     name: '[System 1]Update'
@@ -1059,27 +1042,27 @@ VisualEffectResource:
       \   : SV_GroupThreadID)\n{\n\tuint id = groupThreadId.x + groupId.x * NB_THREADS_PER_GROUP
       + groupId.y * dispatchWidth * NB_THREADS_PER_GROUP;\n\tuint index = id;\n\tif
       (id < nbMax)\n\t{\n#if VFX_USE_ALIVE_CURRENT\n\t\tbool alive = (attributeBuffer.Load((index
-      * 0x3 + 0xA1) << 2));\n\t\t\n\n\t\tif (alive)\n\t\t{\n\t\t\tfloat lifetime =
+      * 0x3 + 0x15) << 2));\n\t\t\n\n\t\tif (alive)\n\t\t{\n\t\t\tfloat lifetime =
       asfloat(attributeBuffer.Load((index * 0x1 + 0x0) << 2));\n\t\t\tfloat texIndex
-      = asfloat(attributeBuffer.Load((index * 0x3 + 0xA0) << 2));\n\t\t\tfloat age
-      = asfloat(attributeBuffer.Load((index * 0x3 + 0xA2) << 2));\n\t\t\t\n\n\t\t\t\n#if
+      = asfloat(attributeBuffer.Load((index * 0x3 + 0x14) << 2));\n\t\t\tfloat age
+      = asfloat(attributeBuffer.Load((index * 0x3 + 0x16) << 2));\n\t\t\t\n\n\t\t\t\n#if
       VFX_USE_OLDPOSITION_CURRENT\n\t\t\toldPosition = position;\n#endif\n\t\t\t\n\t\t\t{\n\t\t\t
       \   FlipbookPlay_0( /*inout */texIndex, (float)8, deltaTime_a);\n\t\t\t}\n\t\t\tAge(
       /*inout */age, deltaTime_a);\n\t\t\tReap(age, lifetime,  /*inout */alive);\n\t\t\t\n\n\t\t\tif
-      (alive)\n\t\t\t{\n\t\t\t\tattributeBuffer.Store((index * 0x3 + 0xA0) << 2,asuint(texIndex));\n\t\t\t\tattributeBuffer.Store((index
-      * 0x3 + 0xA2) << 2,asuint(age));\n\t\t\t\t\n\n#if VFX_HAS_INDIRECT_DRAW\n                uint
+      (alive)\n\t\t\t{\n\t\t\t\tattributeBuffer.Store((index * 0x3 + 0x14) << 2,asuint(texIndex));\n\t\t\t\tattributeBuffer.Store((index
+      * 0x3 + 0x16) << 2,asuint(age));\n\t\t\t\t\n\n#if VFX_HAS_INDIRECT_DRAW\n                uint
       indirectIndex = indirectBuffer.IncrementCounter();\n\t\t\t\tindirectBuffer[indirectIndex]
       = index;\n#endif\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tattributeBuffer.Store((index
-      * 0x3 + 0xA1) << 2,uint(alive));\n\t\t\t\t\n\n\t\t\t\tuint deadIndex = deadListOut.IncrementCounter();\n\t\t\t\tdeadListOut[deadIndex]
+      * 0x3 + 0x15) << 2,uint(alive));\n\t\t\t\t\n\n\t\t\t\tuint deadIndex = deadListOut.IncrementCounter();\n\t\t\t\tdeadListOut[deadIndex]
       = index;\n\t\t\t}\n\t\t}\n#else\n\t\tfloat lifetime = asfloat(attributeBuffer.Load((index
       * 0x1 + 0x0) << 2));\n\t\tfloat texIndex = asfloat(attributeBuffer.Load((index
-      * 0x3 + 0xA0) << 2));\n\t\tbool alive = (attributeBuffer.Load((index * 0x3 +
-      0xA1) << 2));\n\t\tfloat age = asfloat(attributeBuffer.Load((index * 0x3 + 0xA2)
+      * 0x3 + 0x14) << 2));\n\t\tbool alive = (attributeBuffer.Load((index * 0x3 +
+      0x15) << 2));\n\t\tfloat age = asfloat(attributeBuffer.Load((index * 0x3 + 0x16)
       << 2));\n\t\t\n\n\t\t\n#if VFX_USE_OLDPOSITION_CURRENT\n\t\toldPosition = position;\n#endif\n\t\t\n\t\t{\n\t\t
       \   FlipbookPlay_0( /*inout */texIndex, (float)8, deltaTime_a);\n\t\t}\n\t\tAge(
       /*inout */age, deltaTime_a);\n\t\tReap(age, lifetime,  /*inout */alive);\n\t\t\n\n\t\tattributeBuffer.Store((index
-      * 0x3 + 0xA0) << 2,asuint(texIndex));\n\t\tattributeBuffer.Store((index * 0x3
-      + 0xA1) << 2,uint(alive));\n\t\tattributeBuffer.Store((index * 0x3 + 0xA2) <<
+      * 0x3 + 0x14) << 2,asuint(texIndex));\n\t\tattributeBuffer.Store((index * 0x3
+      + 0x15) << 2,uint(alive));\n\t\tattributeBuffer.Store((index * 0x3 + 0x16) <<
       2,asuint(age));\n\t\t\n\n#if VFX_HAS_INDIRECT_DRAW\n        uint indirectIndex
       = indirectBuffer.IncrementCounter();\n\t\tindirectBuffer[indirectIndex] = index;\n#endif\n#endif\n\t}\n}\n"
   - compute: 0
@@ -1090,17 +1073,17 @@ VisualEffectResource:
       One OneMinusSrcAlpha\n\t\tZTest LEqual\n\t\tZWrite Off\n\t\tCull Off\n\t\t\n\t\n\t\t\t\n\t\tHLSLINCLUDE\n\t\t#if
       !defined(VFX_WORLD_SPACE) && !defined(VFX_LOCAL_SPACE)\n\t\t#define VFX_LOCAL_SPACE
       1\n\t\t#endif\n\t\t\n\t\t#define NB_THREADS_PER_GROUP 64\n\t\t#define VFX_USE_LIFETIME_CURRENT
-      1\n\t\t#define VFX_USE_ANGLEX_CURRENT 1\n\t\t#define VFX_USE_ANGLEY_CURRENT
-      1\n\t\t#define VFX_USE_ANGLEZ_CURRENT 1\n\t\t#define VFX_USE_POSITION_CURRENT
-      1\n\t\t#define VFX_USE_TEXINDEX_CURRENT 1\n\t\t#define VFX_USE_COLOR_CURRENT
-      1\n\t\t#define VFX_USE_ALPHA_CURRENT 1\n\t\t#define VFX_USE_ALIVE_CURRENT 1\n\t\t#define
-      VFX_USE_AXISX_CURRENT 1\n\t\t#define VFX_USE_AXISY_CURRENT 1\n\t\t#define VFX_USE_AXISZ_CURRENT
-      1\n\t\t#define VFX_USE_PIVOTX_CURRENT 1\n\t\t#define VFX_USE_PIVOTY_CURRENT
-      1\n\t\t#define VFX_USE_PIVOTZ_CURRENT 1\n\t\t#define VFX_USE_SIZE_CURRENT 1\n\t\t#define
-      VFX_USE_SCALEX_CURRENT 1\n\t\t#define VFX_USE_SCALEY_CURRENT 1\n\t\t#define
-      VFX_USE_SCALEZ_CURRENT 1\n\t\t#define VFX_USE_AGE_CURRENT 1\n\t\t#define IS_TRANSPARENT_PARTICLE
-      1\n\t\t#define VFX_BLENDMODE_ALPHA 1\n\t\t#define VFX_HAS_INDIRECT_DRAW 1\n\t\t#define
-      USE_FLIPBOOK 1\n\t\t#define USE_FLIPBOOK_INTERPOLATION 1\n\t\t#define USE_DEAD_LIST_COUNT
+      1\n\t\t#define VFX_USE_POSITION_CURRENT 1\n\t\t#define VFX_USE_TEXINDEX_CURRENT
+      1\n\t\t#define VFX_USE_COLOR_CURRENT 1\n\t\t#define VFX_USE_ALPHA_CURRENT 1\n\t\t#define
+      VFX_USE_ALIVE_CURRENT 1\n\t\t#define VFX_USE_AXISX_CURRENT 1\n\t\t#define VFX_USE_AXISY_CURRENT
+      1\n\t\t#define VFX_USE_AXISZ_CURRENT 1\n\t\t#define VFX_USE_ANGLEX_CURRENT 1\n\t\t#define
+      VFX_USE_ANGLEY_CURRENT 1\n\t\t#define VFX_USE_ANGLEZ_CURRENT 1\n\t\t#define
+      VFX_USE_PIVOTX_CURRENT 1\n\t\t#define VFX_USE_PIVOTY_CURRENT 1\n\t\t#define
+      VFX_USE_PIVOTZ_CURRENT 1\n\t\t#define VFX_USE_SIZE_CURRENT 1\n\t\t#define VFX_USE_SCALEX_CURRENT
+      1\n\t\t#define VFX_USE_SCALEY_CURRENT 1\n\t\t#define VFX_USE_SCALEZ_CURRENT
+      1\n\t\t#define VFX_USE_AGE_CURRENT 1\n\t\t#define IS_TRANSPARENT_PARTICLE 1\n\t\t#define
+      VFX_BLENDMODE_ALPHA 1\n\t\t#define VFX_HAS_INDIRECT_DRAW 1\n\t\t#define USE_FLIPBOOK
+      1\n\t\t#define USE_FLIPBOOK_INTERPOLATION 1\n\t\t#define USE_DEAD_LIST_COUNT
       1\n\t\t#define HDRP_LIT 1\n\t\t#define HDRP_MATERIAL_TYPE_STANDARD 1\n\t\t#define
       HDRP_USE_BASE_COLOR_MAP 1\n\t\t#define HDRP_USE_BASE_COLOR_MAP_COLOR 1\n\t\t#define
       HDRP_USE_BASE_COLOR_MAP_ALPHA 1\n\t\t#define HDRP_USE_BASE_COLOR 1\n\t\t\n\t\t\n\t\t\n\t\t#define
@@ -1175,35 +1158,33 @@ VisualEffectResource:
       = 0;\n\t\t\t\t\t\t#if USE_DEAD_LIST_COUNT\n\t\t\t\t\t\tdeadCount = deadListCount.Load(0);\n\t\t\t\t\t\t#endif\t\n\t\t\t\t\t\tif
       (index >= asuint(nbMax) - deadCount)\n\t\t\t\t\t\t\treturn o; // cull\n\t\t\t\t\t\t\n\t\t\t\t\t\t#if
       VFX_HAS_INDIRECT_DRAW\n\t\t\t\t\t\tindex = indirectBuffer[index];\n\t\t\t\t\t\tfloat
-      lifetime = asfloat(attributeBuffer.Load((index * 0x1 + 0x0) << 2));\n\t\t\t\t\t\tfloat
-      angleX = asfloat(attributeBuffer.Load((index * 0x3 + 0x14) << 2));\n\t\t\t\t\t\tfloat
-      angleY = asfloat(attributeBuffer.Load((index * 0x3 + 0x15) << 2));\n\t\t\t\t\t\tfloat
-      angleZ = asfloat(attributeBuffer.Load((index * 0x3 + 0x16) << 2));\n\t\t\t\t\t\tfloat3
-      position = asfloat(attributeBuffer.Load3((index * 0x4 + 0x50) << 2));\n\t\t\t\t\t\tfloat
-      texIndex = asfloat(attributeBuffer.Load((index * 0x3 + 0xA0) << 2));\n\t\t\t\t\t\tfloat3
+      lifetime = asfloat(attributeBuffer.Load((index * 0x1 + 0x0) << 2));\n\t\t\t\t\t\tfloat3
+      position = asfloat(attributeBuffer.Load3((index * 0x4 + 0x4) << 2));\n\t\t\t\t\t\tfloat
+      texIndex = asfloat(attributeBuffer.Load((index * 0x3 + 0x14) << 2));\n\t\t\t\t\t\tfloat3
       color = float3(1,1,1);\n\t\t\t\t\t\tfloat alpha = (float)1;\n\t\t\t\t\t\tbool
-      alive = (attributeBuffer.Load((index * 0x3 + 0xA1) << 2));\n\t\t\t\t\t\tfloat3
+      alive = (attributeBuffer.Load((index * 0x3 + 0x15) << 2));\n\t\t\t\t\t\tfloat3
       axisX = float3(1,0,0);\n\t\t\t\t\t\tfloat3 axisY = float3(0,1,0);\n\t\t\t\t\t\tfloat3
-      axisZ = float3(0,0,1);\n\t\t\t\t\t\tfloat pivotX = (float)0;\n\t\t\t\t\t\tfloat
-      pivotY = (float)0;\n\t\t\t\t\t\tfloat pivotZ = (float)0;\n\t\t\t\t\t\tfloat
-      size = (float)0.1;\n\t\t\t\t\t\tfloat scaleX = (float)1;\n\t\t\t\t\t\tfloat
-      scaleY = (float)1;\n\t\t\t\t\t\tfloat scaleZ = (float)1;\n\t\t\t\t\t\tfloat
-      age = asfloat(attributeBuffer.Load((index * 0x3 + 0xA2) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#else\n\t\t\t\t\t\tbool
-      alive = (attributeBuffer.Load((index * 0x3 + 0xA1) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\tif
+      axisZ = float3(0,0,1);\n\t\t\t\t\t\tfloat angleX = (float)0;\n\t\t\t\t\t\tfloat
+      angleY = (float)0;\n\t\t\t\t\t\tfloat angleZ = (float)0;\n\t\t\t\t\t\tfloat
+      pivotX = (float)0;\n\t\t\t\t\t\tfloat pivotY = (float)0;\n\t\t\t\t\t\tfloat
+      pivotZ = (float)0;\n\t\t\t\t\t\tfloat size = (float)0.1;\n\t\t\t\t\t\tfloat
+      scaleX = (float)1;\n\t\t\t\t\t\tfloat scaleY = (float)1;\n\t\t\t\t\t\tfloat
+      scaleZ = (float)1;\n\t\t\t\t\t\tfloat age = asfloat(attributeBuffer.Load((index
+      * 0x3 + 0x16) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#else\n\t\t\t\t\t\tbool
+      alive = (attributeBuffer.Load((index * 0x3 + 0x15) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\tif
       (!alive)\n\t\t\t\t\t\t\treturn o;\n\t\t\t\t\t\t\t\n\t\t\t\t\t\tfloat lifetime
-      = asfloat(attributeBuffer.Load((index * 0x1 + 0x0) << 2));\n\t\t\t\t\t\tfloat
-      angleX = asfloat(attributeBuffer.Load((index * 0x3 + 0x14) << 2));\n\t\t\t\t\t\tfloat
-      angleY = asfloat(attributeBuffer.Load((index * 0x3 + 0x15) << 2));\n\t\t\t\t\t\tfloat
-      angleZ = asfloat(attributeBuffer.Load((index * 0x3 + 0x16) << 2));\n\t\t\t\t\t\tfloat3
-      position = asfloat(attributeBuffer.Load3((index * 0x4 + 0x50) << 2));\n\t\t\t\t\t\tfloat
-      texIndex = asfloat(attributeBuffer.Load((index * 0x3 + 0xA0) << 2));\n\t\t\t\t\t\tfloat3
+      = asfloat(attributeBuffer.Load((index * 0x1 + 0x0) << 2));\n\t\t\t\t\t\tfloat3
+      position = asfloat(attributeBuffer.Load3((index * 0x4 + 0x4) << 2));\n\t\t\t\t\t\tfloat
+      texIndex = asfloat(attributeBuffer.Load((index * 0x3 + 0x14) << 2));\n\t\t\t\t\t\tfloat3
       color = float3(1,1,1);\n\t\t\t\t\t\tfloat alpha = (float)1;\n\t\t\t\t\t\tfloat3
       axisX = float3(1,0,0);\n\t\t\t\t\t\tfloat3 axisY = float3(0,1,0);\n\t\t\t\t\t\tfloat3
-      axisZ = float3(0,0,1);\n\t\t\t\t\t\tfloat pivotX = (float)0;\n\t\t\t\t\t\tfloat
-      pivotY = (float)0;\n\t\t\t\t\t\tfloat pivotZ = (float)0;\n\t\t\t\t\t\tfloat
-      size = (float)0.1;\n\t\t\t\t\t\tfloat scaleX = (float)1;\n\t\t\t\t\t\tfloat
-      scaleY = (float)1;\n\t\t\t\t\t\tfloat scaleZ = (float)1;\n\t\t\t\t\t\tfloat
-      age = asfloat(attributeBuffer.Load((index * 0x3 + 0xA2) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t{\n\t\t\t\t
+      axisZ = float3(0,0,1);\n\t\t\t\t\t\tfloat angleX = (float)0;\n\t\t\t\t\t\tfloat
+      angleY = (float)0;\n\t\t\t\t\t\tfloat angleZ = (float)0;\n\t\t\t\t\t\tfloat
+      pivotX = (float)0;\n\t\t\t\t\t\tfloat pivotY = (float)0;\n\t\t\t\t\t\tfloat
+      pivotZ = (float)0;\n\t\t\t\t\t\tfloat size = (float)0.1;\n\t\t\t\t\t\tfloat
+      scaleX = (float)1;\n\t\t\t\t\t\tfloat scaleY = (float)1;\n\t\t\t\t\t\tfloat
+      scaleZ = (float)1;\n\t\t\t\t\t\tfloat age = asfloat(attributeBuffer.Load((index
+      * 0x3 + 0x16) << 2));\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t#endif\n\t\t\t\t\t\t\n\t\t\t\t{\n\t\t\t\t
       \   Orient_5( /*inout */axisX,  /*inout */axisY,  /*inout */axisZ, position,
       float3(0,1,0));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_39EE3455( /*inout
       */size, (float)20);\n\t\t\t\t}\n\t\t\t\tColorOverLife_733E3(age, lifetime,  /*inout
@@ -1313,7 +1294,7 @@ VisualEffectResource:
       -= deadListCount.Load(0);\n#endif\n\tuint id = groupThreadId.x + groupId.x *
       NB_THREADS_PER_GROUP + groupId.y * dispatchWidth * NB_THREADS_PER_GROUP;\n\tif
       (id < threshold)\n\t{\n\t\tuint index = inputBuffer[id];\n\t\tfloat3 position
-      = asfloat(attributeBuffer.Load3((index * 0x4 + 0x50) << 2));\n\t\t\n\n\t\t\n#if
+      = asfloat(attributeBuffer.Load3((index * 0x4 + 0x4) << 2));\n\t\t\n\n\t\t\n#if
       VFX_LOCAL_SPACE\n\t\tfloat3 wPos = mul(localToWorld,float4(position,1.0f)).xyz;\n#else\n\t\tfloat3
       wPos = position;\n#endif\n\t\tfloat3 camToPos = wPos - cameraPosition;\n\t\t\n\t\tKvp
       kvp;\n\t\tkvp.sortKey = dot(camToPos,camToPos); // sqr distance to the camera\n\t\tkvp.index
@@ -1326,79 +1307,73 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 6
-      - op: 8
+        data[3]: 14
+      - op: 1
         valueIndex: 1
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: -1
-      - op: 56
+        data[3]: 1
+      - op: 1
         valueIndex: 2
-        data[0]: 0
-        data[1]: 1
+        data[0]: -1
+        data[1]: -1
         data[2]: -1
-        data[3]: 6
+        data[3]: 1
       - op: 1
         valueIndex: 3
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 4
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 14
+        data[3]: 2
       - op: 1
         valueIndex: 5
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 6
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
+        data[3]: 2
+      - op: 51
         valueIndex: 7
-        data[0]: -1
+        data[0]: 0
         data[1]: -1
         data[2]: -1
-        data[3]: 1
+        data[3]: 0
       - op: 1
         valueIndex: 8
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 2
-      - op: 1
-        valueIndex: 10
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 2
-      - op: 51
-        valueIndex: 12
-        data[0]: 4
-        data[1]: -1
-        data[2]: -1
-        data[3]: 0
-      - op: 1
-        valueIndex: 13
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
         data[3]: 1
+      - op: 1
+        valueIndex: 9
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 7
+      - op: 1
+        valueIndex: 11
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 3
       - op: 1
         valueIndex: 14
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 3
+        data[3]: 1
+      - op: 1
+        valueIndex: 15
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
+      - op: 1
+        valueIndex: 16
+        data[0]: -1
+        data[1]: -1
+        data[2]: -1
+        data[3]: 1
       - op: 1
         valueIndex: 17
         data[0]: -1
@@ -1410,51 +1385,21 @@ VisualEffectResource:
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 19
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 7
+        data[3]: 3
       - op: 1
         valueIndex: 21
         data[0]: -1
         data[1]: -1
         data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 22
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 23
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 1
-      - op: 1
-        valueIndex: 24
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
-        data[3]: 3
-      - op: 1
-        valueIndex: 27
-        data[0]: -1
-        data[1]: -1
-        data[2]: -1
         data[3]: 3
       - op: 6
-        valueIndex: 30
+        valueIndex: 24
         data[0]: -1
         data[1]: -1
         data[2]: -1
         data[3]: -1
       - op: 9
-        valueIndex: 31
+        valueIndex: 25
         data[0]: -1
         data[1]: -1
         data[2]: -1
@@ -1465,46 +1410,38 @@ VisualEffectResource:
     m_PropertySheet:
       m_Float:
         m_Array:
-        - m_ExpressionIndex: 3
-          m_Value: 360
-        - m_ExpressionIndex: 5
-          m_Value: 0
-        - m_ExpressionIndex: 6
-          m_Value: 10
-        - m_ExpressionIndex: 7
-          m_Value: 0.6058125
-        - m_ExpressionIndex: 11
-          m_Value: 20
-        - m_ExpressionIndex: 13
-          m_Value: 6.2831855
-        - m_ExpressionIndex: 14
+        - m_ExpressionIndex: 1
           m_Value: 1
-        - m_ExpressionIndex: 16
+        - m_ExpressionIndex: 2
+          m_Value: 0.6058125
+        - m_ExpressionIndex: 6
+          m_Value: 20
+        - m_ExpressionIndex: 9
+          m_Value: 6.2831855
+        - m_ExpressionIndex: 10
           m_Value: 0.2
-        - m_ExpressionIndex: 17
+        - m_ExpressionIndex: 11
           m_Value: 8
-        - m_ExpressionIndex: 18
+        - m_ExpressionIndex: 12
           m_Value: 5
       m_Vector2f:
         m_Array:
-        - m_ExpressionIndex: 8
+        - m_ExpressionIndex: 3
           m_Value: {x: 0.125, y: 0.125}
-        - m_ExpressionIndex: 9
+        - m_ExpressionIndex: 4
           m_Value: {x: 8, y: 8}
       m_Vector3f:
         m_Array:
-        - m_ExpressionIndex: 12
+        - m_ExpressionIndex: 8
           m_Value: {x: 0, y: 1, z: 0}
-        - m_ExpressionIndex: 19
+        - m_ExpressionIndex: 13
           m_Value: {x: 3, y: 3, z: 3}
-        - m_ExpressionIndex: 20
+        - m_ExpressionIndex: 14
           m_Value: {x: 0, y: 0, z: 0}
       m_Vector4f:
         m_Array: []
       m_Uint:
-        m_Array:
-        - m_ExpressionIndex: 0
-          m_Value: 0
+        m_Array: []
       m_Int:
         m_Array: []
       m_Matrix4x4f:
@@ -1513,7 +1450,7 @@ VisualEffectResource:
         m_Array: []
       m_Gradient:
         m_Array:
-        - m_ExpressionIndex: 4
+        - m_ExpressionIndex: 0
           m_Value:
             serializedVersion: 2
             key0: {r: 1, g: 1, b: 1, a: 0}
@@ -1545,14 +1482,14 @@ VisualEffectResource:
             m_NumAlphaKeys: 4
       m_NamedObject:
         m_Array:
-        - m_ExpressionIndex: 15
+        - m_ExpressionIndex: 7
           m_Value: {fileID: 2800000, guid: 8d31a9248ac71c6459f5a2466f9cae53, type: 3}
       m_Bool:
         m_Array: []
     m_ExposedExpressions: []
     m_Buffers:
     - type: 1
-      size: 220
+      size: 23
       layout:
       - name: lifetime
         type: 1
@@ -1560,52 +1497,34 @@ VisualEffectResource:
           bucket: 0
           structure: 1
           element: 0
-      - name: angleX
-        type: 1
-        offset:
-          bucket: 20
-          structure: 3
-          element: 0
-      - name: angleY
-        type: 1
-        offset:
-          bucket: 20
-          structure: 3
-          element: 1
-      - name: angleZ
-        type: 1
-        offset:
-          bucket: 20
-          structure: 3
-          element: 2
       - name: position
         type: 3
         offset:
-          bucket: 80
+          bucket: 4
           structure: 4
           element: 0
       - name: texIndex
         type: 1
         offset:
-          bucket: 160
+          bucket: 20
           structure: 3
           element: 0
       - name: alive
         type: 17
         offset:
-          bucket: 160
+          bucket: 20
           structure: 3
           element: 1
       - name: age
         type: 1
         offset:
-          bucket: 160
+          bucket: 20
           structure: 3
           element: 2
-      capacity: 20
+      capacity: 1
       stride: 4
     - type: 1
-      size: 220
+      size: 32
       layout:
       - name: lifetime
         type: 1
@@ -1613,49 +1532,31 @@ VisualEffectResource:
           bucket: 0
           structure: 1
           element: 0
-      - name: angleX
-        type: 1
-        offset:
-          bucket: 20
-          structure: 3
-          element: 0
-      - name: angleY
-        type: 1
-        offset:
-          bucket: 20
-          structure: 3
-          element: 1
-      - name: angleZ
-        type: 1
-        offset:
-          bucket: 20
-          structure: 3
-          element: 2
       - name: position
         type: 3
         offset:
-          bucket: 80
+          bucket: 4
           structure: 4
           element: 0
       - name: texIndex
         type: 1
         offset:
-          bucket: 160
+          bucket: 20
           structure: 3
           element: 0
       - name: alive
         type: 17
         offset:
-          bucket: 160
+          bucket: 20
           structure: 3
           element: 1
       - name: age
         type: 1
         offset:
-          bucket: 160
+          bucket: 20
           structure: 3
           element: 2
-      capacity: 20
+      capacity: 4
       stride: 4
     - type: 1
       size: 1
@@ -1669,7 +1570,7 @@ VisualEffectResource:
       capacity: 1
       stride: 4
     - type: 4
-      size: 20
+      size: 1
       layout: []
       capacity: 0
       stride: 4
@@ -1679,17 +1580,17 @@ VisualEffectResource:
       capacity: 0
       stride: 4
     - type: 4
-      size: 20
+      size: 1
       layout: []
       capacity: 0
       stride: 4
     - type: 0
-      size: 20
+      size: 1
       layout: []
       capacity: 0
       stride: 8
     - type: 0
-      size: 20
+      size: 1
       layout: []
       capacity: 0
       stride: 8
@@ -1748,13 +1649,13 @@ VisualEffectResource:
       buffers: []
       values:
       - nameId: Rate
-        index: 6
+        index: 1
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: -1
   - type: 1
     flags: 3
-    capacity: 20
+    capacity: 1
     layer: 4294967295
     buffers:
     - nameId: attributeBuffer
@@ -1775,9 +1676,9 @@ VisualEffectResource:
       index: 7
     values:
     - nameId: bounds_center
-      index: 20
+      index: 14
     - nameId: bounds_size
-      index: 19
+      index: 13
     tasks:
     - type: 536870912
       buffers:
@@ -1789,14 +1690,12 @@ VisualEffectResource:
         index: 4
       - nameId: sourceAttributeBuffer
         index: 2
-      values:
-      - nameId: uniform_b
-        index: 2
+      values: []
       params:
       - nameId: bounds_center
-        index: 20
+        index: 14
       - nameId: bounds_size
-        index: 19
+        index: 13
       processor: {fileID: 0}
       shaderSourceIndex: 0
     - type: 805306368
@@ -1809,7 +1708,7 @@ VisualEffectResource:
         index: 5
       values:
       - nameId: deltaTime_a
-        index: 21
+        index: 15
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: 1
@@ -1825,7 +1724,7 @@ VisualEffectResource:
         index: 4
       values:
       - nameId: localToWorld
-        index: 22
+        index: 16
       params: []
       processor: {fileID: 0}
       shaderSourceIndex: 3
@@ -1839,9 +1738,9 @@ VisualEffectResource:
         index: 4
       values:
       - nameId: gradient_c
-        index: 10
+        index: 5
       - nameId: baseColorMap
-        index: 15
+        index: 7
       params:
       - nameId: sortPriority
         index: 0
@@ -1869,7 +1768,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661614531}
   m_OutputSlots: []
-  m_Disabled: 0
+  m_Disabled: 1
   attribute: angle
   Composition: 0
   Source: 0

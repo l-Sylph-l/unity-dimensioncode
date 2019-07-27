@@ -13,7 +13,7 @@ public class LiftPlatform : MonoBehaviour
     private float secondCounter = 0f;
     private float speedBuffer;
     public float endHeight = 10.04f;
-    private float stopHeight = 6.5f;
+    public float stopHeight = 6.5f;
 
     public bool MoveToStopPosition { get; set; } = false;
     public bool MoveToEndPosition { get; set; } = false;
@@ -58,7 +58,6 @@ public class LiftPlatform : MonoBehaviour
                 case 1f:
                     if (ButtonFunction.Slower == buttonFunction)
                     {
-                        Debug.Log("Button clicked, Speed: " + speed);
                         speedBuffer = 0.9f;
                     }
                     else
@@ -69,7 +68,6 @@ public class LiftPlatform : MonoBehaviour
                 case 0.9f:
                     if (ButtonFunction.Slower == buttonFunction)
                     {
-                        Debug.Log("Button clicked, Speed: " + speed);
                         speedBuffer = 0.8f;
                     }
                     else
@@ -80,7 +78,6 @@ public class LiftPlatform : MonoBehaviour
                 case 0.8f:
                     if (ButtonFunction.Slower == buttonFunction)
                     {
-                        Debug.Log("Button clicked, Speed: " + speed);
                         speedBuffer = 0.7f;
                     }
                     else
@@ -91,7 +88,6 @@ public class LiftPlatform : MonoBehaviour
                 case 0.7f:
                     if (ButtonFunction.Slower == buttonFunction)
                     {
-                        Debug.Log("Button clicked, Speed: " + speed);
                         speedBuffer = 0.7f;
                     }
                     else
@@ -109,7 +105,6 @@ public class LiftPlatform : MonoBehaviour
     {
         if (secondCounter > 2.7f && !MoveToEndPosition && !MoveToStopPosition)
         {
-            Debug.Log("Lift Time: " + secondCounter + ", Speed: " + speed);
             secondCounter = 0f;
             this.transform.position = startPosition;
             speed = speedBuffer;

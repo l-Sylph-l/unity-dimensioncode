@@ -8,13 +8,12 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
     public Material hologramMaterial;
     public LiftPlatform[] liftPlatformList;
     public GameObject character;
-    public GameObject collider;
+    public GameObject liftCollider;
     private Material[] initialLiftMaterial;
     private bool puzzleFinished = false;
-    private bool gameIsFocused = true;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Material[] hologramMaterials = { hologramMaterial, hologramMaterial };
         initialLiftMaterial = liftPlatformList[1].GetComponent<Renderer>().materials;
@@ -28,7 +27,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
         {
             CheckIfSpeedEqual();
             CheckIfCharacterIsOnLift();
-            CheckWebPuzzleState();
+            //CheckWebPuzzleState();
         }
     }
 
@@ -50,7 +49,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
         return true;
     }
 
-    private bool CheckIfCharacterIsOnLift()
+    private void CheckIfCharacterIsOnLift()
     {
         if (character.transform.position.y > 7.9)
         {
@@ -59,15 +58,13 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
                 liftPlatform.MoveToStopPosition = true;                
             }
             DatabaseManager.Instance.UpdateState("1", "4");
-            return true;
+            puzzleFinished = true;
         }
-
-        return false;
     }
 
     private void ActivateCollider()
     {
-        collider.GetComponent<MeshCollider>().enabled = true;
+        liftCollider.GetComponent<MeshCollider>().enabled = true;
     }
 
     private void ChangeLiftMaterial(Material[] inMaterials)
@@ -78,35 +75,31 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
         }
     }
 
-    public void CheckWebPuzzleState()
-    {
-        Debug.Log("Current Level (Lift): " + DatabaseManager.Instance.CurrentState.level);
-        if (DatabaseManager.Instance.CurrentState.level.Equals("2") && gameIsFocused)
-        {
-            foreach (LiftPlatform liftPlatform in liftPlatformList)
-            {
-                liftPlatform.MoveToStopPosition = false;
-                liftPlatform.MoveToEndPosition = true;
-            }
-            puzzleFinished = true;
-        }
-    }
+    //public void CheckWebPuzzleState()
+    //{
+    //    if (DatabaseManager.Instance.CurrentState.level.Equals("2") && gameIsFocused)
+    //    {
+    //        foreach (LiftPlatform liftPlatform in liftPlatformList)
+    //        {
+    //            liftPlatform.MoveToStopPosition = false;
+    //            liftPlatform.MoveToEndPosition = true;
+    //        }
+    //        puzzleFinished = true;
+    //    }
+    //}
 
     public void ChangeToEndState()
     {
+        ActivateCollider();
+        puzzleFinished = true;
+
         foreach (LiftPlatform liftPlatform in liftPlatformList)
         {
             Vector3 liftPosition = liftPlatform.transform.position;
             liftPlatform.GetComponent<Renderer>().materials = initialLiftMaterial;
-            liftPlatform.MoveToEndPosition = true;
             liftPlatform.MoveToStopPosition = true;
-            liftPlatform.transform.position = new Vector3(liftPosition.x, liftPlatform.endHeight, liftPosition.z);
+            liftPlatform.transform.position = new Vector3(liftPosition.x, liftPlatform.stopHeight, liftPosition.z);
         }
-    }
-
-    private void OnApplicationFocus(bool focus)
-    {
-        gameIsFocused = focus;
     }
 
     public string GetLevel()
@@ -116,7 +109,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
 
     public string GetPart()
     {
-        return "4";
+        return "3";
     }
 
     public Vector3 GetSpawnPosition()
@@ -126,7 +119,7 @@ public class LiftPuzzle : MonoBehaviour, PuzzleInterface
 
     public Vector3 GetSpawnRotation()
     {
-        return new Vector3(0f, 90f, 0f);
+        return new Vector3(0f, -179.99f, 0f);
     }
 
 }

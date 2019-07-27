@@ -70,8 +70,6 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
 
     private void CheckTime()
     {
-        Debug.Log("Current Display Hour" + GetCurrentHour() + ", Current Real Hour: " + DateTime.Now.Hour);
-        Debug.Log("Current Display Minute" + GetCurrentMinute() + ", Current Real Minute: " + DateTime.Now.Minute);
         int currentHour = DateTime.Now.Hour;
         int currentMinute = DateTime.Now.Minute;
 
@@ -234,7 +232,11 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
         ShaderManager.Instance.LerpFloatProperty(this.gameObject.GetComponent<Renderer>().material, "_DisolveValue", 1.5f);
         ShaderManager.Instance.LerpOpacityProperty(minuteHand.GetComponent<Renderer>().material, "_BaseColor", 0f);
         ShaderManager.Instance.LerpOpacityProperty(hourHand.GetComponent<Renderer>().material, "_BaseColor", 0f);
-        DatabaseManager.Instance.UpdateState("1", "2");
+        if (DatabaseManager.Instance.CurrentState.level == GetLevel() && DatabaseManager.Instance.CurrentState.part == GetPart())
+        {
+            DatabaseManager.Instance.UpdateState("1", "2");
+        }
+
         if (this.gameObject.GetComponent<Renderer>().material.GetFloat("_DisolveValue") > 1.4f){
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             DestroyImmediate(hourHand);
@@ -250,7 +252,7 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
 
     public Vector3 GetSpawnRotation()
     {
-        return new Vector3(0f, -237.921f, 0f);
+        return new Vector3(0f, -179.99f, 0f);
     }
 
     /**

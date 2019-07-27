@@ -12,23 +12,23 @@ public class InitialPuzzleManager : MonoBehaviour
     private StateModel currentState;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currentState = DatabaseManager.Instance.CurrentState;
         foreach (GameObject puzzleGameObject in puzzleArray)
         {
             PuzzleInterface puzzle = puzzleGameObject.GetComponent<PuzzleInterface>();
 
-            if (Int32.Parse(currentState.part) > Int32.Parse(puzzle.GetPart()) && Int32.Parse(currentState.level) > Int32.Parse(puzzle.GetLevel()))
-            {
-                puzzle.ChangeToEndState();
-            }
-            else
+            if (Int32.Parse(currentState.part) == Int32.Parse(puzzle.GetPart()) && Int32.Parse(currentState.level) == Int32.Parse(puzzle.GetLevel()))
             {
                 character.transform.position = puzzle.GetSpawnPosition();
                 Vector3 rotation = puzzle.GetSpawnRotation();
                 character.transform.rotation = new Quaternion(0f, rotation.y, 0f, 0f);
                 return;
+            }
+            else
+            {
+                puzzle.ChangeToEndState();
             }
         }
     }
