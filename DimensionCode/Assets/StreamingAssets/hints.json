@@ -16,6 +16,14 @@
       {
          "hintName":"LevelSwitchPuzzleHint",
          "hintText":"The solution to the question is where your journey has started. (ALT+TAB)"
+      },
+      {
+         "hintName":"DoorPuzzleHint",
+         "hintText":"DoorPuzzleHint"
+      },
+      {
+         "hintName":"TetrisPuzzleHint",
+         "hintText":"TetrisPuzzleHint"
       }
    ]
 }

@@ -11,17 +11,19 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
     public GameObject[] lasers;
 
     private bool puzzleFinished = false;
+    private StateModel initialState;
 
     // Start is called before the first frame update
     void Start()
     {
         doorMaterial.SetFloat("_DisolveValue", -1.5f);
+        initialState = DatabaseManager.Instance.CurrentState;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(button01.IsActivated && button02.IsActivated && !puzzleFinished)
+        if (button01.IsActivated && button02.IsActivated && !puzzleFinished)
         {
             ChangeToEndState();
         }
@@ -45,7 +47,10 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
         if (DatabaseManager.Instance.CurrentState.level == GetLevel() && DatabaseManager.Instance.CurrentState.part == GetPart())
         {
             DatabaseManager.Instance.UpdateState("1", "3");
+        }
 
+        if (int.Parse(initialState.level) <= int.Parse(GetLevel()) && int.Parse(initialState.part) <= int.Parse(GetPart()))
+        {
             ShaderManager.Instance.LerpFloatProperty(doorMaterial, "_DisolveValue", 1.5f);
             if (doorMaterial.GetFloat("_DisolveValue") > 1.45f)
             {
@@ -61,7 +66,8 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
 
                 puzzleFinished = true;
             }
-        } else
+        }
+        else
         {
             foreach (GameObject door in doors)
             {
@@ -74,7 +80,7 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
             }
         }
 
-       
+
     }
 
     public Vector3 GetSpawnPosition()

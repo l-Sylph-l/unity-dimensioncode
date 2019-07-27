@@ -13,18 +13,11 @@ public class HintsCollection
 
 public class HintManager : MonoBehaviour
 {
-    public GameObject panel;
-    public TMP_Text hintText;
-    public Image panelBackground;
-    public AudioSource uiSound;
-    private int textPerFrame = 1;
+    public DialogManager dialogManager;
     private string fileName = "hints.json";
     private HintsCollection hintsContainer;
     private StateModel currentState;
     private string currentText = "";
-    private int currentTextIndex = 0;
-    private bool writeNewText = false;
-    private bool showHint = false;
     private float timeUntilHintDisplay = 10f;
 
     // Start is called before the first frame update
@@ -32,24 +25,12 @@ public class HintManager : MonoBehaviour
     {
         currentState = DatabaseManager.Instance.CurrentState;
         LoadHints();
-        currentText = hintsContainer.hints[0].hintText;
-        ChangeColor(new Color32(0, 0, 255, 246));
     }
 
     private void Update()
-    {
-        HandleVisibility();
-        UpdateColor();
+    {        
         CheckCurrentHint();
-
-        if (writeNewText && timeUntilHintDisplay < -0.2f )
-        {
-            ChangeText();
-        }
-        else
-        {
-            CheckIfTextHasChanged();
-        }
+        HandleHintActivation();
     }
 
     private void LoadHints()
@@ -84,109 +65,21 @@ public class HintManager : MonoBehaviour
         return "NO TEXT FOUND!";
     }
 
-    private void ShowHint()
-    {
-        if (hintText.color.a < 1f)
-        {  
-            Color currentTextColor = hintText.color;
-            Color currentPanelColor = panelBackground.color;
-            float textAlphaValue = Mathf.Clamp(currentPanelColor.a + Time.deltaTime, 0f, 1f);
-            float panelAlphaValue = Mathf.Clamp(currentPanelColor.a + Time.deltaTime, 0f, 0.95f);
-            currentTextColor.a = textAlphaValue;
-            currentPanelColor.a = panelAlphaValue;
-            hintText.color = currentTextColor;
-            panelBackground.color = currentPanelColor;
-        }
-    }
-
-    private void HideHint()
-    {
-        if (hintText.color.a > 0f)
-        {
-        Color currentTextColor = hintText.color;
-        Color currentPanelColor = panelBackground.color;
-        float textAlphaValue = Mathf.Clamp(currentPanelColor.a - Time.deltaTime, 0f, 1f);
-        float panelAlphaValue = Mathf.Clamp(currentPanelColor.a - Time.deltaTime, 0f, 0.95f);
-        currentTextColor.a = textAlphaValue;
-        currentPanelColor.a = panelAlphaValue;
-        hintText.color = currentTextColor;
-        panelBackground.color = currentPanelColor;
-        } 
-    }
-
-    private void HandleVisibility()
+    private void HandleHintActivation()
     {
 
         if (timeUntilHintDisplay < 0f)
         {
-            ShowHint();
+            dialogManager.ActivateDialog(currentText);
         }
         else
         {
-            HideHint();
+            dialogManager.DeactivateDialog();
         }
 
-        timeUntilHintDisplay -= Time.deltaTime;
-    }
-
-    private void ChangeColor(Color32 color)
-    {
-        Color panelColor = color;
-        panelColor.a = 0f;
-        hintText.fontSharedMaterial.SetColor("_UnderlayColor", color);
-        hintText.UpdateMeshPadding();
-        panelBackground.color = panelColor;
-    }
-
-    private void UpdateColor()
-    {
-        if (currentState.level != DatabaseManager.Instance.CurrentState.level)
+        if(currentText != "")
         {
-            currentState = DatabaseManager.Instance.CurrentState;
-
-            Color32 currentColor = new Color32(0, 0, 255, 246);
-
-            if (DatabaseManager.Instance.CurrentState.level == "2")
-            {
-                currentColor = new Color32(0, 255, 0, 246);
-            }
-
-            if (DatabaseManager.Instance.CurrentState.level == "3")
-            {
-                currentColor = new Color32(255, 0, 0, 246);
-            }
-
-            ChangeColor(currentColor);
-
-        }
-    }
-
-    private void CheckIfTextHasChanged()
-    {
-        if (currentText != hintText.text)
-        {
-            writeNewText = true;
-            hintText.text = "";
-        }
-    }
-
-    private void ChangeText()
-    {
-        if (writeNewText)
-        {
-            if (!uiSound.isPlaying){
-                uiSound.Play();
-            }
-
-            hintText.text += currentText.Substring(currentTextIndex, textPerFrame);
-            currentTextIndex += textPerFrame;
-
-            if (currentTextIndex == currentText.Length)
-            {
-                writeNewText = false;
-                currentTextIndex = 0;
-                uiSound.Stop();
-            }
+            timeUntilHintDisplay -= Time.deltaTime;
         }
     }
 

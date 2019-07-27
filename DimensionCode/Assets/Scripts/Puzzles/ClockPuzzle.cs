@@ -52,13 +52,14 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
     private int GetCurrentHour()
     {
         float result = GetCurrentHourAngle() / 30f;
+        int convertedResult = (int)result;
 
-        if (result == 0)
+        if (convertedResult == 0)
         {
-            result = 12;
+            convertedResult = 12;
         }
 
-        return (int)result;
+        return convertedResult;
     }
 
     private int GetCurrentMinute()
@@ -72,6 +73,9 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
     {
         int currentHour = DateTime.Now.Hour;
         int currentMinute = DateTime.Now.Minute;
+
+        Debug.Log("Current Hour from angle: " + GetCurrentHour());
+        Debug.Log("Current Hour from system: " + currentHour);
 
         if (currentHour > 12)
         {
