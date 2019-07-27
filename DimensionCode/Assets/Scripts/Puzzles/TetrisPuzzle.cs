@@ -14,8 +14,11 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
     public TetrisTrigger rowTrigger05;
     public TetrisTrigger rowTrigger06;
     public TMP_Text displayText;
+    public GameObject elevatorToLvl3;
 
+    bool elevatorDown = true;
     bool tetrisPuzzleFinished = false;
+    float secondsToWait = 4f;
 
     /**
      * Start of Methods from the puzzle interface
@@ -142,8 +145,54 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
         return "<color=green>" + value + "</color>";
     }
 
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(4);
+    }
+
     void Update()
     {
         DisplayCurrentValue();
+
+        // Lift wird aktiviert
+        if (tetrisPuzzleFinished == true)
+        {
+            Vector3 start = new Vector3(9.89f, 10.17f, -10.02f);
+            Vector3 target = new Vector3(9.89f, 14.06f, -10.02f);
+
+            if (elevatorDown == true)
+            {
+                float step = 2f * Time.deltaTime;
+                elevatorToLvl3.transform.position = Vector3.MoveTowards(elevatorToLvl3.transform.position, target, step);
+                //StartCoroutine(waiter());               
+            }
+
+            if (elevatorDown == false)
+            {
+                float step = 2f * Time.deltaTime;
+                elevatorToLvl3.transform.position = Vector3.MoveTowards(elevatorToLvl3.transform.position, start, step);
+                //StartCoroutine(waiter());
+            }
+
+            if ((elevatorToLvl3.transform.position == target) && (elevatorDown == true))
+            {
+                secondsToWait -= Time.deltaTime;
+                if (secondsToWait < 0f)
+                {
+                    elevatorDown = false;
+                    secondsToWait = 4f;
+                }
+            }
+
+            if ((elevatorToLvl3.transform.position == start) && (elevatorDown == false))
+            {
+                secondsToWait -= Time.deltaTime;
+                if (secondsToWait < 0f)
+                {
+                    elevatorDown = true;
+                    secondsToWait = 4f;
+                }
+            }
+        }
     }
 }
