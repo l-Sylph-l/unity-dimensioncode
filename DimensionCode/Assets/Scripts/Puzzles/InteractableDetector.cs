@@ -6,6 +6,7 @@ public class InteractableDetector : MonoBehaviour
 {
     public Material interactableMaterial;
     public AudioSource interactSound;
+    public GameObject interactHand;
     private Material originalMaterial;
     private Transform currentInteractable;
 
@@ -48,6 +49,8 @@ public class InteractableDetector : MonoBehaviour
 
     private void ChangeToOriginalMaterial()
     {
+        interactHand.SetActive(false);
+
         if (currentInteractable != null && currentInteractable.tag == "InteractableChild")
         {
             foreach (Transform child in currentInteractable.parent)
@@ -68,6 +71,7 @@ public class InteractableDetector : MonoBehaviour
         currentInteractable = hit.transform;
         originalMaterial = currentInteractable.GetComponent<Renderer>().material;
         currentInteractable.GetComponent<Renderer>().material = interactableMaterial;
+        interactHand.SetActive(true);
         InteractableInterface action = currentInteractable.GetComponent<InteractableInterface>();
         PuzzleInterface puzzle = currentInteractable.GetComponent<PuzzleInterface>();
 
