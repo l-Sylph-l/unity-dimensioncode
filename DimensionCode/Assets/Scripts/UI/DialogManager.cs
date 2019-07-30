@@ -90,20 +90,19 @@ public class DialogManager : MonoBehaviour
 
     private void UpdateColor()
     {
-        ChangeColor(new Color(0f, 0f, 1f, panelBackground.color.a));
-
-        if (currentState.level != DatabaseManager.Instance.CurrentState.level)
+        if (DatabaseManager.Instance.CurrentState.level == "1")
         {
-            if (DatabaseManager.Instance.CurrentState.level == "2")
-            {
-                ChangeColor(new Color(0f, 1f, 0f, panelBackground.color.a));
-            }
+            ChangeColor(new Color(0f, 0f, 1f, panelBackground.color.a));
+        }
 
-            if (DatabaseManager.Instance.CurrentState.level == "3")
-            {
-                ChangeColor(new Color(1f, 0f, 0f, panelBackground.color.a));
-            }
+        if (DatabaseManager.Instance.CurrentState.level == "2")
+        {
+            ChangeColor(new Color(0f, 1f, 0f, panelBackground.color.a));
+        }
 
+        if (DatabaseManager.Instance.CurrentState.level == "3")
+        {
+            ChangeColor(new Color(1f, 0f, 0f, panelBackground.color.a));
         }
     }
 
