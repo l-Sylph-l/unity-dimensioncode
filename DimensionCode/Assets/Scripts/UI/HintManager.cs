@@ -13,6 +13,8 @@ public class HintsCollection
 
 public class HintManager : MonoBehaviour
 {
+    [SerializeField]
+    private PrologueManager prologueManager;
     public DialogManager dialogManager;
     private string fileName = "hints.json";
     private HintsCollection hintsContainer;
@@ -28,9 +30,12 @@ public class HintManager : MonoBehaviour
     }
 
     private void Update()
-    {        
-        CheckCurrentHint();
-        HandleHintActivation();
+    {
+        if (prologueManager.CheckIfPrologueFinished())
+        {
+            CheckCurrentHint();
+            HandleHintActivation();
+        }
     }
 
     private void LoadHints()
@@ -77,7 +82,7 @@ public class HintManager : MonoBehaviour
             dialogManager.DeactivateDialog();
         }
 
-        if(currentText != "")
+        if (currentText != "")
         {
             timeUntilHintDisplay -= Time.deltaTime;
         }
@@ -109,6 +114,16 @@ public class HintManager : MonoBehaviour
         if (currentState.part == "4" && currentState.level == "1")
         {
             currentText = GetHint("LevelSwitchPuzzleHint");
+        }
+
+        if (currentState.part == "1" && currentState.level == "2")
+        {
+            currentText = GetHint("DoorPuzzleHint");
+        }
+
+        if (currentState.part == "2" && currentState.level == "2")
+        {
+            currentText = GetHint("TetrisPuzzleHint");
         }
     }
 }

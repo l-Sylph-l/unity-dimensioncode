@@ -26,8 +26,8 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        HandleVisibility();
         UpdateColor();
+        HandleVisibility();
 
         if (writeNewText)
         {
@@ -81,34 +81,28 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    private void ChangeColor(Color32 color)
+    private void ChangeColor(Color color)
     {
-        Color panelColor = color;
-        panelColor.a = 0f;
         dialogText.fontSharedMaterial.SetColor("_UnderlayColor", color);
         dialogText.UpdateMeshPadding();
-        panelBackground.color = panelColor;
+        panelBackground.color = color;
     }
 
     private void UpdateColor()
     {
+        ChangeColor(new Color(0f, 0f, 1f, panelBackground.color.a));
+
         if (currentState.level != DatabaseManager.Instance.CurrentState.level)
         {
-            currentState = DatabaseManager.Instance.CurrentState;
-
-            Color32 currentColor = new Color32(0, 0, 255, 246);
-
             if (DatabaseManager.Instance.CurrentState.level == "2")
             {
-                currentColor = new Color32(0, 255, 0, 246);
+                ChangeColor(new Color(0f, 1f, 0f, panelBackground.color.a));
             }
 
             if (DatabaseManager.Instance.CurrentState.level == "3")
             {
-                currentColor = new Color32(255, 0, 0, 246);
+                ChangeColor(new Color(1f, 0f, 0f, panelBackground.color.a));
             }
-
-            ChangeColor(currentColor);
 
         }
     }

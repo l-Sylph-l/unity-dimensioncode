@@ -17,7 +17,6 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
     void Start()
     {
         doorMaterial.SetFloat("_DisolveValue", -1.5f);
-        initialState = DatabaseManager.Instance.CurrentState;
     }
 
     // Update is called once per frame
@@ -47,6 +46,11 @@ public class ButtonPuzzle : MonoBehaviour, PuzzleInterface
         if (DatabaseManager.Instance.CurrentState.level == GetLevel() && DatabaseManager.Instance.CurrentState.part == GetPart())
         {
             DatabaseManager.Instance.UpdateState("1", "3");
+        }
+
+        if(initialState == null)
+        {
+            initialState = DatabaseManager.Instance.CurrentState;
         }
 
         if (int.Parse(initialState.level) <= int.Parse(GetLevel()) && int.Parse(initialState.part) <= int.Parse(GetPart()))

@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
+using UnityEngine.UI;
 
 public class LoginManager : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class LoginManager : MonoBehaviour
     public TMP_Text errorMessage;
     public GameObject successPopup;
     public GameObject errorPopup;
+    public Image fadeInEffect;
     private string errorMessageValue = "";
     private bool loginButtonClicked = false;
+    private bool loadScene = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,11 @@ public class LoginManager : MonoBehaviour
             errorPopup.SetActive(true);
             errorMessage.text = errorMessageValue;
             errorMessage.color = new Color32(255, 0, 0, 255);
+        }
+
+        if (loadScene)
+        {
+            FadeIn();
         }
     }
 
@@ -95,17 +103,31 @@ public class LoginManager : MonoBehaviour
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene("PrototypeLevel");
+        loadScene = true;
     }
 
     public void StartNewGame()
     {
         DatabaseManager.Instance.UpdateState("1", "1");
-        SceneManager.LoadScene("PrototypeLevel");
+        loadScene = true;
     }
 
     public void DeactivateErrorPopup()
     {
         errorPopup.SetActive(false);
+    }
+
+    private void FadeIn()
+    {
+        Color currentColor = fadeInEffect.color;
+        currentColor.a += Time.deltaTime;
+        Mathf.Clamp(currentColor.a, 0f, 255f);
+        fadeInEffect.color = currentColor;
+
+        if (currentColor.a >= 1f)
+        {
+            SceneManager.LoadScene("PrototypeLevel");
+        }
+
     }
 }

@@ -69,20 +69,11 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
         return (int)result;
     }
 
-    private void CheckTime()
+    private void CheckMinuteTime()
     {
-        int currentHour = DateTime.Now.Hour;
         int currentMinute = DateTime.Now.Minute;
 
-        Debug.Log("Current Hour from angle: " + GetCurrentHour());
-        Debug.Log("Current Hour from system: " + currentHour);
-
-        if (currentHour > 12)
-        {
-            currentHour = currentHour - 12;
-        }
-
-        if (!rotateMinute && (GetCurrentMinute() >= (currentMinute -1) && GetCurrentMinute() <= (currentMinute + 1)))
+        if (rotateMinute && IsMinuteValid(currentMinute))
         {
             minuteHand.GetComponent<Renderer>().material = correctMaterial;
             minuteHandCorrect = true;
@@ -90,12 +81,22 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
         }
         else
         {
+            rotateHour = true;
             rotateMinute = true;
             minuteHand.GetComponent<Renderer>().material = failMaterial;
         }
+    }
 
+    private void CheckHourTime()
+    {
+        int currentHour = DateTime.Now.Hour;
 
-        if (!rotateMinute && !rotateHour && GetCurrentHour() == currentHour)
+        if (currentHour > 12)
+        {
+            currentHour = currentHour - 12;
+        }
+
+        if (rotateHour && GetCurrentHour() == currentHour)
         {
             hourHand.GetComponent<Renderer>().material = correctMaterial;
             hourHandCorrect = true;
@@ -104,7 +105,9 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
         else
         {
             rotateHour = true;
+            rotateMinute = true;
             hourHand.GetComponent<Renderer>().material = failMaterial;
+            minuteHand.GetComponent<Renderer>().material = failMaterial;
         }
     }
 
@@ -190,24 +193,27 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
         return 0f;
     }
 
+
+    private bool IsMinuteValid(int currentMinute)
+    {
+        int lowestMinute = currentMinute - 1;
+        int highestMinute = currentMinute + 1;
+        return (GetCurrentMinute() >= lowestMinute && GetCurrentMinute() <= highestMinute);
+    }
+
     /**
      * Start of Methods from the interact interface
      * IMPORTANT: This Gameobject must have the Tag "Interactable"
      */
-
     public void Interact()
     {
-        if (!rotateMinute && rotateHour)
-        {
-            rotateHour = false;
-        }
-
         if (rotateMinute)
         {
-            rotateMinute = false;
+            CheckMinuteTime();
+        } else
+        {
+            CheckHourTime();
         }
-
-        CheckTime();
     }
 
     /**

@@ -19,11 +19,11 @@
       },
       {
          "hintName":"DoorPuzzleHint",
-         "hintText":"DoorPuzzleHint"
+         "hintText":"DoorPuzzleHint Placeholder"
       },
       {
          "hintName":"TetrisPuzzleHint",
-         "hintText":"TetrisPuzzleHint"
+         "hintText":"TetrisPuzzleHint Placeholder"
       }
    ]
 }
