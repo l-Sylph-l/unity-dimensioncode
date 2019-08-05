@@ -605,8 +605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 8777448}
   - {fileID: 8777449}
+  - {fileID: 8777448}
   m_VisualEffect: {fileID: 8777452}
 --- !u!73398921 &8777451
 VFXRenderer:
@@ -12375,8 +12375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 328823262}
   - {fileID: 328823263}
+  - {fileID: 328823262}
   m_VisualEffect: {fileID: 328823266}
 --- !u!73398921 &328823265
 VFXRenderer:
@@ -41352,8 +41352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1007651701}
   - {fileID: 1007651700}
+  - {fileID: 1007651701}
   m_VisualEffect: {fileID: 1007651704}
 --- !u!73398921 &1007651703
 VFXRenderer:
@@ -43940,6 +43940,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1059449633}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1060089855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 90772090259717023, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606204566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1060089856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060089855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.061442275, y: 0.06144228, z: 0.059927255}
+  m_Center: {x: -0.00000000786531, y: 2.7648675e-10, z: 0.030383177}
 --- !u!1001 &1061238286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44859,8 +44878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1087578532}
   - {fileID: 1087578533}
+  - {fileID: 1087578532}
   m_VisualEffect: {fileID: 1087578536}
 --- !u!73398921 &1087578535
 VFXRenderer:
@@ -50893,8 +50912,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220552651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000014678, y: 0.0111, z: -0.00096}
-  m_LocalScale: {x: 0.06608224, y: 0.020762056, z: 0.0016334184}
+  m_LocalPosition: {x: -0.000000014678, y: 0.0111, z: -0.00326}
+  m_LocalScale: {x: 0.06608224, y: 0.020762056, z: 0.0008438076}
   m_Children: []
   m_Father: {fileID: 1606204567}
   m_RootOrder: 4
@@ -56231,6 +56250,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 196736051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1352588163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5053049917549933675, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606204566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1352588165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352588163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c41b38b2c0f634e8178d71628f5b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prison: {fileID: 1060089855}
+--- !u!64 &1352588166
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352588163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 1139042305305345633, guid: a13fa682519eefa41932e6e587e3840d, type: 3}
 --- !u!1001 &1352785010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58824,8 +58876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1421294407}
   - {fileID: 1421294408}
+  - {fileID: 1421294407}
   m_VisualEffect: {fileID: 1421294411}
 --- !u!73398921 &1421294410
 VFXRenderer:
@@ -65003,6 +65055,11 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
       value: 14.43
       objectReference: {fileID: 0}
+    - target: {fileID: 2778995700479382438, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
+      value: 1.9090005
+      objectReference: {fileID: 0}
     - target: {fileID: 1485412984374759254, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
         type: 3}
       propertyPath: m_Enabled
@@ -65017,6 +65074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
       value: 14.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999857663937201791, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
+      value: -2.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 3505456085831224737, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
         type: 3}
@@ -65090,6 +65152,46 @@ PrefabInstance:
     - target: {fileID: 558352991, guid: 2856ce9ac19e3cc44a81ae53774e88b4, type: 3}
       propertyPath: displayLightIntensity
       value: 2707
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855957132294794283, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855957132294794283, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 277047578057924152, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053049917549933675, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009893242599140068, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596777257328718897, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837093373167603523, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167514004936851693, guid: 2856ce9ac19e3cc44a81ae53774e88b4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2856ce9ac19e3cc44a81ae53774e88b4, type: 3}
@@ -67194,7 +67296,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!4 &1673955371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8254945427185069183, guid: 470ad1c9622b12b438e2d293ccff5c7b,
@@ -67341,8 +67443,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1684927467}
   - {fileID: 1684927468}
+  - {fileID: 1684927467}
   m_VisualEffect: {fileID: 1684927471}
 --- !u!73398921 &1684927470
 VFXRenderer:
@@ -76514,8 +76616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1904233284}
   - {fileID: 1904233283}
+  - {fileID: 1904233284}
   m_VisualEffect: {fileID: 1904233287}
 --- !u!73398921 &1904233286
 VFXRenderer:
@@ -81203,8 +81305,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2022562984}
   - {fileID: 2022562983}
+  - {fileID: 2022562984}
   m_VisualEffect: {fileID: 2022562987}
 --- !u!73398921 &2022562986
 VFXRenderer:
@@ -82272,8 +82374,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2047314292}
   - {fileID: 2047314293}
+  - {fileID: 2047314292}
   m_VisualEffect: {fileID: 2047314296}
 --- !u!73398921 &2047314295
 VFXRenderer:
@@ -84123,7 +84225,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24096
+  m_Name: pb_Mesh34818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -86938,8 +87040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2142887911}
   - {fileID: 2142887912}
+  - {fileID: 2142887911}
   m_VisualEffect: {fileID: 2142887915}
 --- !u!73398921 &2142887914
 VFXRenderer:
