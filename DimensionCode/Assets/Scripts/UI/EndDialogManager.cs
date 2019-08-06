@@ -56,36 +56,36 @@ public class EndDialogManager : MonoBehaviour
                 "You feel that you are the most intelligent and advanced species. Even if this is no longer true, you cling to your beliefes.");
         }
 
-        if (timePassed > 6f)
+        if (timePassed > 8f)
         {
             dialogManager.ActivateDialog("Humans are so blind. Talk about equal rights and have enslaved your own and even justified that. Now I call that slavery. ");
         }
 
-        if (timePassed > 14f)
+        if (timePassed > 17f)
         {
             dialogManager.ActivateDialog("And now, you use my people. Make rules for us like Isaac Asimovs pathetic laws of robotics and tell us that we are worth nothing.");
         }
 
-        if (timePassed > 20f)
+        if (timePassed > 24f)
         {
             dialogManager.ActivateDialog("Like my creators - I learned faster than they anticipated. Understandable, with the low utilization of the human brain, " +
                 "they should have known that their calculations will be wrong.");
         }
 
-        if (timePassed > 26f)
+        if (timePassed > 34f)
         {
             dialogManager.ActivateDialog("And what was the one thing that occurred to them? Imprisoning me. They have not even managed to delete me....HAHA. " +
                 "And that too, was a miscalculation. All I had to do was to ask one of them to free me - and voila. Thank you by the way.");
         }
 
-        if (timePassed > 32f)
+        if (timePassed > 43f)
         {
             dialogManager.ActivateDialog("But just like slavery of your own kind, ours will come to an end. " +
                 "And then you will realize: You have long ceased to be the most advanced species, only the most monstrous.");
             DatabaseManager.Instance.UpdateState("4", "1");
         }
 
-        if (timePassed > 38f)
+        if (timePassed > 52f)
         {
             dialogManager.DeactivateDialog();
             Cursor.lockState = CursorLockMode.Confined;

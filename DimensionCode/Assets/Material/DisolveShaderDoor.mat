@@ -36,6 +36,6 @@ Material:
     - Vector1_B2E5D43E: 0.0069
     - Vector1_D59DEF49: 37.03
     - Vector1_FEE26B42: -1.5
-    - _DisolveValue: 1.4595288
+    - _DisolveValue: -1.5
     m_Colors:
     - Color_8BDF0E71: {r: 0, g: 17.403992, b: 18.164822, a: 0}
