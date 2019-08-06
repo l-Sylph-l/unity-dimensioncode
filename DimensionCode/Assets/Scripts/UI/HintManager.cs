@@ -125,6 +125,21 @@ public class HintManager : MonoBehaviour
         {
             currentText = GetHint("TetrisPuzzleHint");
         }
+
+        if (currentState.part == "3" && currentState.level == "2")
+        {
+            currentText = GetHint("LevelTwoSwitchPuzzleHint");
+        }
+
+        if (currentState.part == "1" && currentState.level == "3")
+        {
+            currentText = GetHint("SplitterPuzzle");
+        }
+
+        if (currentState.part == "2" && currentState.level == "3")
+        {
+            currentText = GetHint("TerminalPuzzle");
+        }
     }
 }
 

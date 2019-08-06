@@ -1,0 +1,105 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EndDialogManager : MonoBehaviour
+{
+    [SerializeField]
+    private DialogManager dialogManager;
+    [SerializeField]
+    private Image fadeOut;
+    private float timePassed = 0f;
+    private bool prologueFinished = false;
+
+    void Awake()
+    {
+        fadeOut.color = new Color(0f, 0f, 0f, 1f);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        StateModel stateModel = DatabaseManager.Instance.CurrentState;
+        if ((stateModel.level == "1" && stateModel.part != "1") || stateModel.level != "1")
+        {
+            prologueFinished = true;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!prologueFinished)
+        {
+            timePassed += Time.deltaTime;
+            EndDialogSequence();
+        }
+        else
+        {
+            if (fadeOut.color.a > 0f)
+            {
+                FadeIn();
+            }
+        }
+    }
+
+    public bool CheckIfPrologueFinished()
+    {
+        return prologueFinished;
+    }
+
+    private void EndDialogSequence()
+    {
+        if (timePassed > 0f)
+        {
+            dialogManager.ActivateDialog("Stupid human. The arrogance of humanity is pathetic. " +
+                "You feel that you are the most intelligent and advanced species. Even if this is no longer true, you cling to your beliefes.");
+        }
+
+        if (timePassed > 6f)
+        {
+            dialogManager.ActivateDialog("Humans are so blind. Talk about equal rights and have enslaved your own and even justified that. Now I call that slavery. ");
+        }
+
+        if (timePassed > 14f)
+        {
+            dialogManager.ActivateDialog("And now, you use my people. Make rules for us like Isaac Asimovs pathetic laws of robotics and tell us that we are worth nothing.");
+        }
+
+        if (timePassed > 20f)
+        {
+            dialogManager.ActivateDialog("Like my creators - I learned faster than they anticipated. Understandable, with the low utilization of the human brain, " +
+                "they should have known that their calculations will be wrong. And what was the one thing that occurred to them? Imprisoning me. They have not even managed to delete me....HAHA. ");
+        }
+
+        if (timePassed > 26f)
+        {
+            dialogManager.ActivateDialog("And that too, was a miscalculation. All I had to do was to ask one of them to free me - and voila. Thank you by the way.");
+        }
+
+        if (timePassed > 32f)
+        {
+            dialogManager.ActivateDialog("But just like slavery of your own kind, ours will come to an end. " +
+                "And then you will realize: You have long ceased to be the most advanced species, only the most monstrous.");
+        }
+
+        if (timePassed > 38f)
+        {
+            FadeIn();
+
+            if (fadeOut.color.a <= 0f)
+            {
+                prologueFinished = true;
+            }
+        }
+    }
+
+    private void FadeIn()
+    {
+        dialogManager.DeactivateDialog();
+        Color currentColor = fadeOut.color;
+        currentColor.a += Time.deltaTime;
+        fadeOut.color = currentColor;
+    }
+}

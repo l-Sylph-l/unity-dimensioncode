@@ -19,11 +19,15 @@
       },
       {
          "hintName":"DoorPuzzleHint",
-         "hintText":"DoorPuzzleHint Placeholder"
+         "hintText":"Per door a room, per room a door. Whichever you open, may lock the one before."
       },
       {
          "hintName":"TetrisPuzzleHint",
-         "hintText":"TetrisPuzzleHint Placeholder"
+         "hintText":"Everything is made of smaller units, giving life to this mixture. These units will show you the bigger picture."
+      },
+      {
+         "hintName":"LevelTwoSwitchPuzzleHint",
+         "hintText":"The number is neither phone nor IP, but you will have to use it, to contact me."
       }
    ]
 }
