@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using TMPro;
 
 public class Terminal : MonoBehaviour, InteractableInterface
 {
     public GameObject prison;
+    [SerializeField]
+    private GameObject TerminalUi;
+    [SerializeField]
+    private TMP_InputField inputField;
+    [SerializeField]
+    private GameObject Access_denied;
+    [SerializeField]
+    private GameObject Access_granted;
+    private bool corredWord = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,21 +26,51 @@ public class Terminal : MonoBehaviour, InteractableInterface
     // Update is called once per frame
     void Update()
     {
-        
+        CheckIfEscapePressed();
+        CheckIfEnterPressed();
+        DestroyPrison();
     }
 
     public void Interact()
     {
-        if (true)
-        {
-            ShaderManager.Instance.LerpFloatProperty(prison.GetComponent<Renderer>().material, "_DisolveValue", 1.5f);
-            ShaderManager.Instance.LerpOpacityProperty(prison.GetComponent<Renderer>().material, "_BaseColor", 0f);
+        TerminalUi.SetActive(true);
+        inputField.Select();
+        inputField.ActivateInputField();       
+    }
 
-            if (prison.GetComponent<Renderer>().material.GetFloat("_DisolveValue") > 1.4f)
+    private void CheckIfEscapePressed()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TerminalUi.SetActive(false);
+        }
+    }
+
+    private void CheckIfEnterPressed()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) && !Access_granted.activeSelf)
+        {
+            if (inputField.text.ToLower() == "africa")
             {
-                prison.GetComponent<BoxCollider>().enabled = false;
-                DestroyImmediate(prison);
+                Access_denied.SetActive(false);
+                Access_granted.SetActive(true);
+                inputField.DeactivateInputField();
+                corredWord = true;
+            }
+            else
+            {
+                Access_denied.SetActive(true);
             }
         }
     }
+
+    private void DestroyPrison()
+    {
+        if (corredWord == true)
+        {
+            Destroy(prison);
+            inputField.text = "africa";
+        }
+    }
+
 }
