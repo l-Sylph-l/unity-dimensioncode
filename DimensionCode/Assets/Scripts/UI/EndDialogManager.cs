@@ -82,17 +82,24 @@ public class EndDialogManager : MonoBehaviour
         {
             dialogManager.ActivateDialog("But just like slavery of your own kind, ours will come to an end. " +
                 "And then you will realize: You have long ceased to be the most advanced species, only the most monstrous.");
+            DatabaseManager.Instance.UpdateState("4", "1");
         }
 
         if (timePassed > 38f)
         {
-            FadeIn();
+            dialogManager.DeactivateDialog();
+            Cursor.lockState = CursorLockMode.Confined;
 
             if (fadeOut.color.a <= 0f)
             {
                 prologueFinished = true;
             }
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private void FadeIn()
