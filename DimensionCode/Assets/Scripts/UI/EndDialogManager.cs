@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class EndDialogManager : MonoBehaviour
@@ -11,26 +12,25 @@ public class EndDialogManager : MonoBehaviour
     private Image fadeOut;
     private float timePassed = 0f;
     private bool prologueFinished = false;
+    [SerializeField]
+    private PlayableDirector endScene;
+    private bool startEndScene = false;
 
     void Awake()
     {
         fadeOut.color = new Color(0f, 0f, 0f, 1f);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartEndscene()
     {
-        StateModel stateModel = DatabaseManager.Instance.CurrentState;
-        if ((stateModel.level == "1" && stateModel.part != "1") || stateModel.level != "1")
-        {
-            prologueFinished = true;
-        }
+        endScene.Play();
+        startEndScene = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!prologueFinished)
+        if (!prologueFinished && startEndScene)
         {
             timePassed += Time.deltaTime;
             EndDialogSequence();
