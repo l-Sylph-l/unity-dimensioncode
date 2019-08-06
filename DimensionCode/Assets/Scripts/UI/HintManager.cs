@@ -21,6 +21,7 @@ public class HintManager : MonoBehaviour
     private StateModel currentState;
     private string currentText = "";
     private float timeUntilHintDisplay = 10f;
+    private bool stopShowingHints = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +32,17 @@ public class HintManager : MonoBehaviour
 
     private void Update()
     {
-        if (prologueManager.CheckIfPrologueFinished())
+        if (prologueManager.CheckIfPrologueFinished() && !stopShowingHints)
         {
             CheckCurrentHint();
             HandleHintActivation();
         }
+    }
+
+    public void StopShowingHints()
+    {
+        stopShowingHints = true;
+        dialogManager.DeactivateDialog();
     }
 
     private void LoadHints()
@@ -99,6 +106,7 @@ public class HintManager : MonoBehaviour
         if (currentState.part == "1" && currentState.level == "1")
         {
             currentText = GetHint("ClockPuzzleHint");
+
         }
 
         if (currentState.part == "2" && currentState.level == "1")

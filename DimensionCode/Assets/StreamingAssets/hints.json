@@ -28,6 +28,14 @@
       {
          "hintName":"LevelTwoSwitchPuzzleHint",
          "hintText":"The number is neither phone nor IP, but you will have to use it, to contact me."
+      },
+      {
+         "hintName":"SplitterPuzzle",
+         "hintText":"In order for you to be most effective, remember to sometimes change your perspective."
+      },
+      {
+         "hintName":"TerminalPuzzle",
+         "hintText":"You only have xxx Seconds. Hurry and free me!."
       }
    ]
 }

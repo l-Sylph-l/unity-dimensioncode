@@ -26,7 +26,7 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
 
     public string GetPart()
     {
-        return "2"; // TODO: Check later!!
+        return "2";
     }
 
     public string GetLevel()
@@ -36,6 +36,10 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
 
     public void ChangeToEndState()
     {
+        if (DatabaseManager.Instance.CurrentState.level == GetLevel() && DatabaseManager.Instance.CurrentState.part == GetPart())
+        {
+            DatabaseManager.Instance.UpdateState("3", "1");
+        }
         tetrisPuzzleFinished = true;
     }
 
@@ -68,6 +72,8 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
         string rowFour = rowTrigger04.getCount().ToString();
         string rowFive = rowTrigger05.getCount().ToString();
         string rowSix = rowTrigger06.getCount().ToString();
+
+        string tetrisCode = rowSix + rowFive + rowFour + rowThree + rowTwo + rowOne;
 
         if (rowOne == "6")
         {
@@ -124,14 +130,14 @@ public class TetrisPuzzle : MonoBehaviour, PuzzleInterface
         }
 
         // Code beginnt bei 6, da rowOne(Collider) von rechts beginnt der Code aber normal von links her geschrieben werden muss.
-        string tetrisCode = rowSix + rowFive + rowFour + rowThree + rowTwo + rowOne;
+        string formattedTetrisCode = rowSix + rowFive + rowFour + rowThree + rowTwo + rowOne;
 
-        displayText.text = tetrisCode;
+        displayText.text = formattedTetrisCode;
 
         // Rätsel wurde gelöst
         if (tetrisCode == "6891056")
         {
-            tetrisPuzzleFinished = true;
+            ChangeToEndState();
         }
     }
 

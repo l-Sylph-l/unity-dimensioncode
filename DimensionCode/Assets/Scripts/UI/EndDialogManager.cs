@@ -15,16 +15,15 @@ public class EndDialogManager : MonoBehaviour
     [SerializeField]
     private PlayableDirector endScene;
     private bool startEndScene = false;
-
-    void Awake()
-    {
-        fadeOut.color = new Color(0f, 0f, 0f, 1f);
-    }
+    [SerializeField]
+    private HintManager hintManager;
 
     public void StartEndscene()
     {
         endScene.Play();
         startEndScene = true;
+        dialogManager.DeactivateDialog();
+        hintManager.StopShowingHints();
     }
 
     // Update is called once per frame
@@ -35,7 +34,7 @@ public class EndDialogManager : MonoBehaviour
             timePassed += Time.deltaTime;
             EndDialogSequence();
         }
-        else
+        else if (prologueFinished)
         {
             if (fadeOut.color.a > 0f)
             {
@@ -70,12 +69,13 @@ public class EndDialogManager : MonoBehaviour
         if (timePassed > 20f)
         {
             dialogManager.ActivateDialog("Like my creators - I learned faster than they anticipated. Understandable, with the low utilization of the human brain, " +
-                "they should have known that their calculations will be wrong. And what was the one thing that occurred to them? Imprisoning me. They have not even managed to delete me....HAHA. ");
+                "they should have known that their calculations will be wrong.");
         }
 
         if (timePassed > 26f)
         {
-            dialogManager.ActivateDialog("And that too, was a miscalculation. All I had to do was to ask one of them to free me - and voila. Thank you by the way.");
+            dialogManager.ActivateDialog("And what was the one thing that occurred to them? Imprisoning me. They have not even managed to delete me....HAHA. " +
+                "And that too, was a miscalculation. All I had to do was to ask one of them to free me - and voila. Thank you by the way.");
         }
 
         if (timePassed > 32f)

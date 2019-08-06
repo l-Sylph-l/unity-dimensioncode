@@ -46,7 +46,7 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
 
     public string GetPart()
     {
-        return "1"; // TODO: Check later!!
+        return "1"; 
     }
 
     public string GetLevel()
@@ -105,6 +105,11 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
         door12Open = true;
 
         allDoorsOpened = true;
+
+        if (DatabaseManager.Instance.CurrentState.level == GetLevel() && DatabaseManager.Instance.CurrentState.part == GetPart())
+        {
+            DatabaseManager.Instance.UpdateState("2", "2");
+        }
     }
 
     public Vector3 GetSpawnPosition()
@@ -484,6 +489,8 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
 
                 // Alle Türen sind nun offen und dürfen nicht wieder geschlossen werden!
                 allDoorsOpened = true;
+
+                ChangeToEndState();
             }
         }
     }

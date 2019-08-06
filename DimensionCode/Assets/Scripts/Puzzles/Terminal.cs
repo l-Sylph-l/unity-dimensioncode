@@ -15,6 +15,8 @@ public class Terminal : MonoBehaviour, InteractableInterface
     private GameObject Access_denied;
     [SerializeField]
     private GameObject Access_granted;
+    [SerializeField]
+    private GameObject kayla;
     private bool corredWord = false;
 
     // Start is called before the first frame update
@@ -70,6 +72,7 @@ public class Terminal : MonoBehaviour, InteractableInterface
         {
             Destroy(prison);
             inputField.text = "africa";
+            kayla.tag = "Interactable";
         }
     }
 

@@ -117,7 +117,7 @@ public class DialogManager : MonoBehaviour
 
     private void ChangeText()
     {
-        if (writeNewText)
+        if (writeNewText && currentText.Length > 0)
         {
             if (!uiSound.isPlaying)
             {
