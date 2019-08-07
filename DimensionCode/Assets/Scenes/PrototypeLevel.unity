@@ -12605,8 +12605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 328823262}
   - {fileID: 328823263}
+  - {fileID: 328823262}
   m_VisualEffect: {fileID: 328823266}
 --- !u!73398921 &328823265
 VFXRenderer:
@@ -20453,8 +20453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 498949897}
   - {fileID: 498949898}
+  - {fileID: 498949897}
   m_VisualEffect: {fileID: 498949901}
 --- !u!73398921 &498949900
 VFXRenderer:
@@ -66510,7 +66510,7 @@ Animator:
   m_GameObject: {fileID: 1606204577}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7987f8e37331a0d45b8abca46fdff5bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -68717,8 +68717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1684927468}
   - {fileID: 1684927467}
+  - {fileID: 1684927468}
   m_VisualEffect: {fileID: 1684927471}
 --- !u!73398921 &1684927470
 VFXRenderer:
@@ -75485,8 +75485,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852812612}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.000000014901161}
-  m_LocalPosition: {x: -2.574, y: 0, z: 0}
+  m_LocalRotation: {x: 0.0041478933, y: 0.92822313, z: 0.3718568, w: -0.010353904}
+  m_LocalPosition: {x: -0.92, y: -4.289999, z: 1.5100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 988688535}
@@ -84047,8 +84047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2047314292}
   - {fileID: 2047314293}
+  - {fileID: 2047314292}
   m_VisualEffect: {fileID: 2047314296}
 --- !u!73398921 &2047314295
 VFXRenderer:
