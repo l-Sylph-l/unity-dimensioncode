@@ -4619,8 +4619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 123431009}
   - {fileID: 123431010}
+  - {fileID: 123431009}
   m_VisualEffect: {fileID: 123431013}
 --- !u!73398921 &123431012
 VFXRenderer:
@@ -12605,8 +12605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 328823263}
   - {fileID: 328823262}
+  - {fileID: 328823263}
   m_VisualEffect: {fileID: 328823266}
 --- !u!73398921 &328823265
 VFXRenderer:
@@ -13642,8 +13642,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 344613698}
   - {fileID: 344613697}
+  - {fileID: 344613698}
   m_VisualEffect: {fileID: 344613701}
 --- !u!73398921 &344613700
 VFXRenderer:
@@ -20453,8 +20453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 498949898}
   - {fileID: 498949897}
+  - {fileID: 498949898}
   m_VisualEffect: {fileID: 498949901}
 --- !u!73398921 &498949900
 VFXRenderer:
@@ -42075,8 +42075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1007651701}
   - {fileID: 1007651700}
+  - {fileID: 1007651701}
   m_VisualEffect: {fileID: 1007651704}
 --- !u!73398921 &1007651703
 VFXRenderer:
@@ -45601,8 +45601,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1087578532}
   - {fileID: 1087578533}
+  - {fileID: 1087578532}
   m_VisualEffect: {fileID: 1087578536}
 --- !u!73398921 &1087578535
 VFXRenderer:
@@ -68717,8 +68717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1684927467}
   - {fileID: 1684927468}
+  - {fileID: 1684927467}
   m_VisualEffect: {fileID: 1684927471}
 --- !u!73398921 &1684927470
 VFXRenderer:
@@ -72955,8 +72955,39 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2229604637242108071, guid: c53d8f63e5def1742803008ae6d1b09a,
+        type: 3}
+      propertyPath: speed
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229604636176704198, guid: c53d8f63e5def1742803008ae6d1b09a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229604637220784781, guid: c53d8f63e5def1742803008ae6d1b09a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229604636896029208, guid: c53d8f63e5def1742803008ae6d1b09a,
+        type: 3}
+      propertyPath: speed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229604637961429113, guid: c53d8f63e5def1742803008ae6d1b09a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1670741102, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
+    - {fileID: 2229604637242108071, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
+    - {fileID: 2229604636176704198, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
+    - {fileID: 2229604636155347180, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
+    - {fileID: 2229604637220784781, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
+    - {fileID: 2229604636896029208, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
+    - {fileID: 2229604637961429113, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c53d8f63e5def1742803008ae6d1b09a, type: 3}
 --- !u!4 &1796349762 stripped
 Transform:
@@ -82978,8 +83009,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2022562983}
   - {fileID: 2022562984}
+  - {fileID: 2022562983}
   m_VisualEffect: {fileID: 2022562987}
 --- !u!73398921 &2022562986
 VFXRenderer:
@@ -84047,8 +84078,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2047314293}
   - {fileID: 2047314292}
+  - {fileID: 2047314293}
   m_VisualEffect: {fileID: 2047314296}
 --- !u!73398921 &2047314295
 VFXRenderer:
@@ -88775,8 +88806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2142887912}
   - {fileID: 2142887911}
+  - {fileID: 2142887912}
   m_VisualEffect: {fileID: 2142887915}
 --- !u!73398921 &2142887914
 VFXRenderer:

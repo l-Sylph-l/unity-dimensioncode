@@ -99,7 +99,7 @@ public class HintManager : MonoBehaviour
     {
         if (currentState.part != DatabaseManager.Instance.CurrentState.part)
         {
-            currentState.part = DatabaseManager.Instance.CurrentState.part;
+            currentState = DatabaseManager.Instance.CurrentState;
             timeUntilHintDisplay = 10f;
         }
 

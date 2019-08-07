@@ -51,7 +51,7 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
 
     private int GetCurrentHour()
     {
-        float result = GetCurrentHourAngle() / 30f;
+        float result = (GetCurrentHourAngle() ) / 30f ;
         int convertedResult = (int)result;
 
         if (convertedResult == 0)
@@ -196,8 +196,8 @@ public class ClockPuzzle : MonoBehaviour, PuzzleInterface, InteractableInterface
 
     private bool IsMinuteValid(int currentMinute)
     {
-        int lowestMinute = currentMinute - 1;
-        int highestMinute = currentMinute + 1;
+        int lowestMinute = currentMinute - 2;
+        int highestMinute = currentMinute + 2;
         return (GetCurrentMinute() >= lowestMinute && GetCurrentMinute() <= highestMinute);
     }
 

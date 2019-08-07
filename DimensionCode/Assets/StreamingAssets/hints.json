@@ -35,7 +35,7 @@
       },
       {
          "hintName":"TerminalPuzzle",
-         "hintText":"You only have xxx Seconds. Hurry and free me!."
+         "hintText":"You only have 60 Seconds. Hurry and free me!."
       }
    ]
 }
