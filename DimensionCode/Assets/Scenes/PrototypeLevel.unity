@@ -605,8 +605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 8777449}
   - {fileID: 8777448}
+  - {fileID: 8777449}
   m_VisualEffect: {fileID: 8777452}
 --- !u!73398921 &8777451
 VFXRenderer:
@@ -13642,8 +13642,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 344613697}
   - {fileID: 344613698}
+  - {fileID: 344613697}
   m_VisualEffect: {fileID: 344613701}
 --- !u!73398921 &344613700
 VFXRenderer:
@@ -45601,8 +45601,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1087578533}
   - {fileID: 1087578532}
+  - {fileID: 1087578533}
   m_VisualEffect: {fileID: 1087578536}
 --- !u!73398921 &1087578535
 VFXRenderer:
@@ -52035,7 +52035,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1238837291}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -52852,15 +52852,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
       propertyPath: m_text
-      value: nwjifnihbh hhfbrhfbrhbfhrbfhrbfhr3bfih3bfh3brfhbhfbhu3bfh3bfhi3bfh3bfhi3bfhb3hifr3hifb3ihfbhi3fbhrbfih43fih43fhi43fhi43fih4bfi4bfi43fi43fi34fi3fbi3fbibfibfi3bfh3bfh43fh4bfib43fb43ifb43ifbi43fbi43fi43fbi3bfi4bfi43fb34fb4ifbi43fbibfi43fbi3bfi3fbi43fi4bfi4bi43fi43f43fib43fib
+      value: new text
       objectReference: {fileID: 0}
     - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 272
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
       propertyPath: m_textInfo.spaceCount
@@ -52872,11 +52872,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223343243, guid: abf6352e4ae826b4da0261a89ab997c8, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5998762164081672983, guid: abf6352e4ae826b4da0261a89ab997c8,
         type: 3}
@@ -60073,8 +60077,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 1421294407}
   - {fileID: 1421294408}
+  - {fileID: 1421294407}
   m_VisualEffect: {fileID: 1421294411}
 --- !u!73398921 &1421294410
 VFXRenderer:
@@ -83101,8 +83105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
   m_Bindings:
-  - {fileID: 2022562984}
   - {fileID: 2022562983}
+  - {fileID: 2022562984}
   m_VisualEffect: {fileID: 2022562987}
 --- !u!73398921 &2022562986
 VFXRenderer:
