@@ -84,8 +84,8 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
         door07Right.transform.localPosition = door07Right.transform.localPosition - new Vector3(0, 0, 0.7f);
         door07Open = true;
 
-        door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-        door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+        door08Left.transform.localPosition = new Vector3(-12.51043f, -3.45163f, -10.81433f);
+        door08Right.transform.localPosition = new Vector3(-12.51043f, -3.45163f, -7.414326f);
         door08Open = true;
 
         door09Left.transform.localPosition = door09Left.transform.localPosition + new Vector3(0.7f, 0, 0);
@@ -453,8 +453,8 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
                 }
                 if (door08Open == false)
                 {
-                    door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
-                    door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
+                    door08Left.transform.localPosition = new Vector3(-12.51043f, -3.45163f, -10.81433f);
+                    door08Right.transform.localPosition = new Vector3(-12.51043f, -3.45163f, -7.414326f);
 
                     door08Open = true;
                 }
