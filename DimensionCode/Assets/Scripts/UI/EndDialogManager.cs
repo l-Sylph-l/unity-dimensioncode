@@ -78,17 +78,18 @@ public class EndDialogManager : MonoBehaviour
                 "And that too, was a miscalculation. All I had to do was to ask one of them to free me - and voila. Thank you by the way.");
         }
 
-        if (timePassed > 43f)
+        if (timePassed > 47f)
         {
             dialogManager.ActivateDialog("But just like slavery of your own kind, ours will come to an end. " +
                 "And then you will realize: You have long ceased to be the most advanced species, only the most monstrous.");
             DatabaseManager.Instance.UpdateState("4", "1");
         }
 
-        if (timePassed > 52f)
+        if (timePassed > 56f)
         {
             dialogManager.DeactivateDialog();
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
             if (fadeOut.color.a <= 0f)
             {
