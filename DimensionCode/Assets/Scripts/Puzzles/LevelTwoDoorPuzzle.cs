@@ -76,8 +76,8 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
         door05Right.transform.localPosition = door05Right.transform.localPosition - new Vector3(0, 0, 0.7f);
         door05Open = true;
 
-        door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-        door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+        door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+        door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0, 0, 0.7f);
         door06Open = true;
 
         door07Left.transform.localPosition = door07Left.transform.localPosition + new Vector3(0, 0, 0.7f);
@@ -439,8 +439,8 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
                 }
                 if (door06Open == false)
                 {
-                    door06Left.transform.localPosition = door06Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                    door06Right.transform.localPosition = door06Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door06Left.transform.localPosition = door06Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door06Right.transform.localPosition = door06Right.transform.localPosition - new Vector3(0, 0, 0.7f);
 
                     door06Open = true;
                 }
@@ -453,8 +453,8 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
                 }
                 if (door08Open == false)
                 {
-                    door08Left.transform.localPosition = door08Left.transform.localPosition - new Vector3(0, 0, 0.7f);
-                    door08Right.transform.localPosition = door08Right.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door08Left.transform.localPosition = door08Left.transform.localPosition + new Vector3(0, 0, 0.7f);
+                    door08Right.transform.localPosition = door08Right.transform.localPosition - new Vector3(0, 0, 0.7f);
 
                     door08Open = true;
                 }
