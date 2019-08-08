@@ -40,6 +40,9 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
     public GetDoorPuzzleButton doorButton11;
     public GetDoorPuzzleButton doorButton12;
 
+    [SerializeField]
+    private GameObject visualEffect;
+
     /**
     * Start of Methods from the puzzle interface
     */
@@ -488,6 +491,7 @@ public class LevelTwoDoorPuzzle : MonoBehaviour, PuzzleInterface
                 }
 
                 // Alle Türen sind nun offen und dürfen nicht wieder geschlossen werden!
+                visualEffect.SetActive(true);
                 allDoorsOpened = true;
 
                 ChangeToEndState();
